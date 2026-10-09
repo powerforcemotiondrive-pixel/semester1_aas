@@ -220,6 +220,59 @@
       background-color: #e0f2fe;
       color: #0369a1;
     }
+    .video-header-actions {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .watch-direct-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 10px;
+      font-weight: 700;
+      color: #b91c1c;
+      background-color: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 9999px;
+      padding: 1.5px 7px;
+      text-decoration: none;
+      line-height: 1.3;
+      transition: all 0.15s ease;
+    }
+    .watch-direct-btn:hover {
+      background-color: #fee2e2;
+      border-color: #f87171;
+      color: #991b1b;
+      transform: translateY(-0.5px);
+    }
+    .local-file-banner {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 14px;
+      font-size: 11.5px;
+      color: #1e40af;
+      line-height: 1.5;
+    }
+    .local-file-banner-icon {
+      font-size: 16px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .local-file-banner-text code {
+      background-color: #dbeafe;
+      color: #1e3a8a;
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 11px;
+    }
     .video-player-container {
       position: relative;
       width: 100%;
@@ -238,6 +291,70 @@
       height: 100%;
       border: 0;
       display: block;
+    }
+    .video-facade {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .video-facade img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.86;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .video-facade:hover img {
+      transform: scale(1.05);
+      opacity: 0.96;
+    }
+    .video-play-btn {
+      position: absolute;
+      width: 52px;
+      height: 36px;
+      background-color: rgba(239, 68, 68, 0.92);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      z-index: 2;
+    }
+    .video-facade:hover .video-play-btn {
+      transform: scale(1.12);
+      background-color: #dc2626;
+    }
+    .video-play-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: #ffffff;
+      margin-left: 2px;
+    }
+    .video-facade-badge {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background-color: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(4px);
+      color: #f8fafc;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      z-index: 2;
     }
     .video-caption {
       font-size: 11px;
@@ -548,6 +665,14 @@
           Watch the accompanying video clips below and take notes on relevant travel collocations, tone, and arguments.
         </p>
 
+        <!-- Dynamic Local File Mode Warning Banner (shown only when opened via file://) -->
+        <div id="local-file-banner" class="local-file-banner" style="display: none;">
+          <div class="local-file-banner-icon">ℹ️</div>
+          <div class="local-file-banner-text">
+            <strong>Local File Preview (Edge / Chromium):</strong> Modern browsers block embedded YouTube players when opened directly from disk (<code>file://</code>) due to strict cross-origin referrer security policies (Error 153). Click any video card or <strong>Watch ↗</strong> to view on YouTube. Embedded inline playback activates automatically when uploaded to <strong>Moodle (eCampus)</strong> or run through a local web server (<code>npm run serve</code>).
+          </div>
+        </div>
+
         <!-- 3-Column Evenly Spaced Video Grid across the row -->
         <div class="video-grid">
           
@@ -555,11 +680,14 @@
           <div class="compact-video-card">
             <div class="video-header">
               <span class="video-title" title="Video 1: Sustainable Aviation">Video 1: Sustainable Aviation</span>
-              <span class="tag-pill tag-amber">Discussion</span>
+              <div class="video-header-actions">
+                <a href="https://www.youtube.com/watch?v=a_fS9ddgoGs" target="_blank" rel="noopener noreferrer" class="watch-direct-btn" title="Open Video 1 on YouTube">Watch ↗</a>
+                <span class="tag-pill tag-amber">Discussion</span>
+              </div>
             </div>
             
             <!-- 🔗 [LINK 1/11: VIDEO 1 EMBED URL] - Replace src below with your YouTube embed link -->
-            <div class="video-player-container">
+            <div class="video-player-container" data-video-id="a_fS9ddgoGs" data-video-title="Video 1: Sustainable Aviation">
               <iframe 
                 src="https://www.youtube-nocookie.com/embed/a_fS9ddgoGs" 
                 title="YouTube video player 1 - Sustainable Aviation" 
@@ -578,11 +706,14 @@
           <div class="compact-video-card">
             <div class="video-header">
               <span class="video-title" title="Video 2: TOEIC Listening Strategies">Video 2: TOEIC Listening</span>
-              <span class="tag-pill tag-emerald">Strategy</span>
+              <div class="video-header-actions">
+                <a href="https://www.youtube.com/watch?v=SaV2m8jtaRI" target="_blank" rel="noopener noreferrer" class="watch-direct-btn" title="Open Video 2 on YouTube">Watch ↗</a>
+                <span class="tag-pill tag-emerald">Strategy</span>
+              </div>
             </div>
 
             <!-- 🔗 [LINK 2/11: VIDEO 2 EMBED URL] - Replace src below with your YouTube embed link -->
-            <div class="video-player-container">
+            <div class="video-player-container" data-video-id="SaV2m8jtaRI" data-video-title="Video 2: TOEIC Listening Strategies">
               <iframe 
                 src="https://www.youtube-nocookie.com/embed/SaV2m8jtaRI" 
                 title="YouTube video player 2 - TOEIC Listening" 
@@ -601,11 +732,14 @@
           <div class="compact-video-card">
             <div class="video-header">
               <span class="video-title" title="Video 3: Airport Infrastructure & DD&RS">Video 3: Airport Operations</span>
-              <span class="tag-pill tag-sky">Case Study</span>
+              <div class="video-header-actions">
+                <a href="https://www.youtube.com/watch?v=cjxn0z1f7Pk" target="_blank" rel="noopener noreferrer" class="watch-direct-btn" title="Open Video 3 on YouTube">Watch ↗</a>
+                <span class="tag-pill tag-sky">Case Study</span>
+              </div>
             </div>
 
             <!-- 🔗 [LINK 3/11: VIDEO 3 EMBED URL] - Replace src below with your YouTube embed link -->
-            <div class="video-player-container">
+            <div class="video-player-container" data-video-id="cjxn0z1f7Pk" data-video-title="Video 3: Airport Infrastructure & Operations">
               <iframe 
                 src="https://www.youtube-nocookie.com/embed/cjxn0z1f7Pk" 
                 title="YouTube video player 3 - Airport Infrastructure & Operations" 
@@ -843,6 +977,35 @@
 
   </div>
 </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Under local file:// protocol (e.g. Edge/Chrome opened directly from disk),
+      // modern Chromium browsers suppress Referer headers, causing YouTube embeds
+      // to trigger Error 153 ("Video Player Configuration Error").
+      // In this environment, gracefully upgrade video players to HD thumbnail facade cards.
+      var isFile = window.location.protocol === 'file:';
+      if (isFile) {
+        var banner = document.getElementById('local-file-banner');
+        if (banner) banner.style.display = 'flex';
 
+        var containers = document.querySelectorAll('.video-player-container[data-video-id]');
+        containers.forEach(function(el) {
+          var vid = el.getAttribute('data-video-id');
+          var title = el.getAttribute('data-video-title') || 'Video';
+          var url = 'https://www.youtube.com/watch?v=' + vid;
+          el.innerHTML = 
+            '<a href="' + url + '" target="_blank" rel="noopener noreferrer" class="video-facade" title="' + title + ' - Click to play on YouTube">' +
+              '<img src="https://img.youtube.com/vi/' + vid + '/hqdefault.jpg" alt="' + title + '" loading="lazy">' +
+              '<div class="video-play-btn" aria-hidden="true">' +
+                '<svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>' +
+              '</div>' +
+              '<div class="video-facade-badge">' +
+                '<span>Watch on YouTube ↗</span>' +
+              '</div>' +
+            '</a>';
+        });
+      }
+    });
+  </script>
 </body>
 </html>
