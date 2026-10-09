@@ -27,6 +27,7 @@
     /* Elements and inactive buttons that must NOT have mesh texture */
     #deck-icon-box,
     #counter-badge,
+    #card-tag-wrapper,
     #prev-btn,
     #next-btn,
     button:disabled,
@@ -44,36 +45,15 @@
       transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
     }
 
-    /* Header brand icon and title spacing */
-    .header-brand-group {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    @media (min-width: 640px) {
-      .header-brand-group {
-        gap: 16px;
-      }
-    }
-
-    /* Floating module box styling - module buttons left/above, eCampus under module 1 on mobile, right of module 3 on desktop */
+    /* Floating module box styling - left aligned under the canvas */
     .module-selector-wrapper {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 8px;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
       margin-top: 14px;
-      width: 100%;
-      padding: 0 4px;
-    }
-    @media (min-width: 640px) {
-      .module-selector-wrapper {
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 10px;
-        padding-right: 24px;
-      }
+      padding-left: 2px;
     }
 
     .module-selector-box {
@@ -86,62 +66,42 @@
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
     }
 
-    .module-box-left {
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .ecampus-box-right {
-      display: inline-flex;
-      align-items: center;
-    }
-
     .module-buttons-group {
       display: flex;
       align-items: center;
       gap: 10px;
     }
-
-    /* Worksheet button responsive placement: alongside Revision on mobile, right-aligned on desktop */
-    #worksheet-btn {
-      margin-left: 0;
-    }
-    @media (min-width: 640px) {
-      #worksheet-btn {
-        margin-left: auto;
-      }
-    }
   </style>
 </head>
-<body class="bg-slate-100 min-h-screen flex flex-col justify-start sm:justify-center items-center py-2 sm:py-4">
+<body class="bg-slate-100 min-h-screen flex items-center justify-center">
 
   <!-- Custom Tailwind adjustments -->
   <div class="w-[98%] sm:w-[95%] lg:w-[90%] max-w-[1350px] mx-auto px-2 sm:px-4 py-3 font-sans">
     <!-- Main Deck Container -->
-    <div class="moodle-deck-canvas bg-white rounded-2xl shadow-2xl border border-slate-300 flex flex-col overflow-hidden">
+    <div class="moodle-deck-canvas bg-white rounded-2xl shadow-xl border border-slate-300 flex flex-col overflow-hidden">
       
       <!-- Header bar -->
-      <header id="deck-header" class="textured-surface bg-[#c0684f] text-white px-4 py-4 sm:px-6 sm:py-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#a8543d] shrink-0 relative overflow-hidden">
-        <div class="header-brand-group min-w-0">
-          <div id="deck-icon-box" class="bg-[#c99948] p-2.5 rounded-lg text-white shadow-md flex items-center justify-center shrink-0">
+      <header id="deck-header" class="textured-surface bg-[#cb755e] text-white px-4 py-4 sm:px-6 sm:py-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#b5634c] shrink-0 relative overflow-hidden">
+        <div class="flex items-center space-x-3 sm:space-x-4">
+          <div id="deck-icon-box" class="bg-[#d6a555] p-2.5 rounded-lg text-white shadow-md flex items-center justify-center">
             <!-- Theme Icon -->
             <svg width="20" height="20" style="width: 20px; height: 20px;" class="w-5 h-5 text-white shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
             </svg>
           </div>
-          <div class="min-w-0">
-            <span id="deck-supertitle" class="block text-xs sm:text-sm md:text-base font-black tracking-wider text-[#fef08a] uppercase truncate">GSEA SEMESTER 1 - MODULE 1: TRAVEL, TRANSPORT &amp; LEISURE (2)</span>
-            <h1 id="deck-title" class="text-sm sm:text-base font-bold text-white mt-0.5 truncate">Loading Module...</h1>
+          <div>
+            <span id="deck-supertitle" class="block text-xs sm:text-sm md:text-base font-black tracking-wider text-[#fef39e] uppercase">GSEA SEMESTER 1 - MODULE 1: TRAVEL, TRANSPORT &amp; LEISURE (2)</span>
+            <h1 id="deck-title" class="text-sm sm:text-base font-bold text-white mt-0.5">Loading Module...</h1>
           </div>
         </div>
 
         <!-- Navigation Controls -->
-        <div class="flex items-center space-x-2 shrink-0">
-          <span id="counter-badge" class="text-xs font-medium text-white bg-[#a8543d] px-2.5 py-1 rounded-md border border-[#904431] mr-1 shadow-md">1 of 6</span>
-          <button id="prev-btn" class="flex items-center space-x-1 bg-[#a8543d] hover:bg-[#904431] active:bg-[#783526] text-slate-100 px-3 py-1.5 rounded-lg font-semibold text-xs transition-all border border-[#904431] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer shadow-md" type="button">
+        <div class="flex items-center space-x-2">
+          <span id="counter-badge" class="text-xs font-medium text-white bg-[#b5634c] px-2.5 py-1 rounded-md border border-[#9e523b] mr-1 shadow-md">1 of 6</span>
+          <button id="prev-btn" class="flex items-center space-x-1 bg-[#b5634c] hover:bg-[#9e523b] active:bg-[#88432f] text-slate-100 px-3 py-1.5 rounded-lg font-semibold text-xs transition-all border border-[#9e523b] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer shadow-md" type="button">
             <span class="pointer-events-none">Previous</span>
           </button>
-          <button id="next-btn" class="flex items-center space-x-1 bg-[#c99948] hover:bg-[#b08137] active:bg-[#966b2a] text-white px-3 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-md disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer" type="button">
+          <button id="next-btn" class="flex items-center space-x-1 bg-[#d6a555] hover:bg-[#bf8f40] active:bg-[#a8782f] text-white px-3 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-md disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer" type="button">
             <span class="pointer-events-none">Next</span>
           </button>
         </div>
@@ -165,11 +125,11 @@
           <div class="space-y-4">
             <div class="flex flex-col lg:flex-row gap-4 items-start justify-between">
               <div class="space-y-3 flex-1">
-                <!-- Restyled badge -->
-                <div id="card-tag-wrapper" class="textured-surface inline-flex items-center space-x-2 bg-[#c0684f] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#a8543d] shadow-sm">
+                <!-- Restyled badge (no mesh) -->
+                <div id="card-tag-wrapper" class="inline-flex items-center space-x-2 bg-[#cb755e] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#b5634c] shadow-sm">
                   <span id="card-tag">Section 1</span>
                 </div>
-                <h2 id="card-heading" class="text-lg sm:text-xl font-black text-[#c0684f] tracking-tight"></h2>
+                <h2 id="card-heading" class="text-lg sm:text-xl font-black text-[#cb755e] tracking-tight"></h2>
                 <div id="card-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed space-y-2"></div>
               </div>
               <!-- Image Container with Subtle Drop Shadow -->
@@ -198,23 +158,23 @@
       </footer>
     </div>
 
-    <!-- Module Selector Bar at Bottom -->
+    <!-- Module Selector Bar at Bottom - Left aligned -->
     <div class="module-selector-wrapper">
       <!-- Separate Box for Module Selection Buttons -->
-      <div class="module-selector-box module-box-left">
+      <div class="module-selector-box">
         <div id="module-selector-container" class="module-buttons-group">
           <!-- Populated via script -->
         </div>
       </div>
       <!-- Separate Box for eCampus Link Button -->
-      <div class="module-selector-box ecampus-box-right">
+      <div class="module-selector-box">
         <a id="ecampus-btn"
            href="https://e-campus.enac.fr/moodle/"
            target="_blank"
            rel="noopener noreferrer"
            aria-label="Visit eCampus Moodle"
            class="textured-surface px-4 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-bold tracking-wide transition-all border cursor-pointer select-none inline-flex items-center justify-center no-underline shadow-md"
-           style="background-color: #c0684f; border-color: #a8543d; border-width: 1.5px; border-style: solid; color: #ffffff; box-shadow: 0 2px 8px rgba(192, 104, 79, 0.25);">
+           style="background-color: #cb755e; border-color: #b5634c; border-width: 1.5px; border-style: solid; color: #ffffff; box-shadow: 0 2px 8px rgba(203, 117, 94, 0.25);">
           eCampus
         </a>
       </div>
@@ -343,17 +303,19 @@
         name: "Module 1",
         subtitle: "Travel, Transport & Leisure",
         supertitle: "GSEA SEMESTER 1 - MODULE 1: TRAVEL, TRANSPORT & LEISURE (2)",
-        // Softened Terracotta / Warm Orange Theme
-        primary: "#c0684f",
-        primaryDark: "#a8543d",
-        primaryDarker: "#904431",
-        accent: "#c99948",
-        accentDark: "#b08137",
-        accentDarker: "#966b2a",
-        highlight: "#fef08a",
+        // Softened Pastel Terracotta / Warm Orange Theme
+        primary: "#cb755e",
+        primaryDark: "#b5634c",
+        primaryDarker: "#9e523b",
+        accent: "#d6a555",
+        accentDark: "#bf8f40",
+        accentDarker: "#a8782f",
+        highlight: "#fef39e",
+        worksheet: "#dfb469",
+        worksheetDark: "#cb9e53",
         activeMenuBg: "rgba(254, 243, 199, 0.7)",
-        activeMenuText: "#c0684f",
-        activeMenuBorder: "#c99948",
+        activeMenuText: "#cb755e",
+        activeMenuBorder: "#d6a555",
         pages: createModulePages(1)
       },
       {
@@ -361,17 +323,19 @@
         name: "Module 2",
         subtitle: "Weather & the Environment",
         supertitle: "GSEA SEMESTER 1 - MODULE 2: WEATHER & THE ENVIRONMENT",
-        // Softened Slate Blue Theme
-        primary: "#46729a",
-        primaryDark: "#375d80",
-        primaryDarker: "#2a4966",
-        accent: "#5e87b0",
-        accentDark: "#4c7297",
-        accentDarker: "#3b5d7e",
-        highlight: "#e0f2fe",
-        activeMenuBg: "rgba(70, 114, 154, 0.09)",
-        activeMenuText: "#46729a",
-        activeMenuBorder: "#5e87b0",
+        // Softened Pastel Slate Blue Theme
+        primary: "#5681a8",
+        primaryDark: "#456e92",
+        primaryDarker: "#355a7a",
+        accent: "#7097bd",
+        accentDark: "#5c83a8",
+        accentDarker: "#496f92",
+        highlight: "#e9f6ff",
+        worksheet: "#7fa7cc",
+        worksheetDark: "#6b92b6",
+        activeMenuBg: "rgba(86, 129, 168, 0.12)",
+        activeMenuText: "#5681a8",
+        activeMenuBorder: "#7097bd",
         pages: createModulePages(2)
       },
       {
@@ -379,17 +343,19 @@
         name: "Module 3",
         subtitle: "New Technology",
         supertitle: "GSEA SEMESTER 1 - MODULE 3: NEW TECHNOLOGY",
-        // Softened Botanical Sage Green Theme
-        primary: "#5c8147",
-        primaryDark: "#4a6a37",
-        primaryDarker: "#395329",
-        accent: "#769c5c",
-        accentDark: "#62844a",
-        accentDarker: "#4f6c39",
-        highlight: "#ecfccb",
-        activeMenuBg: "rgba(92, 129, 71, 0.09)",
-        activeMenuText: "#5c8147",
-        activeMenuBorder: "#769c5c",
+        // Softened Pastel Botanical Sage Green Theme
+        primary: "#6e9359",
+        primaryDark: "#5a7e47",
+        primaryDarker: "#486737",
+        accent: "#87ac6e",
+        accentDark: "#729759",
+        accentDarker: "#5e8146",
+        highlight: "#f2fde0",
+        worksheet: "#96ba7e",
+        worksheetDark: "#82a569",
+        activeMenuBg: "rgba(110, 147, 89, 0.12)",
+        activeMenuText: "#6e9359",
+        activeMenuBorder: "#87ac6e",
         pages: createModulePages(3)
       }
     ];
@@ -417,15 +383,25 @@
       }
 
       // Read initial module from URL hash if provided (#module1, #module2, #module3)
-      const hash = window.location.hash.toLowerCase();
-      let initialMod = 0;
-      if (hash.includes('mod2') || hash.includes('module2') || hash.includes('module-2')) {
-        initialMod = 1;
-      } else if (hash.includes('mod3') || hash.includes('module3') || hash.includes('module-3')) {
-        initialMod = 2;
+      function getModuleFromHash() {
+        const hash = window.location.hash.toLowerCase();
+        if (hash.includes('mod2') || hash.includes('module2') || hash.includes('module-2')) {
+          return 1;
+        } else if (hash.includes('mod3') || hash.includes('module3') || hash.includes('module-3')) {
+          return 2;
+        }
+        return 0;
       }
 
-      switchModule(initialMod, 0);
+      switchModule(getModuleFromHash(), 0);
+
+      // Listen for hash changes dynamically (e.g., browser back/forward or intra-page links)
+      window.addEventListener('hashchange', () => {
+        const targetMod = getModuleFromHash();
+        if (targetMod !== currentModuleIndex) {
+          switchModule(targetMod, 0);
+        }
+      });
     }
 
     function renderModuleSelector() {
@@ -440,8 +416,11 @@
         btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
         btn.setAttribute('aria-label', `Select ${mod.name}`);
 
+        btn.className = `px-4 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-bold tracking-wide transition-all border cursor-pointer select-none ${
+          isSelected ? 'shadow-md scale-[1.02] textured-surface' : 'hover:bg-slate-50'
+        }`;
+
         if (isSelected) {
-          btn.className = 'textured-surface px-4 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-bold tracking-wide transition-all border cursor-pointer select-none shadow-md scale-[1.02]';
           btn.style.backgroundColor = mod.primary;
           btn.style.borderColor = mod.primaryDark;
           btn.style.borderWidth = '1.5px';
@@ -449,9 +428,7 @@
           btn.style.color = '#ffffff';
           btn.style.boxShadow = `0 2px 8px ${mod.primary}40`;
         } else {
-          btn.className = 'px-4 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-bold tracking-wide transition-all border cursor-pointer select-none hover:bg-slate-50';
           btn.style.backgroundColor = '#ffffff';
-          btn.style.backgroundImage = 'none';
           btn.style.borderColor = '#cbd5e1';
           btn.style.borderWidth = '1.5px';
           btn.style.borderStyle = 'solid';
@@ -461,11 +438,9 @@
             btn.style.borderColor = mod.primary;
             btn.style.color = mod.primary;
             btn.style.backgroundColor = mod.activeMenuBg;
-            btn.style.backgroundImage = 'none';
           };
           btn.onmouseleave = () => {
             btn.style.backgroundColor = '#ffffff';
-            btn.style.backgroundImage = 'none';
             btn.style.borderColor = '#cbd5e1';
             btn.style.color = '#475569';
           };
@@ -546,14 +521,14 @@
       const skillsEl = document.getElementById('card-skills');
       if (skillsEl) {
         skillsEl.innerHTML = `
-          <div class="flex flex-col"><span class="text-xs sm:text-sm font-black italic tracking-wide" style="color: ${mod.primary};">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono">/ˈfluː.ən.si/</span></div>
-          <div class="flex flex-col"><span class="text-[11px] sm:text-xs font-bold uppercase" style="color: ${mod.accent};">Grammar</span><span class="text-[8px] text-slate-400 font-mono">/ˈɡræm.ər/</span></div>
-          <div class="flex flex-col"><span class="text-[10px] sm:text-[11px] font-extrabold normal-case text-slate-700 underline decoration-slate-300">DDRS & TOEIC</span><span class="text-[8px] text-slate-400 font-mono">/diː-diː-ɑː-ɛs & ˈtəʊ.ɪk/</span></div>
-          <div class="flex flex-col"><span class="text-[11px] sm:text-xs font-semibold italic" style="color: ${mod.primaryDark};">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono">/prəˌnʌn.siˈeɪ.shən/</span></div>
-          <div class="flex flex-col"><span class="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-teal-700">Comprehension</span><span class="text-[8px] text-slate-400 font-mono">/ˌkɒm.prɪˈhen.ʃən/</span></div>
-          <div class="flex flex-col"><span class="text-xs sm:text-sm font-black italic text-sky-700">Discussion</span><span class="text-[8px] text-slate-400 font-mono">/dɪˈskʌʃ.ən/</span></div>
-          <div class="flex flex-col"><span class="text-[11px] sm:text-xs font-extrabold uppercase text-rose-600">CORRECTION</span><span class="text-[8px] text-slate-400 font-mono">/kəˈrek.ʃən/</span></div>
-          <div class="flex flex-col"><span class="text-[10px] sm:text-[11px] font-extrabold tracking-widest" style="color: ${mod.accent};">GO / NO GO</span><span class="text-[8px] text-slate-400 font-mono">/ɡəʊ / nəʊ ɡəʊ/</span></div>
+          <div class="flex flex-col"><span class="text-sm font-black italic tracking-wide" style="color: ${mod.primary};">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono">/ˈfluː.ən.si/</span></div>
+          <div class="flex flex-col"><span class="text-xs font-bold uppercase" style="color: ${mod.accent};">Grammar</span><span class="text-[8px] text-slate-400 font-mono">/ˈɡræm.ər/</span></div>
+          <div class="flex flex-col"><span class="text-[11px] font-extrabold normal-case text-slate-700 underline decoration-slate-300">DDRS & TOEIC</span><span class="text-[8px] text-slate-400 font-mono">/diː-diː-ɑː-ɛs & ˈtəʊ.ɪk/</span></div>
+          <div class="flex flex-col"><span class="text-xs font-semibold italic" style="color: ${mod.primaryDark};">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono">/prəˌnʌn.siˈeɪ.shən/</span></div>
+          <div class="flex flex-col"><span class="text-xs font-bold uppercase tracking-wider text-teal-700">Comprehension</span><span class="text-[8px] text-slate-400 font-mono">/ˌkɒm.prɪˈhen.ʃən/</span></div>
+          <div class="flex flex-col"><span class="text-sm font-black italic text-sky-700">Discussion</span><span class="text-[8px] text-slate-400 font-mono">/dɪˈskʌʃ.ən/</span></div>
+          <div class="flex flex-col"><span class="text-xs font-extrabold uppercase" style="color: #ea5d74;">CORRECTION</span><span class="text-[8px] text-slate-400 font-mono">/kəˈrek.ʃən/</span></div>
+          <div class="flex flex-col"><span class="text-[11px] font-extrabold tracking-widest" style="color: ${mod.accent};">GO / NO GO</span><span class="text-[8px] text-slate-400 font-mono">/ɡəʊ / nəʊ ɡəʊ/</span></div>
         `;
       }
 
@@ -716,9 +691,9 @@
         const pdfBtn = document.createElement('a');
         pdfBtn.id = "worksheet-btn";
         pdfBtn.className = "textured-surface inline-flex items-center space-x-2 text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all cursor-pointer";
-        pdfBtn.style.backgroundColor = mod.accent;
-        pdfBtn.onmouseenter = () => pdfBtn.style.backgroundColor = mod.accentDark;
-        pdfBtn.onmouseleave = () => pdfBtn.style.backgroundColor = mod.accent;
+        pdfBtn.style.backgroundColor = mod.worksheet;
+        pdfBtn.onmouseenter = () => pdfBtn.style.backgroundColor = mod.worksheetDark;
+        pdfBtn.onmouseleave = () => pdfBtn.style.backgroundColor = mod.worksheet;
         pdfBtn.href = page.pdfUrl;
         pdfBtn.target = "_blank";
         pdfBtn.rel = "noopener noreferrer";

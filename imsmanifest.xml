@@ -14,7 +14,7 @@
       <item identifier="ITEM_MOD1">
         <title>Module 1: Travel &amp; Transport</title>
         <item identifier="ITEM_M1_S1" identifierref="RESOURCE_1">
-          <title>Session 1 - Introduction &amp; Travel Anecdote</title>
+          <title>Session 1 - Introduction &amp; Travel Anecdotes</title>
         </item>
         <item identifier="ITEM_M1_S2" identifierref="RESOURCE_1">
           <title>Session 2 - Evolution of Transport</title>
@@ -30,7 +30,7 @@
         </item>
       </item>
       <item identifier="ITEM_MOD2">
-        <title>Module 2: Social Policy &amp; Innovation</title>
+        <title>Module 2: Weather &amp; the Environment</title>
         <item identifier="ITEM_M2_S1" identifierref="RESOURCE_1">
           <title>Session 1: Extreme Weather</title>
         </item>
@@ -47,6 +47,24 @@
           <title>Session 5 - Formative Evaluation</title>
         </item>
       </item>
+      <item identifier="ITEM_MOD3">
+        <title>Module 3: New Technology</title>
+        <item identifier="ITEM_M3_S1" identifierref="RESOURCE_1">
+          <title>Session 1: Artificial Intelligence</title>
+        </item>
+        <item identifier="ITEM_M3_S2" identifierref="RESOURCE_1">
+          <title>Session 2: Future of travel</title>
+        </item>
+        <item identifier="ITEM_M3_S3" identifierref="RESOURCE_1">
+          <title>Session 3: Debate and Critical Thinking</title>
+        </item>
+        <item identifier="ITEM_M3_S4" identifierref="RESOURCE_1">
+          <title>Session 4: Biometrics and digital identity</title>
+        </item>
+        <item identifier="ITEM_M3_S5" identifierref="RESOURCE_1">
+          <title>Session 5 - Formative Evaluation</title>
+        </item>
+      </item>
     </organization>
   </organizations>
   <resources>
@@ -58,8 +76,7 @@
       <file href="ddrs2.html"/>
       <file href="ddrs3.html"/>
       
-      <!-- Compiled Tailwind CSS stylesheets -->
-      <file href="dist/output.css"/>
+      <!-- Compiled Tailwind CSS stylesheet -->
       <file href="output.css"/>
       
       <!-- Session 1 Course Pages -->
@@ -76,18 +93,25 @@
       <file href="session2/admat1.html"/>
       <file href="session2/admat2.html"/>
       
-      <!-- Module Deck Card Images -->
+      <!-- Module 1 Deck Card Images -->
       <file href="images/card1.png"/>
       <file href="images/card2.png"/>
       <file href="images/card3.png"/>
       <file href="images/card4.png"/>
       <file href="images/card5.png"/>
+      <file href="images/card6.png"/>
       
       <!-- Module 2 Card Images -->
       <file href="images/m2card1.png"/>
       <file href="images/m2card2.png"/>
       <file href="images/m2card3.png"/>
       <file href="images/m2card4.png"/>
+      
+      <!-- Module 3 Card Images -->
+      <file href="images/m3card1.png"/>
+      <file href="images/m3card2.png"/>
+      <file href="images/m3card3.png"/>
+      <file href="images/m3card4.png"/>
       
       <!-- Session 1 Subdirectory Images -->
       <file href="session1/images/card1.png"/>
