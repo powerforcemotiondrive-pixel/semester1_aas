@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GSEA Semester 1 - Course Modules</title>
   <!-- Tailwind CSS CLI Output -->
-  <link rel="stylesheet" href="https://powerforcemotiondrive-pixel.github.io/moodle-assets/output.css">
+  <link rel="stylesheet" href="output.css">
   <style>
     /* Signature Tactile Micro-Mesh Texture */
     .textured-surface,
+    #deck-header,
     #ecampus-btn,
     .module-buttons-group button[aria-pressed="true"],
     #action-links-container a {
@@ -20,7 +21,7 @@
         /* Layer 3: -45° crosshatch shadow grooves (1px line every 4px) */
         repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.16) 0, rgba(0, 0, 0, 0.16) 1px, transparent 0, transparent 4px),
         /* Layer 4: Vertical depth gradient (light top, darker bottom) */
-        linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.14) 100%);
+        linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.14) 100%) !important;
     }
 
     /* Elements and inactive buttons that must NOT have mesh texture */
@@ -43,18 +44,34 @@
       transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
     }
 
-    /* Floating module box styling - separated box positioned under the frame to the right */
+    /* Header brand icon and title spacing */
+    .header-brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    @media (min-width: 640px) {
+      .header-brand-group {
+        gap: 16px;
+      }
+    }
+
+    /* Floating module box styling - module buttons left/above, eCampus under module 1 on mobile, right of module 3 on desktop */
     .module-selector-wrapper {
       display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
       margin-top: 14px;
-      padding-right: 16px;
+      width: 100%;
+      padding: 0 4px;
     }
     @media (min-width: 640px) {
       .module-selector-wrapper {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
         padding-right: 24px;
       }
     }
@@ -69,14 +86,34 @@
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
     }
 
+    .module-box-left {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .ecampus-box-right {
+      display: inline-flex;
+      align-items: center;
+    }
+
     .module-buttons-group {
       display: flex;
       align-items: center;
       gap: 10px;
     }
+
+    /* Worksheet button responsive placement: alongside Revision on mobile, right-aligned on desktop */
+    #worksheet-btn {
+      margin-left: 0;
+    }
+    @media (min-width: 640px) {
+      #worksheet-btn {
+        margin-left: auto;
+      }
+    }
   </style>
 </head>
-<body class="bg-slate-100 min-h-screen flex items-center justify-center">
+<body class="bg-slate-100 min-h-screen flex flex-col justify-start sm:justify-center items-center py-2 sm:py-4">
 
   <!-- Custom Tailwind adjustments -->
   <div class="w-[98%] sm:w-[95%] lg:w-[90%] max-w-[1350px] mx-auto px-2 sm:px-4 py-3 font-sans">
@@ -85,21 +122,21 @@
       
       <!-- Header bar -->
       <header id="deck-header" class="textured-surface bg-[#c0684f] text-white px-4 py-4 sm:px-6 sm:py-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#a8543d] shrink-0 relative overflow-hidden">
-        <div class="flex items-center space-x-3 sm:space-x-4">
-          <div id="deck-icon-box" class="bg-[#c99948] p-2.5 rounded-lg text-white shadow-md flex items-center justify-center">
+        <div class="header-brand-group min-w-0">
+          <div id="deck-icon-box" class="bg-[#c99948] p-2.5 rounded-lg text-white shadow-md flex items-center justify-center shrink-0">
             <!-- Theme Icon -->
             <svg width="20" height="20" style="width: 20px; height: 20px;" class="w-5 h-5 text-white shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
             </svg>
           </div>
-          <div>
-            <span id="deck-supertitle" class="block text-xs sm:text-sm md:text-base font-black tracking-wider text-[#fef08a] uppercase">GSEA SEMESTER 1 - MODULE 1: TRAVEL, TRANSPORT &amp; LEISURE (2)</span>
-            <h1 id="deck-title" class="text-sm sm:text-base font-bold text-white mt-0.5">Loading Module...</h1>
+          <div class="min-w-0">
+            <span id="deck-supertitle" class="block text-xs sm:text-sm md:text-base font-black tracking-wider text-[#fef08a] uppercase truncate">GSEA SEMESTER 1 - MODULE 1: TRAVEL, TRANSPORT &amp; LEISURE (2)</span>
+            <h1 id="deck-title" class="text-sm sm:text-base font-bold text-white mt-0.5 truncate">Loading Module...</h1>
           </div>
         </div>
 
         <!-- Navigation Controls -->
-        <div class="flex items-center space-x-2">
+        <div class="flex items-center space-x-2 shrink-0">
           <span id="counter-badge" class="text-xs font-medium text-white bg-[#a8543d] px-2.5 py-1 rounded-md border border-[#904431] mr-1 shadow-md">1 of 6</span>
           <button id="prev-btn" class="flex items-center space-x-1 bg-[#a8543d] hover:bg-[#904431] active:bg-[#783526] text-slate-100 px-3 py-1.5 rounded-lg font-semibold text-xs transition-all border border-[#904431] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer shadow-md" type="button">
             <span class="pointer-events-none">Previous</span>
@@ -161,10 +198,16 @@
       </footer>
     </div>
 
-    <!-- Module Selector Bar at Bottom - Compact, Neat & Positioned under Worksheet button -->
+    <!-- Module Selector Bar at Bottom -->
     <div class="module-selector-wrapper">
+      <!-- Separate Box for Module Selection Buttons -->
+      <div class="module-selector-box module-box-left">
+        <div id="module-selector-container" class="module-buttons-group">
+          <!-- Populated via script -->
+        </div>
+      </div>
       <!-- Separate Box for eCampus Link Button -->
-      <div class="module-selector-box">
+      <div class="module-selector-box ecampus-box-right">
         <a id="ecampus-btn"
            href="https://e-campus.enac.fr/moodle/"
            target="_blank"
@@ -174,12 +217,6 @@
            style="background-color: #c0684f; border-color: #a8543d; border-width: 1.5px; border-style: solid; color: #ffffff; box-shadow: 0 2px 8px rgba(192, 104, 79, 0.25);">
           eCampus
         </a>
-      </div>
-      <!-- Separate Box for Module Selection Buttons -->
-      <div class="module-selector-box">
-        <div id="module-selector-container" class="module-buttons-group">
-          <!-- Populated via script -->
-        </div>
       </div>
     </div>
   </div>
@@ -342,7 +379,7 @@
         name: "Module 3",
         subtitle: "New Technology",
         supertitle: "GSEA SEMESTER 1 - MODULE 3: NEW TECHNOLOGY",
-        // Softened Sage Green Theme
+        // Softened Botanical Sage Green Theme
         primary: "#5c8147",
         primaryDark: "#4a6a37",
         primaryDarker: "#395329",
@@ -509,14 +546,14 @@
       const skillsEl = document.getElementById('card-skills');
       if (skillsEl) {
         skillsEl.innerHTML = `
-          <div class="flex flex-col"><span class="text-sm font-black italic tracking-wide" style="color: ${mod.primary};">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono">/ˈfluː.ən.si/</span></div>
-          <div class="flex flex-col"><span class="text-xs font-bold uppercase" style="color: ${mod.accent};">Grammar</span><span class="text-[8px] text-slate-400 font-mono">/ˈɡræm.ər/</span></div>
-          <div class="flex flex-col"><span class="text-[11px] font-extrabold normal-case text-slate-700 underline decoration-slate-300">DDRS & TOEIC</span><span class="text-[8px] text-slate-400 font-mono">/diː-diː-ɑː-ɛs & ˈtəʊ.ɪk/</span></div>
-          <div class="flex flex-col"><span class="text-xs font-semibold italic" style="color: ${mod.primaryDark};">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono">/prəˌnʌn.siˈeɪ.shən/</span></div>
-          <div class="flex flex-col"><span class="text-xs font-bold uppercase tracking-wider text-teal-700">Comprehension</span><span class="text-[8px] text-slate-400 font-mono">/ˌkɒm.prɪˈhen.ʃən/</span></div>
-          <div class="flex flex-col"><span class="text-sm font-black italic text-sky-700">Discussion</span><span class="text-[8px] text-slate-400 font-mono">/dɪˈskʌʃ.ən/</span></div>
-          <div class="flex flex-col"><span class="text-xs font-extrabold uppercase text-rose-600">CORRECTION</span><span class="text-[8px] text-slate-400 font-mono">/kəˈrek.ʃən/</span></div>
-          <div class="flex flex-col"><span class="text-[11px] font-extrabold tracking-widest" style="color: ${mod.accent};">GO / NO GO</span><span class="text-[8px] text-slate-400 font-mono">/ɡəʊ / nəʊ ɡəʊ/</span></div>
+          <div class="flex flex-col"><span class="text-xs sm:text-sm font-black italic tracking-wide" style="color: ${mod.primary};">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono">/ˈfluː.ən.si/</span></div>
+          <div class="flex flex-col"><span class="text-[11px] sm:text-xs font-bold uppercase" style="color: ${mod.accent};">Grammar</span><span class="text-[8px] text-slate-400 font-mono">/ˈɡræm.ər/</span></div>
+          <div class="flex flex-col"><span class="text-[10px] sm:text-[11px] font-extrabold normal-case text-slate-700 underline decoration-slate-300">DDRS & TOEIC</span><span class="text-[8px] text-slate-400 font-mono">/diː-diː-ɑː-ɛs & ˈtəʊ.ɪk/</span></div>
+          <div class="flex flex-col"><span class="text-[11px] sm:text-xs font-semibold italic" style="color: ${mod.primaryDark};">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono">/prəˌnʌn.siˈeɪ.shən/</span></div>
+          <div class="flex flex-col"><span class="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-teal-700">Comprehension</span><span class="text-[8px] text-slate-400 font-mono">/ˌkɒm.prɪˈhen.ʃən/</span></div>
+          <div class="flex flex-col"><span class="text-xs sm:text-sm font-black italic text-sky-700">Discussion</span><span class="text-[8px] text-slate-400 font-mono">/dɪˈskʌʃ.ən/</span></div>
+          <div class="flex flex-col"><span class="text-[11px] sm:text-xs font-extrabold uppercase text-rose-600">CORRECTION</span><span class="text-[8px] text-slate-400 font-mono">/kəˈrek.ʃən/</span></div>
+          <div class="flex flex-col"><span class="text-[10px] sm:text-[11px] font-extrabold tracking-widest" style="color: ${mod.accent};">GO / NO GO</span><span class="text-[8px] text-slate-400 font-mono">/ɡəʊ / nəʊ ɡəʊ/</span></div>
         `;
       }
 
@@ -645,9 +682,6 @@
 
       footerInstruction.textContent = "Click below to open this specific page directly in your workspace tab.";
 
-      const leftButtonsGroup = document.createElement('div');
-      leftButtonsGroup.className = "flex flex-wrap items-center gap-2";
-
       const createActionBtn = (href, label) => {
         const btn = document.createElement('a');
         btn.className = "textured-surface inline-flex items-center space-x-2 text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all cursor-pointer";
@@ -662,27 +696,26 @@
       };
 
       if (page.lessonPlanUrl) {
-        leftButtonsGroup.appendChild(createActionBtn(page.lessonPlanUrl, "Lesson Plan"));
+        actionContainer.appendChild(createActionBtn(page.lessonPlanUrl, "Lesson Plan"));
       }
 
       if (page.objectivesUrl) {
-        leftButtonsGroup.appendChild(createActionBtn(page.objectivesUrl, "Objectives"));
+        actionContainer.appendChild(createActionBtn(page.objectivesUrl, "Objectives"));
       }
 
       const materialsUrl = page.additionalMaterialsUrl || page.url;
       if (materialsUrl) {
-        leftButtonsGroup.appendChild(createActionBtn(materialsUrl, "Additional Materials"));
+        actionContainer.appendChild(createActionBtn(materialsUrl, "Additional Materials"));
       }
 
       if (page.classReviewUrl && !page.classReviewUrl.includes("YOUR_REVIEW_ID")) {
-        leftButtonsGroup.appendChild(createActionBtn(page.classReviewUrl, "Revision"));
+        actionContainer.appendChild(createActionBtn(page.classReviewUrl, "Revision"));
       }
-
-      actionContainer.appendChild(leftButtonsGroup);
 
       if (page.pdfUrl && !page.pdfUrl.includes("INSERT_YOUR_PDF_LINK_HERE")) {
         const pdfBtn = document.createElement('a');
-        pdfBtn.className = "textured-surface inline-flex items-center space-x-2 text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all ml-auto cursor-pointer";
+        pdfBtn.id = "worksheet-btn";
+        pdfBtn.className = "textured-surface inline-flex items-center space-x-2 text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all cursor-pointer";
         pdfBtn.style.backgroundColor = mod.accent;
         pdfBtn.onmouseenter = () => pdfBtn.style.backgroundColor = mod.accentDark;
         pdfBtn.onmouseleave = () => pdfBtn.style.backgroundColor = mod.accent;
