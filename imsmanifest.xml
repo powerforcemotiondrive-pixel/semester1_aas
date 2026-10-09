@@ -79,19 +79,61 @@
       <!-- Compiled Tailwind CSS stylesheet -->
       <file href="output.css"/>
       
-      <!-- Session 1 Course Pages -->
+      <!-- Session 1 Course Pages (Modules 1, 2, 3) -->
       <file href="session1/plan1.html"/>
       <file href="session1/obj1.html"/>
-      <file href="session1/rev1.html"/>
       <file href="session1/admat1.html"/>
+      <file href="session1/rev1.html"/>
+      <file href="session1/plan2.html"/>
+      <file href="session1/obj2.html"/>
+      <file href="session1/admat2.html"/>
+      <file href="session1/rev2.html"/>
+      <file href="session1/plan3.html"/>
+      <file href="session1/obj3.html"/>
+      <file href="session1/admat3.html"/>
+      <file href="session1/rev3.html"/>
       
-      <!-- Session 2 Course Pages -->
+      <!-- Session 2 Course Pages (Modules 1, 2, 3) -->
+      <file href="session2/plan1.html"/>
+      <file href="session2/obj1.html"/>
+      <file href="session2/admat1.html"/>
+      <file href="session2/rev1.html"/>
       <file href="session2/plan2.html"/>
       <file href="session2/obj2.html"/>
-      <file href="session2/rev1.html"/>
-      <file href="session2/rev2.html"/>
-      <file href="session2/admat1.html"/>
       <file href="session2/admat2.html"/>
+      <file href="session2/rev2.html"/>
+      <file href="session2/plan3.html"/>
+      <file href="session2/obj3.html"/>
+      <file href="session2/admat3.html"/>
+      <file href="session2/rev3.html"/>
+      
+      <!-- Session 3 Course Pages (Modules 1, 2, 3) -->
+      <file href="session3/plan1.html"/>
+      <file href="session3/obj1.html"/>
+      <file href="session3/admat1.html"/>
+      <file href="session3/rev1.html"/>
+      <file href="session3/plan2.html"/>
+      <file href="session3/obj2.html"/>
+      <file href="session3/admat2.html"/>
+      <file href="session3/rev2.html"/>
+      <file href="session3/plan3.html"/>
+      <file href="session3/obj3.html"/>
+      <file href="session3/admat3.html"/>
+      <file href="session3/rev3.html"/>
+      
+      <!-- Session 4 Course Pages (Modules 1, 2, 3) -->
+      <file href="session4/plan1.html"/>
+      <file href="session4/obj1.html"/>
+      <file href="session4/admat1.html"/>
+      <file href="session4/rev1.html"/>
+      <file href="session4/plan2.html"/>
+      <file href="session4/obj2.html"/>
+      <file href="session4/admat2.html"/>
+      <file href="session4/rev2.html"/>
+      <file href="session4/plan3.html"/>
+      <file href="session4/obj3.html"/>
+      <file href="session4/admat3.html"/>
+      <file href="session4/rev3.html"/>
       
       <!-- Module 1 Deck Card Images -->
       <file href="images/card1.png"/>
@@ -112,18 +154,6 @@
       <file href="images/m3card2.png"/>
       <file href="images/m3card3.png"/>
       <file href="images/m3card4.png"/>
-      
-      <!-- Session 1 Subdirectory Images -->
-      <file href="session1/images/card1.png"/>
-      <file href="session1/images/card2.png"/>
-      <file href="session1/images/card3.png"/>
-      <file href="session1/images/card4.png"/>
-
-      <!-- Session 2 Subdirectory Images -->
-      <file href="session2/images/card1.png"/>
-      <file href="session2/images/card2.png"/>
-      <file href="session2/images/card3.png"/>
-      <file href="session2/images/card4.png"/>
       
       <!-- Student Worksheets & PDF Documents -->
       <file href="agmod1.pdf"/>

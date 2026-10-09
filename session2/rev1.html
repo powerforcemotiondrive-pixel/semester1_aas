@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Session 2 - Revision &amp; Vocabulary / Evolution of Transport</title>
+    <title>Session 2 - Revision / Class Review</title>
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="../output.css">
     <style>
       /* Signature Tactile Micro-Mesh Texture */
       .textured-surface {
         background-image: 
-          /* Layer 1: Soft top-edge spotlight sheen */
           radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.14) 0%, transparent 70%),
-          /* Layer 2: 45° diagonal highlight ridges (1px line every 4px) */
           repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.045) 0, rgba(255, 255, 255, 0.045) 1px, transparent 0, transparent 4px),
-          /* Layer 3: -45° crosshatch shadow grooves (1px line every 4px) */
           repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.16) 0, rgba(0, 0, 0, 0.16) 1px, transparent 0, transparent 4px),
-          /* Layer 4: Vertical depth gradient (light top, darker bottom) */
           linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.14) 100%) !important;
       }
 
@@ -32,448 +28,263 @@
   </head>
 <body class="bg-slate-100 min-h-screen">
 
-<!-- Custom Tailwind adjustments for Warm Editorial / Terracotta & Oat theme -->
 <div class="w-[98%] sm:w-[95%] lg:w-[90%] max-w-[1350px] mx-auto px-2 sm:px-4 py-3 font-sans">
   <div class="moodle-deck-canvas bg-white rounded-2xl shadow-xl border border-slate-300 flex flex-col overflow-hidden">
-    
-    <!-- Standardized Header bar -->
-    <header class="textured-surface bg-[#c0684f] text-white px-4 py-4 sm:px-6 sm:py-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#a85640] shrink-0 relative overflow-hidden">
-      <div class="flex items-center space-x-3 sm:space-x-4 min-w-0 flex-1">
-        <div class="bg-[#d6a555] p-2.5 rounded-lg text-white shadow-md flex items-center justify-center shrink-0">
-          <!-- Terracotta Theme Icon -->
-          <svg width="20" height="20" style="width: 20px; height: 20px;" class="w-5 h-5 text-white shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-          </svg>
-        </div>
-        <div class="min-w-0">
-          <span class="block text-[11px] sm:text-sm md:text-base font-black tracking-wider text-[#fef39e] uppercase truncate">GSEA SEMESTER 1 - GENERAL ENGLISH MODULE 1</span>
-          <h1 class="text-xs sm:text-base font-bold text-white mt-0.5 truncate">Session 2 - Evolution of Transport &amp; DD&amp;RS</h1>
-        </div>
-      </div>
       
-      <!-- Back to Module / Session Link -->
+      <!-- Header bar -->
+      <header class="textured-surface bg-[#c0684f] text-white px-4 py-4 sm:px-6 sm:py-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#a85640] shrink-0 relative overflow-hidden">
+        <div class="flex items-center space-x-3 sm:space-x-4 min-w-0 flex-1">
+          <div class="bg-[#d6a555] p-2.5 rounded-lg text-white shadow-md flex items-center justify-center shrink-0">
+            <svg width="20" height="20" style="width: 20px; height: 20px;" class="w-5 h-5 text-white shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+          </div>
+          <div class="min-w-0">
+            <span class="block text-[11px] sm:text-sm md:text-base font-black tracking-wider text-[#fef39e] uppercase truncate">GSEA SEMESTER 1 - GENERAL ENGLISH MODULE 1</span>
+            <h1 class="text-xs sm:text-base font-bold text-white mt-0.5 truncate">Session 2 - Evolution of Transport</h1>
+          </div>
+        </div>
+      <!-- Back to Module Link -->
       <div class="flex items-center space-x-2 shrink-0">
         <a class="back-btn flex items-center space-x-1.5 bg-[#d6a555] hover:bg-[#bf8f40] active:bg-[#a8782f] text-white px-3.5 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-md cursor-pointer shrink-0"
-           href="../index.html">
+           href="../index.html#module1">
           <svg width="14" height="14" style="width: 14px; height: 14px;" class="w-3.5 h-3.5 stroke-[2.5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path>
           </svg>
           <span>Back to Module 1</span>
         </a>
       </div>
-    </header>
+      </header>
 
-    <!-- Workspace Body -->
-    <div class="flex-1 flex flex-col overflow-hidden">
-      <div class="flex-1 bg-white p-3 sm:p-8 flex flex-col justify-between overflow-y-auto">
-        <div class="space-y-6">
-          <div class="flex flex-col lg:flex-row gap-6 items-start justify-between">
-            <div class="space-y-4 flex-1">
-              <!-- Badge -->
-              <div class="inline-flex items-center space-x-2 bg-[#c0684f] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#a85640] shadow-sm">
-                GSEA Semester 1 Lesson Outline
+      <!-- Workspace Body -->
+      <div class="flex-1 flex flex-col overflow-hidden">
+        <div class="flex-1 bg-white p-3 sm:p-8 flex flex-col justify-between overflow-y-auto">
+          <div class="space-y-6">
+            <div class="flex flex-col lg:flex-row gap-6 items-start justify-between">
+              <div class="space-y-4 flex-1">
+                <div class="inline-flex items-center space-x-2 bg-[#c0684f] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#a85640] shadow-sm">
+                  GSEA Semester 1 Lesson Outline
+                </div>
+                <h2 class="text-xl sm:text-2xl font-black text-[#c0684f] tracking-tight">
+                  Session 2: Evolution of Transport
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Essential professional and technical vocabulary covering operational concepts, analytical frameworks, and formal communication structures.
+                </p>
               </div>
-              <h2 class="text-xl sm:text-2xl font-black text-[#c0684f] tracking-tight">
-                Session 2: Evolution of Transport &amp; DD&amp;RS
-              </h2>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Essential B2-level professional and technical vocabulary covering historical mobility transitions, multi-modal corridors, rail electrification, life-cycle emissions, and cause-effect grammar structures.
-              </p>
-            </div>
 
-            <!-- Square Image Container with Subtle Drop Shadow -->
-            <div class="w-full sm:w-48 h-48 rounded-xl shrink-0 overflow-hidden shadow-md" style="box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);">
-              <img class="w-full h-full object-cover" src="../images/card2.png" onerror="this.onerror=null; this.src='images/card2.png';" alt="Session 2 graphic">
+              <!-- Square Image Container -->
+              <div class="w-full sm:w-48 h-48 rounded-xl shrink-0 overflow-hidden shadow-md" style="box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);">
+                <img class="w-full h-full object-cover" src="../images/card2.png" alt="Session 2 graphic">
+              </div>
             </div>
-          </div>
               
-          <!-- SCORM-SAFE 3-COLUMN FLEXBOX GRID CONTAINER (30 TERMS) -->
-          <div class="flex flex-wrap gap-3 pt-2">
-            
-            <!-- 01 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Modal Shift</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">01</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                The deliberate transition of travelers or freight from carbon-intensive modes (cars, planes) to sustainable alternatives (rail, cycling).
-              </p>
+            <!-- SCORM-SAFE 3-COLUMN FLEXBOX GRID CONTAINER -->
+            <div class="flex flex-wrap gap-3 pt-2">
+                <!-- Term 01 -->
+                <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
+                  <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Modal Shift</h3>
+                    <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">01</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
+                    The deliberate transition of travelers or freight from carbon-intensive modes to sustainable alternatives.
+                  </p>
+                </div>
+                <!-- Term 02 -->
+                <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
+                  <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">High-Speed Rail (HSR)</h3>
+                    <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">02</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
+                    Electrified passenger trains operating over 250 km/h, providing a low-carbon competitor to domestic flights.
+                  </p>
+                </div>
+                <!-- Term 03 -->
+                <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
+                  <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Life-Cycle Emissions</h3>
+                    <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">03</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
+                    The total greenhouse gas emissions generated throughout vehicle manufacturing, operation, maintenance, and disposal.
+                  </p>
+                </div>
+                <!-- Term 04 -->
+                <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
+                  <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Territorial Equity</h3>
+                    <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">04</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
+                    Ensuring balanced access to reliable transport infrastructure across both rural and metropolitan regions.
+                  </p>
+                </div>
+                <!-- Term 05 -->
+                <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
+                  <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Intermodal Hub</h3>
+                    <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">05</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
+                    A transit node seamlessly integrating rail, metro, bus, shared mobility, and pedestrian corridors.
+                  </p>
+                </div>
+                <!-- Term 06 -->
+                <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
+                  <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Decarbonization</h3>
+                    <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">06</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
+                    The process of eliminating carbon dioxide emissions from transportation fuels and propulsion systems.
+                  </p>
+                </div>
+                <!-- Term 07 -->
+                <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
+                  <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Electrification</h3>
+                    <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">07</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
+                    Converting transit lines from fossil fuels to electric power supplied by renewable grids.
+                  </p>
+                </div>
+                <!-- Term 08 -->
+                <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
+                  <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Active Mobility</h3>
+                    <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">08</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
+                    Human-powered travel modes, primarily cycling and walking, producing zero operational emissions.
+                  </p>
+                </div>
+                <!-- Term 09 -->
+                <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
+                  <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Corridor Capacity</h3>
+                    <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">09</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
+                    The maximum passenger or freight volume that a transit route can transport within a given timeframe.
+                  </p>
+                </div>
+                <!-- Term 10 -->
+                <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
+                  <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Fleet Modernization</h3>
+                    <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">10</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
+                    Systematic replacement of aging vehicles with energy-efficient, low-emission models.
+                  </p>
+                </div>
+                <!-- Term 11 -->
+                <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
+                  <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Deadheading</h3>
+                    <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">11</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
+                    Operating empty transit vehicles or positioning crew members without generating passenger revenue.
+                  </p>
+                </div>
+                <!-- Term 12 -->
+                <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
+                  <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Point-to-Point Transit</h3>
+                    <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">12</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
+                    A network architecture where vehicles travel directly between origin and destination without intermediate hubs.
+                  </p>
+                </div>
+                <!-- Term 13 -->
+                <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
+                  <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Sustainable Aviation Fuel (SAF)</h3>
+                    <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">13</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
+                    Non-petroleum-based drop-in aviation fuel derived from waste oils, agricultural residues, or captured carbon.
+                  </p>
+                </div>
+                <!-- Term 14 -->
+                <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
+                  <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Traffic Congestion</h3>
+                    <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">14</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
+                    Gridlock conditions when traffic volume exceeds roadway capacity, causing delays and excess idling emissions.
+                  </p>
+                </div>
+                <!-- Term 15 -->
+                <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
+                  <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Micro-Mobility</h3>
+                    <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">15</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
+                    Small, lightweight transportation devices operating at low speeds, such as e-scooters and e-bikes.
+                  </p>
+                </div>
+                <!-- Term 16 -->
+                <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
+                  <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Induced Demand</h3>
+                    <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">16</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
+                    The phenomenon where increasing roadway capacity results in increased vehicular traffic rather than congestion relief.
+                  </p>
+                </div>
+                <!-- Term 17 -->
+                <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
+                  <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Modal Split</h3>
+                    <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">17</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
+                    The percentage of total passenger journeys completed using each transport mode within a given region.
+                  </p>
+                </div>
+                <!-- Term 18 -->
+                <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
+                  <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Low-Emission Zone (LEZ)</h3>
+                    <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">18</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
+                    A designated geographic area where access by polluting vehicles is restricted or subject to penalty fees.
+                  </p>
+                </div>
             </div>
 
-            <!-- 02 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">High-Speed Rail (HSR)</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">02</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                Electrified passenger trains operating over 250 km/h, providing a low-carbon competitor to domestic and short-haul flights.
-              </p>
-            </div>
-
-            <!-- 03 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Life-Cycle Emissions</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">03</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                The total greenhouse gas emissions generated throughout vehicle and infrastructure manufacturing, operation, maintenance, and disposal.
-              </p>
-            </div>
-
-            <!-- 04 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Territorial Equity</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">04</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                Fair distribution of transit infrastructure ensuring remote or rural populations maintain equitable mobility and economic access.
-              </p>
-            </div>
-
-            <!-- 05 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Land Take</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">05</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                The total surface area of natural or agricultural land consumed and artificialized to construct highways, tracks, or runways.
-              </p>
-            </div>
-
-            <!-- 06 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Decarbonization</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">06</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                The systematic technological and behavioral elimination of fossil carbon from transport propulsion and logistics systems.
-              </p>
-            </div>
-
-            <!-- 07 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Intermodal Transit</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">07</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                A seamless travel chain combining multiple transport modes (e.g., train, tram, and electric bike) with synchronized ticketing.
-              </p>
-            </div>
-
-            <!-- 08 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Electrification</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">08</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                Upgrading diesel rail networks with overhead catenary wires or battery storage, drastically reducing direct line emissions.
-              </p>
-            </div>
-
-            <!-- 09 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Short-Haul Flight</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">09</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                Commercial air travel over distances under 600 km, exhibiting high carbon intensity due to take-off and landing fuel burn.
-              </p>
-            </div>
-
-            <!-- 10 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Active Mobility</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">10</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                Human-powered transport forms (walking, cycling, micro-mobility) supporting zero emissions and public health in urban areas.
-              </p>
-            </div>
-
-            <!-- 11 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Fleet Renewal</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">11</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                Systematic phase-out of older high-emission aircraft and rolling stock in favor of aerodynamically optimized, fuel-efficient models.
-              </p>
-            </div>
-
-            <!-- 12 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Corridor Capacity</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">12</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                The maximum passenger throughput and freight volume a given arterial transport link can safely handle without congestion.
-              </p>
-            </div>
-
-            <!-- 13 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Sustainable Aviation Fuel</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">13</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                Drop-in jet kerosene alternatives synthesized from circular biomass, waste cooking oils, or captured CO2, cutting net emissions up to 80%.
-              </p>
-            </div>
-
-            <!-- 14 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Modal Split</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">14</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                The statistical percentage share of commuter trips divided across competing transit modes within a region or city.
-              </p>
-            </div>
-
-            <!-- 15 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Congestion Charge</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">15</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                A targeted road pricing mechanism levied on private automobiles in central districts to curb traffic jams and fund public transit.
-              </p>
-            </div>
-
-            <!-- 16 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Last-Mile Connectivity</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">16</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                Transport solutions (shuttles, e-scooters, feeder buses) bridging the gap between major railway terminals and a traveler's doorstep.
-              </p>
-            </div>
-
-            <!-- 17 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Transit-Oriented Dev.</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">17</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                Urban planning concentrating residential density, commercial offices, and civic amenities within walking radius of transit hubs.
-              </p>
-            </div>
-
-            <!-- 18 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Zero-Emission Vehicle</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">18</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                Propulsion technology (battery-electric or hydrogen fuel cell) emitting zero exhaust pollutants during active operation.
-              </p>
-            </div>
-
-            <!-- 19 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Energy Efficiency</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">19</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                The ratio of useful travel work delivered (passenger-kilometers) per unit of energy consumed across transport modes.
-              </p>
-            </div>
-
-            <!-- 20 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Noise Abatement</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">20</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                Engine design, sound barriers, and operational flight procedures applied to protect communities adjacent to transit corridors.
-              </p>
-            </div>
-
-            <!-- 21 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Mobility-as-a-Service</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">21</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                Digital consumer platforms unifying journey planning, booking, and contactless payment across various public and private transit operators.
-              </p>
-            </div>
-
-            <!-- 22 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Freight Modal Shift</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">22</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                Transferring heavy logistics containers from long-distance highway trucking to electrified freight trains or inland waterways.
-              </p>
-            </div>
-
-            <!-- 23 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Infrastructure Footprint</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">23</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                The ecological and physical alteration resulting from laying railway ballast, pouring airport concrete, and erecting highway viaducts.
-              </p>
-            </div>
-
-            <!-- 24 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Regulatory Framework</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">24</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                Enforceable governmental directives and carbon trading systems (EU ETS, CORSIA) establishing emissions limits on commercial carriers.
-              </p>
-            </div>
-
-            <!-- 25 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Passenger Punctuality</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">25</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                A core performance indicator tracking scheduled vs. actual arrival times, determining public trust in rail vs. air reliability.
-              </p>
-            </div>
-
-            <!-- 26 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Environmental Impact</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">26</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                Statutory Environmental Impact Assessments (EIAs) conducted prior to funding or breaking ground on major corridor expansions.
-              </p>
-            </div>
-
-            <!-- 27 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Urban Sprawl</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">27</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                Low-density peri-urban expansion that increases commuter trip lengths and forces heavy reliance on personal passenger cars.
-              </p>
-            </div>
-
-            <!-- 28 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Public Transit Subsidy</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">28</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                Fiscal investment from public budgets to lower farebox costs, incentivizing high ridership and equitable civic mobility.
-              </p>
-            </div>
-
-            <!-- 29 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Signaling Modernization</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">29</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                Digital train control systems (ERTMS/ETCS) enabling higher train frequency, reduced headways, and safer corridor operations.
-              </p>
-            </div>
-
-            <!-- 30 -->
-            <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
-              <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Carbon Offset Scheme</h3>
-                <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">30</span>
-              </div>
-              <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
-                Financial contributions compensating for unavoidable transport emissions by funding certified external renewable energy projects.
-              </p>
+            <!-- Stylized Skills Footer Area -->
+            <div class="w-full pt-3 pb-3 px-4 rounded-xl border border-slate-200/60 bg-slate-50/50 grid grid-cols-2 sm:grid-cols-4 gap-y-2.5 gap-x-4 shadow-sm">
+              <div class="flex flex-col"><span class="text-sm font-black italic tracking-wide text-[#c0684f]">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono">/ˈfluː.ən.si/</span></div>
+              <div class="flex flex-col"><span class="text-xs font-bold uppercase text-[#d6a555]">Grammar</span><span class="text-[8px] text-slate-400 font-mono">/ˈɡræm.ər/</span></div>
+              <div class="flex flex-col"><span class="text-[11px] font-extrabold normal-case text-slate-700 underline decoration-slate-300">Technical Lexicon</span><span class="text-[8px] text-slate-400 font-mono">/ˈtek.nɪ.kəl/</span></div>
+              <div class="flex flex-col"><span class="text-xs font-semibold italic text-[#a85640]">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono">/prəˌnʌn.siˈeɪ.shən/</span></div>
+              <div class="flex flex-col"><span class="text-xs font-bold uppercase tracking-wider text-teal-700">Comprehension</span><span class="text-[8px] text-slate-400 font-mono">/ˌkɒm.prɪˈhen.ʃən/</span></div>
+              <div class="flex flex-col"><span class="text-sm font-black italic text-sky-700">Discussion</span><span class="text-[8px] text-slate-400 font-mono">/dɪˈskʌʃ.ən/</span></div>
+              <div class="flex flex-col"><span class="text-xs font-extrabold uppercase text-[#ea5d74]">CORRECTION</span><span class="text-[8px] text-slate-400 font-mono">/kəˈrek.ʃən/</span></div>
+              <div class="flex flex-col"><span class="text-[11px] font-extrabold tracking-widest text-[#d6a555]">INTERACTION</span><span class="text-[8px] text-slate-400 font-mono">/ˌɪn.təˈræk.ʃən/</span></div>
             </div>
 
           </div>
-
-          <!-- Context Statements -->
-          <div class="pt-4 space-y-3">
-            <div class="inline-flex items-center space-x-2 bg-[#d6a555] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide shadow-sm">
-              Evolution of Transport Context Statements (Cause, Effect &amp; Proportionality Focus)
-            </div>
-            <ul class="list-disc list-inside space-y-2 text-xs sm:text-sm text-slate-700 bg-slate-50/50 p-3 sm:p-4 rounded-xl border border-slate-200/70">
-              <li><strong>Owing to</strong> rapid advancements in electric traction and high-speed rail networks, regional travelers have increasingly shifted away from domestic flights.</li>
-              <li>The municipality's bold decision to construct dedicated bus rapid transit corridors <strong>resulted in</strong> a 24% reduction in urban commuter emissions.</li>
-              <li><strong>As a consequence of</strong> stringent carbon penalties on short-haul corporate travel, multiple aerospace firms have updated their staff mobility rules.</li>
-              <li><strong>The more accessible</strong> and punctual public transit networks become, <strong>the more willing</strong> commuters are to leave personal cars at home.</li>
-              <li><strong>Owing to</strong> strict noise abatement mandates and runway slot caps, major European hubs have accelerated the fleet renewal of twin-engine aircraft.</li>
-            </ul>
-          </div>
-
-          <!-- Grammar Tip -->
-          <div class="pt-2 space-y-3">
-            <div class="inline-flex items-center space-x-2 bg-[#c0684f] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#a85640] shadow-sm">
-              Grammar Focus: Cause, Consequence &amp; Proportional Comparatives
-            </div>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Professional B2 transport reports require precise cause-and-effect connectors and double comparative structures to evaluate infrastructure trade-offs:
-            </p>
-            <ul class="list-disc list-inside space-y-1.5 text-xs sm:text-sm text-slate-700 bg-slate-50/50 p-3 sm:p-4 rounded-xl border border-slate-200/70">
-              <li><strong>Cause Prepositions:</strong> <em>Owing to</em> and <em>Due to</em> are followed by noun phrases (e.g., &quot;<em>Owing to</em> heavy track modernization, journey times decreased&quot;).</li>
-              <li><strong>Consequence Connectors:</strong> <em>As a consequence of</em> + noun, or verbs like <em>resulted in / led to</em> (e.g., &quot;Fleet electrification <em>resulted in</em> lower lifecycle emissions&quot;).</li>
-              <li><strong>Double Comparatives (Proportionality):</strong> <em>The + comparative..., the + comparative...</em> (e.g., &quot;<em>The higher</em> the frequency of trains, <em>the greater</em> the passenger modal shift&quot;).</li>
-              <li><strong>B2 Professional Application:</strong> Essential for executive transit audits, comparing corridor options, and justifying environmental investment decisions.</li>
-            </ul>
-          </div>
-
-          <!-- Stylized Skills Footer Area -->
-          <div class="w-full pt-3 pb-3 px-4 rounded-xl border border-slate-200/60 bg-slate-50/50 grid grid-cols-2 sm:grid-cols-4 gap-y-2.5 gap-x-4 shadow-sm">
-            <div class="flex flex-col"><span class="text-sm font-black italic tracking-wide text-[#c0684f]">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono">/ˈfluː.ən.si/</span></div>
-            <div class="flex flex-col"><span class="text-xs font-bold uppercase text-[#d6a555]">Grammar</span><span class="text-[8px] text-slate-400 font-mono">/ˈɡræm.ər/</span></div>
-            <div class="flex flex-col"><span class="text-[11px] font-extrabold normal-case text-slate-700 underline decoration-slate-300">Evolution of Transport</span><span class="text-[8px] text-slate-400 font-mono">/ˌev.əˈluː.ʃən əv ˈtræn.spɔːt/</span></div>
-            <div class="flex flex-col"><span class="text-xs font-semibold italic text-[#a85640]">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono">/prəˌnʌn.siˈeɪ.shən/</span></div>
-            <div class="flex flex-col"><span class="text-xs font-bold uppercase tracking-wider text-teal-700">Comprehension</span><span class="text-[8px] text-slate-400 font-mono">/ˌkɒm.prɪˈhen.ʃən/</span></div>
-            <div class="flex flex-col"><span class="text-sm font-black italic text-sky-700">discussion</span><span class="text-[8px] text-slate-400 font-mono">/dɪˈskʌʃ.ən/</span></div>
-            <div class="flex flex-col"><span class="text-xs font-extrabold uppercase text-[#ea5d74]">CORRECTION</span><span class="text-[8px] text-slate-400 font-mono">/kəˈrek.ʃən/</span></div>
-            <div class="flex flex-col"><span class="text-[11px] font-extrabold tracking-widest text-[#d6a555]">INTERACTION</span><span class="text-[8px] text-slate-400 font-mono">/ˌɪn.təˈræk.ʃən/</span></div>
-          </div>
-
         </div>
       </div>
 
-      <!-- Bottom footer -->
-      <footer class="bg-slate-50 border-t border-slate-200 px-3 py-2 text-[11px] text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-1 shrink-0 rounded-b-2xl">
-        <span class="font-medium text-slate-700 truncate max-w-full">Active: Session 2 - Evolution of Transport &amp; DD&amp;RS</span>
-        <span class="font-medium text-slate-500 shrink-0">GSEA Semester 1 English. Phil PARRIS LH/LAN</span>
+      <!-- Bottom status footer -->
+      <footer class="bg-slate-50 border-t border-slate-200 px-3 py-2 text-[11px] text-slate-500 flex justify-between items-center shrink-0 rounded-b-2xl">
+        <span class="font-medium text-slate-700">Active: Session 2 Class Review</span>
+        <span class="font-medium">GSEA Semester 1 English. Phil PARRIS LH/LAN</span>
       </footer>
 
-    </div>
   </div>
 </div>
 
