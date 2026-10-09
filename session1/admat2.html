@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="../output.css">
 
   <style>
+
+    /* Robust, self-contained styling for resilient rendering across all browsers */
     *, *::before, *::after {
       box-sizing: border-box;
     }
@@ -20,6 +22,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* Container Canvas */
     .deck-container {
       width: 98%;
       max-width: 1350px;
@@ -47,6 +50,7 @@
       overflow: hidden;
     }
 
+    /* Header styling */
     .deck-header {
       background-color: #49739a;
       color: #ffffff;
@@ -72,6 +76,7 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     .back-btn {
+      background-image: none !important;
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -84,143 +89,201 @@
       text-decoration: none;
       transition: background-color 0.15s ease, transform 0.1s ease;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      background-image: none !important;
     }
     .back-btn:hover {
       background-color: #5c83a8;
       transform: translateY(-1px);
     }
 
+    /* Content Area */
     .deck-body {
       background-color: #ffffff;
       padding: 24px 28px;
       display: flex;
       flex-direction: column;
-      gap: 28px;
+      gap: 24px;
+    }
+    @media (max-width: 640px) {
+      .deck-body {
+        padding: 16px 14px;
+        gap: 18px;
+      }
     }
 
+    /* Unified Section Panels: Clean, shaded background container for distinct section separation */
+    .section-panel {
+      background-color: #f8fafc; /* subtle slate tint for elegant contrast */
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 20px 22px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    @media (max-width: 640px) {
+      .section-panel {
+        padding: 14px 14px;
+      }
+    }
+
+    /* Section Headers */
     .section-header {
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 6px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e2e8f0;
     }
     .section-badge {
       background-color: #49739a;
       color: #ffffff;
       font-size: 11px;
       font-weight: 800;
-      padding: 3px 8px;
+      padding: 2px 8px;
       border-radius: 6px;
       letter-spacing: 0.05em;
     }
     .section-title {
-      font-size: 18px;
+      font-size: 14px;
       font-weight: 800;
       color: #49739a;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
       margin: 0;
-      letter-spacing: -0.01em;
     }
     .section-intro {
-      font-size: 13px;
-      color: #64748b;
-      margin: 0 0 16px 0;
-      line-height: 1.5;
-    }
-
-    .local-file-banner {
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-left: 4px solid #3b82f6;
-      border-radius: 8px;
-      padding: 10px 14px;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
       font-size: 12px;
+      color: #64748b;
+      margin: 0;
       line-height: 1.5;
-      color: #1e3a8a;
     }
 
+    /* Section 1: Evenly Spaced 3-Column Video Grid */
     .video-grid {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
       width: 100%;
     }
-    @media (min-width: 640px) {
+    @media (max-width: 720px) {
       .video-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
       }
     }
-    @media (min-width: 1024px) {
-      .video-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-      }
-    }
-
     .compact-video-card {
-      background-color: #f8fafc;
+      background-color: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
-      padding: 12px;
+      padding: 14px 16px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-      transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+      gap: 10px;
+      min-width: 0; /* Prevents grid blowout */
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
     .compact-video-card:hover {
       border-color: #cbd5e1;
-      box-shadow: 0 6px 16px -2px rgba(0, 0, 0, 0.08);
-      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     }
     .video-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 6px;
+      gap: 8px;
     }
     .video-title {
       font-size: 12px;
       font-weight: 700;
-      color: #334155;
+      color: #1e293b;
+      margin: 0;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      flex: 1;
+    }
+    .tag-pill {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .tag-amber {
+      background-color: #fef3c7;
+      color: #92400e;
+    }
+    .tag-emerald {
+      background-color: #d1fae5;
+      color: #065f46;
+    }
+    .tag-sky {
+      background-color: #e0f2fe;
+      color: #0369a1;
     }
     .video-header-actions {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 6px;
       flex-shrink: 0;
     }
     .watch-direct-btn {
-      font-size: 10px;
-      font-weight: 700;
-      color: #ffffff;
-      background-color: #2563eb;
-      padding: 2px 7px;
-      border-radius: 4px;
-      text-decoration: none;
       display: inline-flex;
       align-items: center;
-      transition: background-color 0.15s ease;
+      gap: 3px;
+      font-size: 10px;
+      font-weight: 700;
+      color: #b91c1c;
+      background-color: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 9999px;
+      padding: 1.5px 7px;
+      text-decoration: none;
+      line-height: 1.3;
+      transition: all 0.15s ease;
     }
     .watch-direct-btn:hover {
-      background-color: #1d4ed8;
+      background-color: #fee2e2;
+      border-color: #f87171;
+      color: #991b1b;
+      transform: translateY(-0.5px);
     }
-
+    .local-file-banner {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 14px;
+      font-size: 11.5px;
+      color: #1e40af;
+      line-height: 1.5;
+    }
+    .local-file-banner-icon {
+      font-size: 16px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .local-file-banner-text code {
+      background-color: #dbeafe;
+      color: #1e3a8a;
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 11px;
+    }
     .video-player-container {
       position: relative;
       width: 100%;
-      padding-top: 56.25%;
+      aspect-ratio: 16 / 9;
       background-color: #0f172a;
       border-radius: 8px;
       overflow: hidden;
+      border: 1px solid #e2e8f0;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15);
     }
     .video-player-container iframe {
       position: absolute;
@@ -229,189 +292,328 @@
       width: 100%;
       height: 100%;
       border: 0;
+      display: block;
+    }
+    .video-facade {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .video-facade img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.86;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .video-facade:hover img {
+      transform: scale(1.05);
+      opacity: 0.96;
+    }
+    .video-play-btn {
+      position: absolute;
+      width: 52px;
+      height: 36px;
+      background-color: rgba(239, 68, 68, 0.92);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      z-index: 2;
+    }
+    .video-facade:hover .video-play-btn {
+      transform: scale(1.12);
+      background-color: #dc2626;
+    }
+    .video-play-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: #ffffff;
+      margin-left: 2px;
+    }
+    .video-facade-badge {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background-color: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(4px);
+      color: #f8fafc;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      z-index: 2;
     }
     .video-caption {
       font-size: 11px;
       color: #64748b;
       margin: 0;
-      line-height: 1.4;
+      line-height: 1.45;
     }
 
+    /* Section 2: News Articles Grid (2 Equal Columns) */
     .news-grid {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
+      width: 100%;
     }
-    @media (min-width: 768px) {
+    @media (max-width: 680px) {
       .news-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
       }
     }
     .news-card {
-      background: #f8fafc;
+      background-color: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
-      padding: 16px 18px;
+      padding: 18px 20px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 10px;
-      transition: all 0.15s ease;
+      gap: 14px;
+      min-width: 0;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
     .news-card:hover {
       border-color: #cbd5e1;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
     .news-meta {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-    }
-    .news-source {
+      justify-content: space-between;
       font-size: 11px;
+    }
+    .news-topic {
       font-weight: 800;
+      color: #49739a;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      color: #49739a;
     }
-    .news-title {
+    .news-source-tag {
+      background-color: #f1f5f9;
+      color: #475569;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .news-heading {
       font-size: 14px;
       font-weight: 700;
-      color: #1e293b;
-      margin: 0;
+      color: #0f172a;
       line-height: 1.4;
+      margin: 6px 0;
     }
-    .news-title a {
-      color: inherit;
-      text-decoration: none;
-    }
-    .news-title a:hover {
-      color: #49739a;
-      text-decoration: underline;
-    }
-    .news-abstract {
+    .news-snippet {
       font-size: 12px;
-      color: #64748b;
+      color: #475569;
+      line-height: 1.55;
       margin: 0;
-      line-height: 1.5;
     }
     .news-footer {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding-top: 8px;
-      border-top: 1px dashed #e2e8f0;
-      font-size: 11px;
+      justify-content: space-between;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 12px;
     }
     .read-time {
+      font-size: 11px;
       color: #94a3b8;
+      font-weight: 500;
     }
-    .read-link {
-      color: #49739a;
+    .article-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: #49739a;
+      color: #ffffff;
+      padding: 6px 13px;
+      border-radius: 7px;
+      font-size: 11px;
       font-weight: 700;
       text-decoration: none;
+      transition: background-color 0.15s ease;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
     }
-    .read-link:hover {
-      text-decoration: underline;
+    .article-btn:hover {
+      background-color: #396084;
     }
 
+    /* Section 3: Web Resources (6 Items in 3x2 Grid) */
     .resources-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      width: 100%;
     }
-    @media (min-width: 640px) {
+    @media (max-width: 900px) {
       .resources-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
-    @media (min-width: 1024px) {
+    @media (max-width: 580px) {
       .resources-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr;
       }
     }
     .resource-card {
-      background: #f8fafc;
+      background-color: #ffffff;
       border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 12px 14px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      border-radius: 12px;
+      padding: 16px 18px;
       text-decoration: none;
-      color: inherit;
-      transition: all 0.15s ease;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      min-width: 0;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
     }
     .resource-card:hover {
       border-color: #7097bd;
-      background: #ffffff;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(112, 151, 189, 0.15);
+    }
+    .resource-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .resource-tag {
+      font-size: 10px;
+      font-weight: 800;
+      color: #7097bd;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
     .resource-icon {
-      font-size: 20px;
-      flex-shrink: 0;
-    }
-    .resource-info {
-      flex: 1;
-      min-width: 0;
-    }
-    .resource-title {
       font-size: 12px;
       font-weight: 700;
+      color: #94a3b8;
+      transition: color 0.15s ease;
+    }
+    .resource-card:hover .resource-icon {
+      color: #7097bd;
+    }
+    .resource-name {
+      font-size: 13px;
+      font-weight: 700;
       color: #1e293b;
-      margin-bottom: 2px;
+      margin: 3px 0;
+      transition: color 0.15s ease;
+    }
+    .resource-card:hover .resource-name {
+      color: #49739a;
     }
     .resource-desc {
       font-size: 11px;
       color: #64748b;
+      line-height: 1.5;
       margin: 0;
-      line-height: 1.3;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
     .resource-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
       font-size: 11px;
       font-weight: 700;
       color: #49739a;
-      flex-shrink: 0;
     }
 
-    .tag-pill {
-      font-size: 10px;
-      font-weight: 700;
-      padding: 2px 7px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
+    /* Bottom Vocabulary Ribbon */
+    .vocab-footer {
+      border: 1px solid rgba(226, 232, 240, 0.6);
+      background-color: rgba(248, 250, 252, 0.5);
+      border-radius: 12px;
+      padding: 12px 16px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 16px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
     }
-    .tag-amber { background-color: #fef3c7; color: #92400e; }
-    .tag-emerald { background-color: #d1fae5; color: #065f46; }
-    .tag-sky { background-color: #e0f2fe; color: #0369a1; }
+    @media (min-width: 640px) {
+      .vocab-footer {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+    .vocab-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .vocab-word {
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .vocab-ipa {
+      font-size: 8px;
+      color: #94a3b8;
+      font-family: monospace;
+      margin-top: 1px;
+    }
 
+    /* Deck Footer */
     .deck-footer {
       background-color: #f8fafc;
       border-top: 1px solid #e2e8f0;
-      padding: 12px 24px;
+      padding: 10px 18px;
+      font-size: 11px;
+      color: #64748b;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 11px;
-      color: #64748b;
     }
+  
+    /* Signature Tactile Micro-Mesh Texture */
+    .textured-surface,
+    .article-btn {
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.14) 0%, transparent 70%),
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.045) 0, rgba(255, 255, 255, 0.045) 1px, transparent 0, transparent 4px),
+        repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.16) 0, rgba(0, 0, 0, 0.16) 1px, transparent 0, transparent 4px),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.14) 100%) !important;
+    }
+
+    .header-icon-box,
+    .section-badge,
+    button:disabled,
+    .btn-inactive,
+      .back-btn {
+      background-image: none !important;
+      background-image: none !important;
+    }
+    
+  
   </style>
 </head>
 <body>
 
-<div class="deck-container">
-  <div class="moodle-deck-canvas">
-
+<!-- Main Canvas Container -->
+<div class="w-[98%] sm:w-[95%] lg:w-[90%] max-w-[1350px] mx-auto px-2 sm:px-4 py-3 font-sans deck-container">
+  <div class="moodle-deck-canvas bg-white rounded-2xl shadow-xl border border-slate-300 flex flex-col overflow-hidden">
+    
     <!-- Header bar -->
     <header class="deck-header">
       <div style="display: flex; align-items: center; gap: 14px;">
-        <div class="header-icon-box">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="color: #ffffff;">
+        <div class="header-icon-box" style="background-color: #7097bd;">
+          <svg width="20" height="20" style="width: 20px; height: 20px;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
           </svg>
         </div>
@@ -419,14 +621,18 @@
           <span style="display: block; font-size: 11px; font-weight: 900; letter-spacing: 0.08em; color: #e9f6ff; text-transform: uppercase;">
             GSEA SEMESTER 1 - GENERAL ENGLISH MODULE 2
           </span>
-          <h1 style="font-size: 16px; font-weight: 800; color: #ffffff; margin: 2px 0 0 0;">
-            Session 1 - Extreme Weather
+          <h1 style="font-size: 15px; font-weight: 700; color: #ffffff; margin: 2px 0 0 0;">
+            Session 1 - Additional Materials &amp; Resources: Extreme Weather &amp; Meteorology
           </h1>
         </div>
       </div>
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <a class="back-btn" href="../index.html#module2">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      
+      <!-- Back to Module / Session Link -->
+      <div class="flex items-center space-x-2 shrink-0">
+        <a class="flex items-center space-x-1.5 text-white px-3.5 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-md cursor-pointer shrink-0 back-btn"
+           style="background-color: #7097bd; background-image: none !important;"
+           href="../index.html#module2">
+          <svg width="14" height="14" style="width: 14px; height: 14px;" class="w-3.5 h-3.5 stroke-[2.5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path>
           </svg>
           <span>Back to Module 2</span>
@@ -434,27 +640,29 @@
       </div>
     </header>
 
-    <!-- Body Container -->
+    <!-- Workspace Body -->
     <div class="deck-body">
       
-      <!-- Top Overview Banner -->
-      <div style="border-bottom: 1px solid #e2e8f0; padding-bottom: 18px;">
-        <span style="display: inline-block; background-color: #49739a; color: #ffffff; padding: 4px 12px; border-radius: 9999px; font-size: 11px; font-weight: 800; border: 1px solid #396084; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
-          Session 1 Resource Dossier
-        </span>
+      <!-- Introduction & Badge Area -->
+      <div style="display: flex; flex-direction: column; gap: 8px; padding-bottom: 4px; border-bottom: 1px solid #f1f5f9;">
+        <div>
+          <span style="display: inline-block; background-color: #49739a; color: #ffffff; padding: 4px 12px; border-radius: 9999px; font-size: 11px; font-weight: 800; border: 1px solid #396084; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+            GSEA Supplementary Resource Hub
+          </span>
+        </div>
         <h2 style="font-size: 22px; font-weight: 900; color: #49739a; margin: 4px 0 0 0; letter-spacing: -0.02em;">
-          Extreme Weather &amp; Meteorology in Aviation
+          Session 1 Multimedia, Case Studies &amp; Research Links
         </h2>
-        <p style="font-size: 13px; color: #64748b; margin: 4px 0 0 0; line-height: 1.5;">
-          Authoritative technical documentation, multi-modal infrastructure analyses, case studies, and multimedia resources curated for ENAC GSEA engineers.
+        <p style="font-size: 13px; color: #64748b; line-height: 1.55; margin: 0; max-width: 950px;">
+          Explore curated audio-visual material, real-world case studies on Extreme Weather &amp; Meteorology, and authoritative reference portals to expand your DD&amp;RS insights, master technical vocabulary, and prepare for class discussions.
         </p>
       </div>
 
-      <!-- SECTION 01: Video Analysis -->
-      <section>
+      <!-- SECTION 1: YOUTUBE VIDEO VIEWERS (Shaded Panel, 3 Evenly Spaced) -->
+      <section class="section-panel">
         <div class="section-header">
-          <span class="section-badge">01</span>
-          <h3 class="section-title">Video Viewers &amp; Analysis</h3>
+          <span class="section-badge" style="background-color: #49739a;">01</span>
+          <h3 class="section-title" style="color: #49739a;">Video Viewers &amp; Analysis</h3>
         </div>
         <p class="section-intro">
           Watch the accompanying video clips below and take notes on relevant technical vocabulary, arguments, and policy trade-offs.
@@ -462,25 +670,26 @@
 
         <!-- Dynamic Local File Mode Warning Banner -->
         <div id="local-file-banner" class="local-file-banner" style="display: none;">
-          <div style="font-size: 16px;">ℹ️</div>
-          <div>
+          <div class="local-file-banner-icon">ℹ️</div>
+          <div class="local-file-banner-text">
             <strong>Local File Preview (Edge / Chromium):</strong> Modern browsers block embedded YouTube players when opened directly from disk (<code>file://</code>) due to strict cross-origin referrer security policies (Error 153). Click any video card or <strong>Watch ↗</strong> to view on YouTube. Embedded inline playback activates automatically when uploaded to <strong>Moodle (eCampus)</strong> or run through a local web server (<code>npm run serve</code>).
           </div>
         </div>
 
-        <!-- 3-Column Video Grid -->
+        <!-- 3-Column Evenly Spaced Video Grid -->
         <div class="video-grid">
+
           <!-- Video 1 -->
           <div class="compact-video-card">
             <div class="video-header">
-              <span class="video-title" title="Meteorology for Air Traffic Controllers">Video 1: Meteorology for Air Traffic Controllers</span>
+              <span class="video-title" title="Video 1: Meteorology for Air Traffic Controllers">Video 1: Meteorology for Air Traffic Controllers</span>
               <div class="video-header-actions">
                 <a href="https://www.youtube.com/watch?v=a_fS9ddgoGs" target="_blank" rel="noopener noreferrer" class="watch-direct-btn" title="Open Video 1 on YouTube">Watch ↗</a>
                 <span class="tag-pill tag-amber">Meteorology</span>
               </div>
             </div>
             
-            <div class="video-player-container" data-video-id="a_fS9ddgoGs" data-video-title="Video 1: Meteorology for Air Traffic Controllers">
+            <div class="video-player-container" data-video-id="a_fS9ddgoGs" data-video-title="Meteorology for Air Traffic Controllers">
               <iframe 
                 src="https://www.youtube-nocookie.com/embed/a_fS9ddgoGs" 
                 title="YouTube video player 1 - Meteorology for Air Traffic Controllers" 
@@ -494,17 +703,18 @@
               <strong>Focus:</strong> Analyzing microbursts, wind shear, and thunderstorm cells in approach airspace.
             </p>
           </div>
+
           <!-- Video 2 -->
           <div class="compact-video-card">
             <div class="video-header">
-              <span class="video-title" title="Jet Stream Shifts and Clear-Air Turbulence">Video 2: Jet Stream Shifts and Clear-Air Turbulence</span>
+              <span class="video-title" title="Video 2: Jet Stream Shifts and Clear-Air Turbulence">Video 2: Jet Stream Shifts and Clear-Air Turbulence</span>
               <div class="video-header-actions">
                 <a href="https://www.youtube.com/watch?v=SaV2m8jtaRI" target="_blank" rel="noopener noreferrer" class="watch-direct-btn" title="Open Video 2 on YouTube">Watch ↗</a>
                 <span class="tag-pill tag-emerald">Scientific</span>
               </div>
             </div>
             
-            <div class="video-player-container" data-video-id="SaV2m8jtaRI" data-video-title="Video 2: Jet Stream Shifts and Clear-Air Turbulence">
+            <div class="video-player-container" data-video-id="SaV2m8jtaRI" data-video-title="Jet Stream Shifts and Clear-Air Turbulence">
               <iframe 
                 src="https://www.youtube-nocookie.com/embed/SaV2m8jtaRI" 
                 title="YouTube video player 2 - Jet Stream Shifts and Clear-Air Turbulence" 
@@ -518,17 +728,18 @@
               <strong>Focus:</strong> How climate change is intensifying high-altitude shear and increasing in-flight turbulence incidents.
             </p>
           </div>
+
           <!-- Video 3 -->
           <div class="compact-video-card">
             <div class="video-header">
-              <span class="video-title" title="De-Icing Protocols &amp; Winter Operations">Video 3: De-Icing Protocols &amp; Winter Operations</span>
+              <span class="video-title" title="Video 3: De-Icing Protocols &amp; Winter Operations">Video 3: De-Icing Protocols &amp; Winter Operations</span>
               <div class="video-header-actions">
                 <a href="https://www.youtube.com/watch?v=cjxn0z1f7Pk" target="_blank" rel="noopener noreferrer" class="watch-direct-btn" title="Open Video 3 on YouTube">Watch ↗</a>
                 <span class="tag-pill tag-sky">Operations</span>
               </div>
             </div>
             
-            <div class="video-player-container" data-video-id="cjxn0z1f7Pk" data-video-title="Video 3: De-Icing Protocols &amp; Winter Operations">
+            <div class="video-player-container" data-video-id="cjxn0z1f7Pk" data-video-title="De-Icing Protocols &amp; Winter Operations">
               <iframe 
                 src="https://www.youtube-nocookie.com/embed/cjxn0z1f7Pk" 
                 title="YouTube video player 3 - De-Icing Protocols &amp; Winter Operations" 
@@ -542,176 +753,242 @@
               <strong>Focus:</strong> Chemical holdover times, runway de-icing vehicles, and cold-weather airport logistics.
             </p>
           </div>
+
         </div>
       </section>
 
-      <!-- SECTION 02: In-Depth Technical Articles -->
-      <section>
+      <!-- SECTION 2: FEATURED NEWS & CURRENT AFFAIRS (2 Columns) -->
+      <section class="section-panel">
         <div class="section-header">
-          <span class="section-badge">02</span>
-          <h3 class="section-title">In-Depth Technical Articles &amp; Readings</h3>
+          <span class="section-badge" style="background-color: #49739a;">02</span>
+          <h3 class="section-title" style="color: #49739a;">Featured Case Studies &amp; Policy Reports</h3>
         </div>
         <p class="section-intro">
-          Academic research papers and policy briefings exploring sector decarbonization, regulatory roadmaps, and international standards.
+          Read these two industry reports examining ecological responsibility, technical standards, and evolving transport policy.
         </p>
+
         <div class="news-grid">
+
           <article class="news-card">
-            <div class="news-meta">
-              <span class="news-source">WMO Bulletin</span>
-              <span class="tag-pill tag-sky">Technical Reading</span>
-            </div>
-            <h4 class="news-title">
-              <a href="https://public.wmo.int" target="_blank" rel="noopener noreferrer">
+            <div>
+              <div class="news-meta">
+                <span class="news-topic" style="color: #49739a;">WMO Bulletin</span>
+                <span class="news-source-tag">Industry Analysis</span>
+              </div>
+              <h4 class="news-heading">
                 Climate Impacts on Aviation Operations
-              </a>
-            </h4>
-            <p class="news-abstract">
-              World Meteorological Organization analysis of rising surface temperatures and airport density altitude challenges.
-            </p>
+              </h4>
+              <p class="news-snippet">
+                World Meteorological Organization analysis of rising surface temperatures and airport density altitude challenges.
+              </p>
+            </div>
+            
             <div class="news-footer">
-              <span class="read-time">6-8 min read • Academic B2/C1</span>
-              <a href="https://public.wmo.int" target="_blank" rel="noopener noreferrer" class="read-link">Read Full Report →</a>
+              <span class="read-time">Estimated read: 5-7 mins</span>
+              <a href="https://public.wmo.int" target="_blank" rel="noopener noreferrer" class="article-btn" style="background-color: #49739a;">
+                <span>Read Full Report</span>
+                <span aria-hidden="true">→</span>
+              </a>
             </div>
           </article>
+
           <article class="news-card">
-            <div class="news-meta">
-              <span class="news-source">Nature Climate Change</span>
-              <span class="tag-pill tag-sky">Technical Reading</span>
-            </div>
-            <h4 class="news-title">
-              <a href="https://www.nature.com" target="_blank" rel="noopener noreferrer">
+            <div>
+              <div class="news-meta">
+                <span class="news-topic" style="color: #49739a;">Nature Climate Change</span>
+                <span class="news-source-tag">Industry Analysis</span>
+              </div>
+              <h4 class="news-heading">
                 Turbulence Intensity in a Warming Atmosphere
-              </a>
-            </h4>
-            <p class="news-abstract">
-              Empirical study showing a 55% increase in severe clear-air turbulence over the North Atlantic.
-            </p>
+              </h4>
+              <p class="news-snippet">
+                Empirical study showing a 55% increase in severe clear-air turbulence over the North Atlantic.
+              </p>
+            </div>
+            
             <div class="news-footer">
-              <span class="read-time">6-8 min read • Academic B2/C1</span>
-              <a href="https://www.nature.com" target="_blank" rel="noopener noreferrer" class="read-link">Read Full Report →</a>
+              <span class="read-time">Estimated read: 5-7 mins</span>
+              <a href="https://www.nature.com" target="_blank" rel="noopener noreferrer" class="article-btn" style="background-color: #49739a;">
+                <span>Read Full Report</span>
+                <span aria-hidden="true">→</span>
+              </a>
             </div>
           </article>
+
         </div>
       </section>
 
-      <!-- SECTION 03: Professional References -->
-      <section>
+      <!-- SECTION 3: CURATED WEB RESOURCES & REFERENCES (6 Items, 3x2 Grid) -->
+      <section class="section-panel">
         <div class="section-header">
-          <span class="section-badge">03</span>
-          <h3 class="section-title">Professional Reference Links</h3>
+          <span class="section-badge" style="background-color: #49739a;">03</span>
+          <h3 class="section-title" style="color: #49739a;">Curated Web Resources &amp; References</h3>
         </div>
         <p class="section-intro">
-          Key institutional organizations, regulatory bodies, and international statistical databases.
+          Access these 6 authoritative portals for grammar reference, vocabulary enrichment, and DD&amp;RS research.
         </p>
+
         <div class="resources-grid">
+
+          <!-- Resource 1 -->
           <a href="https://public.wmo.int" target="_blank" rel="noopener noreferrer" class="resource-card">
-            <div class="resource-icon">🌐</div>
-            <div class="resource-info">
-              <div class="resource-title">World Meteorological Organization</div>
-              <p class="resource-desc">Global authority on atmospheric science, weather warnings, and climate metrics.</p>
+            <div>
+              <div class="resource-header">
+                <span class="resource-tag" style="color: #7097bd;">01 • Authoritative Source</span>
+                <span class="resource-icon">↗</span>
+              </div>
+              <h4 class="resource-name">World Meteorological Organization</h4>
+              <p class="resource-desc">
+                Global authority on atmospheric science, weather warnings, and climate metrics.
+              </p>
             </div>
-            <span class="resource-action">Visit ↗</span>
+            <div class="resource-action" style="color: #49739a;">
+              <span>Visit Resource</span>
+              <span aria-hidden="true">→</span>
+            </div>
           </a>
+
+          <!-- Resource 2 -->
           <a href="https://www.aviationweather.gov" target="_blank" rel="noopener noreferrer" class="resource-card">
-            <div class="resource-icon">🌐</div>
-            <div class="resource-info">
-              <div class="resource-title">NOAA Aviation Weather Center</div>
-              <p class="resource-desc">Official meteorological forecasts, METAR reports, and turbulence modeling.</p>
+            <div>
+              <div class="resource-header">
+                <span class="resource-tag" style="color: #7097bd;">02 • Authoritative Source</span>
+                <span class="resource-icon">↗</span>
+              </div>
+              <h4 class="resource-name">NOAA Aviation Weather Center</h4>
+              <p class="resource-desc">
+                Official meteorological forecasts, METAR reports, and turbulence modeling.
+              </p>
             </div>
-            <span class="resource-action">Visit ↗</span>
+            <div class="resource-action" style="color: #49739a;">
+              <span>Visit Resource</span>
+              <span aria-hidden="true">→</span>
+            </div>
           </a>
+
+          <!-- Resource 3 -->
           <a href="https://www.eurocontrol.int" target="_blank" rel="noopener noreferrer" class="resource-card">
-            <div class="resource-icon">🌐</div>
-            <div class="resource-info">
-              <div class="resource-title">Eurocontrol Crisis Management</div>
-              <p class="resource-desc">European air traffic network weather disruption management and delay stats.</p>
+            <div>
+              <div class="resource-header">
+                <span class="resource-tag" style="color: #7097bd;">03 • Authoritative Source</span>
+                <span class="resource-icon">↗</span>
+              </div>
+              <h4 class="resource-name">Eurocontrol Crisis Management</h4>
+              <p class="resource-desc">
+                European air traffic network weather disruption management and delay stats.
+              </p>
             </div>
-            <span class="resource-action">Visit ↗</span>
+            <div class="resource-action" style="color: #49739a;">
+              <span>Visit Resource</span>
+              <span aria-hidden="true">→</span>
+            </div>
           </a>
+
+          <!-- Resource 4 -->
           <a href="https://www.icao.int" target="_blank" rel="noopener noreferrer" class="resource-card">
-            <div class="resource-icon">🌐</div>
-            <div class="resource-info">
-              <div class="resource-title">ICAO Meteorology Panel</div>
-              <p class="resource-desc">International standards for aerodrome meteorological reporting and safety.</p>
+            <div>
+              <div class="resource-header">
+                <span class="resource-tag" style="color: #7097bd;">04 • Authoritative Source</span>
+                <span class="resource-icon">↗</span>
+              </div>
+              <h4 class="resource-name">ICAO Meteorology Panel</h4>
+              <p class="resource-desc">
+                International standards for aerodrome meteorological reporting and safety.
+              </p>
             </div>
-            <span class="resource-action">Visit ↗</span>
+            <div class="resource-action" style="color: #49739a;">
+              <span>Visit Resource</span>
+              <span aria-hidden="true">→</span>
+            </div>
           </a>
+
+          <!-- Resource 5 -->
           <a href="https://climate.copernicus.eu" target="_blank" rel="noopener noreferrer" class="resource-card">
-            <div class="resource-icon">🌐</div>
-            <div class="resource-info">
-              <div class="resource-title">Copernicus Climate Service</div>
-              <p class="resource-desc">European satellite data tracking global surface temperatures and extreme storms.</p>
+            <div>
+              <div class="resource-header">
+                <span class="resource-tag" style="color: #7097bd;">05 • Authoritative Source</span>
+                <span class="resource-icon">↗</span>
+              </div>
+              <h4 class="resource-name">Copernicus Climate Service</h4>
+              <p class="resource-desc">
+                European satellite data tracking global surface temperatures and extreme storms.
+              </p>
             </div>
-            <span class="resource-action">Visit ↗</span>
+            <div class="resource-action" style="color: #49739a;">
+              <span>Visit Resource</span>
+              <span aria-hidden="true">→</span>
+            </div>
           </a>
+
+          <!-- Resource 6 -->
           <a href="https://www.etsglobal.org/fr/fr" target="_blank" rel="noopener noreferrer" class="resource-card">
-            <div class="resource-icon">🌐</div>
-            <div class="resource-info">
-              <div class="resource-title">ETS Global TOEIC</div>
-              <p class="resource-desc">Aviation and emergency briefing listening practice for technical professionals.</p>
+            <div>
+              <div class="resource-header">
+                <span class="resource-tag" style="color: #7097bd;">06 • Authoritative Source</span>
+                <span class="resource-icon">↗</span>
+              </div>
+              <h4 class="resource-name">ETS Global TOEIC</h4>
+              <p class="resource-desc">
+                Aviation and emergency briefing listening practice for technical professionals.
+              </p>
             </div>
-            <span class="resource-action">Visit ↗</span>
+            <div class="resource-action" style="color: #49739a;">
+              <span>Visit Resource</span>
+              <span aria-hidden="true">→</span>
+            </div>
           </a>
+
         </div>
       </section>
 
       <!-- Stylized Skills Footer Area -->
-      <div class="w-full pt-3 pb-3 px-4 rounded-xl border border-slate-200/60 bg-slate-50/50 grid grid-cols-2 sm:grid-cols-4 gap-y-2.5 gap-x-4 shadow-sm" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 12px 16px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px;">
-        <div style="display: flex; flex-direction: column;"><span style="font-size: 14px; font-weight: 900; font-style: italic; color: #49739a;">FLUENCY</span><span style="font-size: 8px; color: #94a3b8; font-family: monospace;">/ˈfluː.ən.si/</span></div>
-        <div style="display: flex; flex-direction: column;"><span style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: #7097bd;">Grammar</span><span style="font-size: 8px; color: #94a3b8; font-family: monospace;">/ˈɡræm.ər/</span></div>
-        <div style="display: flex; flex-direction: column;"><span style="font-size: 11px; font-weight: 800; color: #334155; text-decoration: underline; text-decoration-color: #cbd5e1;">Technical Lexicon</span><span style="font-size: 8px; color: #94a3b8; font-family: monospace;">/ˈtek.nɪ.kəl/</span></div>
-        <div style="display: flex; flex-direction: column;"><span style="font-size: 12px; font-weight: 600; font-style: italic; color: #396084;">Pronunciation</span><span style="font-size: 8px; color: #94a3b8; font-family: monospace;">/prəˌnʌn.siˈeɪ.shən/</span></div>
-        <div style="display: flex; flex-direction: column;"><span style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: #0f766e;">Comprehension</span><span style="font-size: 8px; color: #94a3b8; font-family: monospace;">/ˌkɒm.prɪˈhen.ʃən/</span></div>
-        <div style="display: flex; flex-direction: column;"><span style="font-size: 14px; font-weight: 900; font-style: italic; color: #0369a1;">Discussion</span><span style="font-size: 8px; color: #94a3b8; font-family: monospace;">/dɪˈskʌʃ.ən/</span></div>
-        <div style="display: flex; flex-direction: column;"><span style="font-size: 12px; font-weight: 800; text-transform: uppercase; color: #ea5d74;">CORRECTION</span><span style="font-size: 8px; color: #94a3b8; font-family: monospace;">/kəˈrek.ʃən/</span></div>
-        <div style="display: flex; flex-direction: column;"><span style="font-size: 11px; font-weight: 800; letter-spacing: 0.08em; color: #7097bd;">INTERACTION</span><span style="font-size: 8px; color: #94a3b8; font-family: monospace;">/ˌɪn.təˈræk.ʃən/</span></div>
+      <div class="w-full pt-3 pb-3 px-4 rounded-xl border border-slate-200/60 bg-slate-50/50 grid grid-cols-2 sm:grid-cols-4 gap-y-2.5 gap-x-4 shadow-sm vocab-footer">
+        <div class="flex flex-col vocab-item"><span class="text-sm font-black italic tracking-wide vocab-word" style="color: #49739a; font-style: italic;">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/ˈfluː.ən.si/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-xs font-bold uppercase vocab-word" style="color: #7097bd; text-transform: uppercase;">Grammar</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/ˈɡræm.ər/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-[11px] font-extrabold normal-case text-slate-700 underline decoration-slate-300 vocab-word" style="color: #334155; text-decoration: underline; text-decoration-color: #cbd5e1;">Technical Lexicon</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/ˌtek.nɪ.kəl/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-xs font-semibold italic vocab-word" style="color: #396084; font-style: italic;">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/prəˌnʌn.siˈeɪ.shən/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-xs font-bold uppercase tracking-wider text-teal-700 vocab-word" style="color: #0f766e; text-transform: uppercase;">Comprehension</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/ˌkɒm.prɪˈhen.ʃən/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-sm font-black italic text-sky-700 vocab-word" style="color: #0369a1; font-style: italic;">Discussion</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/dɪˈskʌʃ.ən/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-xs font-extrabold uppercase text-[#ea5d74] vocab-word" style="color: #ea5d74; text-transform: uppercase;">CORRECTION</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/kəˈrek.ʃən/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-[11px] font-extrabold tracking-widest vocab-word" style="color: #7097bd; letter-spacing: 0.08em;">INTERACTION</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/ˌɪn.təˈræk.ʃən/</span></div>
       </div>
 
     </div>
 
     <!-- Bottom status footer -->
-    <footer class="deck-footer">
-      <span style="font-weight: 600; color: #334155;">Active: Session 1 Additional Materials</span>
-      <span style="font-weight: 500;">GSEA Semester 1 English • Phil PARRIS LH/LAN</span>
+    <footer class="deck-footer bg-slate-50 border-t border-slate-200 px-3 py-2 text-[11px] text-slate-500 flex justify-between items-center shrink-0 rounded-b-2xl">
+      <span class="font-medium text-slate-700" style="font-weight: 600; color: #334155;">Active: Session 1 Additional Materials</span>
+      <span class="font-medium">GSEA Semester 1 English • Phil PARRIS LH/LAN</span>
     </footer>
 
   </div>
 </div>
 
-<!-- Embedded Video Guard & Error 153 Local-File Preview Handling -->
-<script>
-  (function() {
-    const isLocalFile = window.location.protocol === 'file:';
-    if (isLocalFile) {
-      const banner = document.getElementById('local-file-banner');
-      if (banner) banner.style.display = 'flex';
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var isFile = window.location.protocol === 'file:';
+      if (isFile) {
+        var banner = document.getElementById('local-file-banner');
+        if (banner) banner.style.display = 'flex';
 
-      document.querySelectorAll('.video-player-container').forEach(container => {
-        const videoId = container.getAttribute('data-video-id');
-        const videoTitle = container.getAttribute('data-video-title') || 'Watch on YouTube';
-        if (!videoId) return;
-
-        const thumbUrl = 'https://img.youtube.com/vi/' + videoId + '/hqdefault.jpg';
-        const watchUrl = 'https://www.youtube.com/watch?v=' + videoId;
-
-        container.innerHTML = `
-          <a href="${watchUrl}" target="_blank" rel="noopener noreferrer" 
-             style="display: block; position: absolute; top:0; left:0; width:100%; height:100%; background: #000 url('${thumbUrl}') center/cover no-repeat; text-decoration: none;"
-             title="Click to watch ${videoTitle} on YouTube">
-            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.65) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 12px; text-align: center;">
-              <div style="width: 48px; height: 34px; background: #ff0000; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
-                <div style="width: 0; height: 0; border-top: 7px solid transparent; border-bottom: 7px solid transparent; border-left: 13px solid #ffffff; margin-left: 3px;"></div>
-              </div>
-              <span style="color: #ffffff; font-size: 11px; font-weight: 700; text-shadow: 0 1px 3px rgba(0,0,0,0.8); background: rgba(0,0,0,0.6); padding: 3px 8px; border-radius: 4px;">
-                Watch on YouTube ↗
-              </span>
-            </div>
-          </a>
-        `;
-      });
-    }
-  })();
-</script>
-
+        var containers = document.querySelectorAll('.video-player-container[data-video-id]');
+        containers.forEach(function(el) {
+          var vid = el.getAttribute('data-video-id');
+          var title = el.getAttribute('data-video-title') || 'Video';
+          var url = 'https://www.youtube.com/watch?v=' + vid;
+          el.innerHTML = 
+            '<a href="' + url + '" target="_blank" rel="noopener noreferrer" class="video-facade" title="' + title + ' - Click to play on YouTube">' +
+              '<img src="https://img.youtube.com/vi/' + vid + '/hqdefault.jpg" alt="' + title + '" loading="lazy">' +
+              '<div class="video-play-btn" aria-hidden="true">' +
+                '<svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>' +
+              '</div>' +
+              '<div class="video-facade-badge">' +
+                '<span>Watch on YouTube ↗</span>' +
+              '</div>' +
+            '</a>';
+        });
+      }
+    });
+  </script>
 </body>
 </html>
