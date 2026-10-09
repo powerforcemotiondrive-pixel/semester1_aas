@@ -7,9 +7,40 @@
   <!-- Tailwind CSS CLI Output -->
   <link rel="stylesheet" href="https://powerforcemotiondrive-pixel.github.io/moodle-assets/output.css">
   <style>
+    /* Signature Tactile Micro-Mesh Texture */
+    .textured-surface,
+    #ecampus-btn,
+    .module-buttons-group button[aria-pressed="true"],
+    #action-links-container a {
+      background-image: 
+        /* Layer 1: Soft top-edge spotlight sheen */
+        radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.14) 0%, transparent 70%),
+        /* Layer 2: 45° diagonal highlight ridges (1px line every 4px) */
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.045) 0, rgba(255, 255, 255, 0.045) 1px, transparent 0, transparent 4px),
+        /* Layer 3: -45° crosshatch shadow grooves (1px line every 4px) */
+        repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.16) 0, rgba(0, 0, 0, 0.16) 1px, transparent 0, transparent 4px),
+        /* Layer 4: Vertical depth gradient (light top, darker bottom) */
+        linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.14) 100%);
+    }
+
+    /* Elements and inactive buttons that must NOT have mesh texture */
+    #deck-icon-box,
+    #counter-badge,
+    #prev-btn,
+    #next-btn,
+    button:disabled,
+    .module-buttons-group button:not([aria-pressed="true"]),
+    .btn-inactive {
+      background-image: none !important;
+    }
+
+    .module-buttons-group button:not([aria-pressed="true"]) {
+      background-color: #ffffff !important;
+    }
+
     /* Theme transitions */
-    #deck-header, #deck-icon-box, #card-tag-wrapper, #card-heading, #prev-btn, #next-btn, #counter-badge, #ecampus-btn {
-      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+    #deck-header, #deck-icon-box, #card-tag-wrapper, #card-heading, #prev-btn, #next-btn, #counter-badge, #ecampus-btn, .module-buttons-group button, #action-links-container a {
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
     }
 
     /* Floating module box styling - separated box positioned under the frame to the right */
@@ -53,27 +84,27 @@
     <div class="moodle-deck-canvas bg-white rounded-2xl shadow-2xl border border-slate-300 flex flex-col overflow-hidden">
       
       <!-- Header bar -->
-      <header id="deck-header" class="bg-[#b85d42] text-white px-4 py-4 sm:px-6 sm:py-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#9e4e37] shrink-0 relative overflow-hidden" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.03) 10px, rgba(255, 255, 255, 0.03) 20px);">
+      <header id="deck-header" class="textured-surface bg-[#c0684f] text-white px-4 py-4 sm:px-6 sm:py-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#a8543d] shrink-0 relative overflow-hidden">
         <div class="flex items-center space-x-3 sm:space-x-4">
-          <div id="deck-icon-box" class="bg-[#c29b38] p-2.5 rounded-lg text-white shadow-md flex items-center justify-center">
+          <div id="deck-icon-box" class="bg-[#c99948] p-2.5 rounded-lg text-white shadow-md flex items-center justify-center">
             <!-- Theme Icon -->
             <svg width="20" height="20" style="width: 20px; height: 20px;" class="w-5 h-5 text-white shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
             </svg>
           </div>
           <div>
-            <span id="deck-supertitle" class="block text-xs sm:text-sm md:text-base font-black tracking-wider text-[#fde047] uppercase">GSEA SEMESTER 1 - MODULE 1: TRAVEL, TRANSPORT &amp; LEISURE (2)</span>
+            <span id="deck-supertitle" class="block text-xs sm:text-sm md:text-base font-black tracking-wider text-[#fef08a] uppercase">GSEA SEMESTER 1 - MODULE 1: TRAVEL, TRANSPORT &amp; LEISURE (2)</span>
             <h1 id="deck-title" class="text-sm sm:text-base font-bold text-white mt-0.5">Loading Module...</h1>
           </div>
         </div>
 
         <!-- Navigation Controls -->
         <div class="flex items-center space-x-2">
-          <span id="counter-badge" class="text-xs font-medium text-white bg-[#9e4e37] px-2.5 py-1 rounded-md border border-[#853f2c] mr-1 shadow-md">1 of 6</span>
-          <button id="prev-btn" class="flex items-center space-x-1 bg-[#9e4e37] hover:bg-[#853f2c] active:bg-[#6e3222] text-slate-100 px-3 py-1.5 rounded-lg font-semibold text-xs transition-all border border-[#853f2c] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer shadow-md" type="button">
+          <span id="counter-badge" class="text-xs font-medium text-white bg-[#a8543d] px-2.5 py-1 rounded-md border border-[#904431] mr-1 shadow-md">1 of 6</span>
+          <button id="prev-btn" class="flex items-center space-x-1 bg-[#a8543d] hover:bg-[#904431] active:bg-[#783526] text-slate-100 px-3 py-1.5 rounded-lg font-semibold text-xs transition-all border border-[#904431] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer shadow-md" type="button">
             <span class="pointer-events-none">Previous</span>
           </button>
-          <button id="next-btn" class="flex items-center space-x-1 bg-[#c29b38] hover:bg-[#a8842c] active:bg-[#8f6e21] text-white px-3 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-md disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer" type="button">
+          <button id="next-btn" class="flex items-center space-x-1 bg-[#c99948] hover:bg-[#b08137] active:bg-[#966b2a] text-white px-3 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-md disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer" type="button">
             <span class="pointer-events-none">Next</span>
           </button>
         </div>
@@ -98,10 +129,10 @@
             <div class="flex flex-col lg:flex-row gap-4 items-start justify-between">
               <div class="space-y-3 flex-1">
                 <!-- Restyled badge -->
-                <div id="card-tag-wrapper" class="inline-flex items-center space-x-2 bg-[#b85d42] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#9e4e37] shadow-sm">
+                <div id="card-tag-wrapper" class="textured-surface inline-flex items-center space-x-2 bg-[#c0684f] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#a8543d] shadow-sm">
                   <span id="card-tag">Section 1</span>
                 </div>
-                <h2 id="card-heading" class="text-lg sm:text-xl font-black text-[#b85d42] tracking-tight"></h2>
+                <h2 id="card-heading" class="text-lg sm:text-xl font-black text-[#c0684f] tracking-tight"></h2>
                 <div id="card-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed space-y-2"></div>
               </div>
               <!-- Image Container with Subtle Drop Shadow -->
@@ -139,8 +170,8 @@
            target="_blank"
            rel="noopener noreferrer"
            aria-label="Visit eCampus Moodle"
-           class="px-4 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-bold tracking-wide transition-all border cursor-pointer select-none inline-flex items-center justify-center no-underline shadow-md"
-           style="background-color: #b85d42; border-color: #9e4e37; border-width: 1.5px; border-style: solid; color: #ffffff; box-shadow: 0 2px 8px rgba(184, 93, 66, 0.25);">
+           class="textured-surface px-4 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-bold tracking-wide transition-all border cursor-pointer select-none inline-flex items-center justify-center no-underline shadow-md"
+           style="background-color: #c0684f; border-color: #a8543d; border-width: 1.5px; border-style: solid; color: #ffffff; box-shadow: 0 2px 8px rgba(192, 104, 79, 0.25);">
           eCampus
         </a>
       </div>
@@ -275,17 +306,17 @@
         name: "Module 1",
         subtitle: "Travel, Transport & Leisure",
         supertitle: "GSEA SEMESTER 1 - MODULE 1: TRAVEL, TRANSPORT & LEISURE (2)",
-        // Terracotta Theme (Original)
-        primary: "#b85d42",
-        primaryDark: "#9e4e37",
-        primaryDarker: "#853f2c",
-        accent: "#c29b38",
-        accentDark: "#a8842c",
-        accentDarker: "#8f6e21",
-        highlight: "#fde047",
-        activeMenuBg: "rgba(254, 243, 199, 0.8)",
-        activeMenuText: "#b85d42",
-        activeMenuBorder: "#c29b38",
+        // Softened Terracotta / Warm Orange Theme
+        primary: "#c0684f",
+        primaryDark: "#a8543d",
+        primaryDarker: "#904431",
+        accent: "#c99948",
+        accentDark: "#b08137",
+        accentDarker: "#966b2a",
+        highlight: "#fef08a",
+        activeMenuBg: "rgba(254, 243, 199, 0.7)",
+        activeMenuText: "#c0684f",
+        activeMenuBorder: "#c99948",
         pages: createModulePages(1)
       },
       {
@@ -293,17 +324,17 @@
         name: "Module 2",
         subtitle: "Weather & the Environment",
         supertitle: "GSEA SEMESTER 1 - MODULE 2: WEATHER & THE ENVIRONMENT",
-        // Slate Blue Theme
-        primary: "#365f88",
-        primaryDark: "#274868",
-        primaryDarker: "#1d364f",
-        accent: "#4d78a3",
-        accentDark: "#3b6284",
-        accentDarker: "#2d4d6a",
-        highlight: "#bae6fd",
-        activeMenuBg: "rgba(54, 95, 136, 0.08)",
-        activeMenuText: "#365f88",
-        activeMenuBorder: "#4d78a3",
+        // Softened Slate Blue Theme
+        primary: "#46729a",
+        primaryDark: "#375d80",
+        primaryDarker: "#2a4966",
+        accent: "#5e87b0",
+        accentDark: "#4c7297",
+        accentDarker: "#3b5d7e",
+        highlight: "#e0f2fe",
+        activeMenuBg: "rgba(70, 114, 154, 0.09)",
+        activeMenuText: "#46729a",
+        activeMenuBorder: "#5e87b0",
         pages: createModulePages(2)
       },
       {
@@ -311,17 +342,17 @@
         name: "Module 3",
         subtitle: "New Technology",
         supertitle: "GSEA SEMESTER 1 - MODULE 3: NEW TECHNOLOGY",
-        // Olive Green Theme
-        primary: "#526e38",
-        primaryDark: "#3e5429",
-        primaryDarker: "#2c3c1d",
-        accent: "#6c8c4c",
-        accentDark: "#57723c",
-        accentDarker: "#43592d",
-        highlight: "#d9f99d",
-        activeMenuBg: "rgba(82, 110, 56, 0.08)",
-        activeMenuText: "#526e38",
-        activeMenuBorder: "#6c8c4c",
+        // Softened Sage Green Theme
+        primary: "#5c8147",
+        primaryDark: "#4a6a37",
+        primaryDarker: "#395329",
+        accent: "#769c5c",
+        accentDark: "#62844a",
+        accentDarker: "#4f6c39",
+        highlight: "#ecfccb",
+        activeMenuBg: "rgba(92, 129, 71, 0.09)",
+        activeMenuText: "#5c8147",
+        activeMenuBorder: "#769c5c",
         pages: createModulePages(3)
       }
     ];
@@ -372,11 +403,8 @@
         btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
         btn.setAttribute('aria-label', `Select ${mod.name}`);
 
-        btn.className = `px-4 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-bold tracking-wide transition-all border cursor-pointer select-none ${
-          isSelected ? 'shadow-md scale-[1.02]' : 'hover:bg-slate-50'
-        }`;
-
         if (isSelected) {
+          btn.className = 'textured-surface px-4 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-bold tracking-wide transition-all border cursor-pointer select-none shadow-md scale-[1.02]';
           btn.style.backgroundColor = mod.primary;
           btn.style.borderColor = mod.primaryDark;
           btn.style.borderWidth = '1.5px';
@@ -384,18 +412,23 @@
           btn.style.color = '#ffffff';
           btn.style.boxShadow = `0 2px 8px ${mod.primary}40`;
         } else {
+          btn.className = 'px-4 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-bold tracking-wide transition-all border cursor-pointer select-none hover:bg-slate-50';
           btn.style.backgroundColor = '#ffffff';
+          btn.style.backgroundImage = 'none';
           btn.style.borderColor = '#cbd5e1';
           btn.style.borderWidth = '1.5px';
           btn.style.borderStyle = 'solid';
           btn.style.color = '#475569';
+          btn.style.boxShadow = 'none';
           btn.onmouseenter = () => {
             btn.style.borderColor = mod.primary;
             btn.style.color = mod.primary;
             btn.style.backgroundColor = mod.activeMenuBg;
+            btn.style.backgroundImage = 'none';
           };
           btn.onmouseleave = () => {
             btn.style.backgroundColor = '#ffffff';
+            btn.style.backgroundImage = 'none';
             btn.style.borderColor = '#cbd5e1';
             btn.style.color = '#475569';
           };
@@ -578,7 +611,7 @@
       if (page.detailsUrl) {
         footerInstruction.textContent = "Click below to view the official government DD&RS framework:";
         const detailsBtn = document.createElement('a');
-        detailsBtn.className = "inline-flex items-center space-x-2 text-white px-3.5 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all cursor-pointer";
+        detailsBtn.className = "textured-surface inline-flex items-center space-x-2 text-white px-3.5 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all cursor-pointer";
         detailsBtn.style.backgroundColor = mod.primary;
         detailsBtn.onmouseenter = () => detailsBtn.style.backgroundColor = mod.primaryDark;
         detailsBtn.onmouseleave = () => detailsBtn.style.backgroundColor = mod.primary;
@@ -617,7 +650,7 @@
 
       const createActionBtn = (href, label) => {
         const btn = document.createElement('a');
-        btn.className = "inline-flex items-center space-x-2 text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all";
+        btn.className = "textured-surface inline-flex items-center space-x-2 text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all cursor-pointer";
         btn.style.backgroundColor = mod.primary;
         btn.onmouseenter = () => btn.style.backgroundColor = mod.primaryDark;
         btn.onmouseleave = () => btn.style.backgroundColor = mod.primary;
@@ -649,7 +682,7 @@
 
       if (page.pdfUrl && !page.pdfUrl.includes("INSERT_YOUR_PDF_LINK_HERE")) {
         const pdfBtn = document.createElement('a');
-        pdfBtn.className = "inline-flex items-center space-x-2 text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all ml-auto";
+        pdfBtn.className = "textured-surface inline-flex items-center space-x-2 text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all ml-auto cursor-pointer";
         pdfBtn.style.backgroundColor = mod.accent;
         pdfBtn.onmouseenter = () => pdfBtn.style.backgroundColor = mod.accentDark;
         pdfBtn.onmouseleave = () => pdfBtn.style.backgroundColor = mod.accent;
