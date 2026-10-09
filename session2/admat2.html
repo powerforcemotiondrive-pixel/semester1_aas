@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 2 - Additional Materials &amp; Resources</title>
+  <!-- Remote Tailwind CSS -->
+  <link rel="stylesheet" href="../dist/output.css">
+  <link rel="stylesheet" href="https://powerforcemotiondrive-pixel.github.io/moodle-assets/output.css">
+
+  <style>
+    /* Robust, self-contained styling for resilient rendering across all browsers */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background-color: #f1f5f9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1e293b;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Container Canvas */
+    .deck-container {
+      width: 98%;
+      max-width: 1350px;
+      margin: 0 auto;
+      padding: 12px 8px;
+    }
+    @media (min-width: 640px) {
+      .deck-container {
+        width: 95%;
+        padding: 12px 16px;
+      }
+    }
+    @media (min-width: 1024px) {
+      .deck-container {
+        width: 90%;
+      }
+    }
+    .moodle-deck-canvas {
+      background-color: #ffffff;
+      border-radius: 16px;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Header styling */
+    .deck-header {
+      background-color: #b85d42;
+      color: #ffffff;
+      padding: 18px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid #9e4e37;
+      background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.03) 10px, rgba(255, 255, 255, 0.03) 20px);
+    }
+    .header-icon-box {
+      background-color: #c29b38;
+      padding: 10px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: #c29b38;
+      color: #ffffff;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 12px;
+      text-decoration: none;
+      transition: background-color 0.15s ease, transform 0.1s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .back-btn:hover {
+      background-color: #a8842c;
+      transform: translateY(-1px);
+    }
+
+    /* Content Area */
+    .deck-body {
+      background-color: #ffffff;
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    @media (max-width: 640px) {
+      .deck-body {
+        padding: 16px 14px;
+        gap: 18px;
+      }
+    }
+
+    /* Unified Section Panels */
+    .section-panel {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 20px 22px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    @media (max-width: 640px) {
+      .section-panel {
+        padding: 14px 14px;
+      }
+    }
+
+    /* Section Headers */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .section-badge {
+      background-color: #b85d42;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+    }
+    .section-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #1e293b;
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+    .section-intro {
+      font-size: 13px;
+      color: #64748b;
+      margin: 0 0 4px 0;
+      line-height: 1.5;
+    }
+
+    /* SECTION 1: Video Grid */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      width: 100%;
+    }
+    @media (max-width: 720px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .compact-video-card {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 0;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .compact-video-card:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .video-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+    .video-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .tag-pill {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .tag-amber {
+      background-color: #fef3c7;
+      color: #92400e;
+    }
+    .tag-emerald {
+      background-color: #d1fae5;
+      color: #065f46;
+    }
+    .tag-sky {
+      background-color: #e0f2fe;
+      color: #0369a1;
+    }
+    .video-player-container {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      background-color: #000000;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .video-player-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .video-caption {
+      font-size: 11px;
+      color: #64748b;
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    /* SECTION 2: News Grid */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      width: 100%;
+    }
+    @media (max-width: 680px) {
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .news-card {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .news-card:hover {
+      border-color: #c29b38;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+    .news-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .news-topic {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #b85d42;
+    }
+    .news-source-tag {
+      font-size: 10px;
+      font-weight: 600;
+      background-color: #f1f5f9;
+      color: #475569;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .news-heading {
+      font-size: 15px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.35;
+      margin: 0 0 6px 0;
+    }
+    .news-snippet {
+      font-size: 12px;
+      color: #64748b;
+      line-height: 1.55;
+      margin: 0;
+    }
+    .news-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 10px;
+      border-top: 1px solid #f1f5f9;
+      margin-top: 4px;
+    }
+    .read-time {
+      font-size: 11px;
+      color: #94a3b8;
+    }
+    .article-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: #b85d42;
+      color: #ffffff;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.15s ease;
+    }
+    .article-btn:hover {
+      background-color: #9e4e37;
+    }
+
+    /* SECTION 3: Resources Grid */
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      width: 100%;
+    }
+    @media (max-width: 900px) {
+      .resources-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 580px) {
+      .resources-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .resource-card {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px 18px;
+      text-decoration: none;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      min-width: 0;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+    }
+    .resource-card:hover {
+      border-color: #c29b38;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+    }
+    .resource-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+    .resource-tag {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #b85d42;
+      background-color: #fff1ee;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .resource-icon {
+      color: #94a3b8;
+      font-size: 13px;
+    }
+    .resource-name {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 5px 0;
+      line-height: 1.35;
+    }
+    .resource-desc {
+      font-size: 11px;
+      color: #64748b;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .resource-action {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #c29b38;
+      padding-top: 8px;
+      border-top: 1px dashed #f1f5f9;
+    }
+    .resource-card:hover .resource-action {
+      color: #9e4e37;
+    }
+
+    /* Skills Footer Area */
+    .vocab-footer {
+      border: 1px solid rgba(226, 232, 240, 0.6);
+      background-color: rgba(248, 250, 252, 0.5);
+      border-radius: 12px;
+      padding: 12px 16px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 16px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+    @media (min-width: 640px) {
+      .vocab-footer {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+    .vocab-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .vocab-word {
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .vocab-ipa {
+      font-size: 8px;
+      color: #94a3b8;
+      font-family: monospace;
+      margin-top: 1px;
+    }
+
+    /* Deck Footer */
+    .deck-footer {
+      background-color: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      padding: 10px 18px;
+      font-size: 11px;
+      color: #64748b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Main Canvas Container -->
+<div class="w-[98%] sm:w-[95%] lg:w-[90%] max-w-[1350px] mx-auto px-2 sm:px-4 py-3 font-sans deck-container">
+  <div class="moodle-deck-canvas bg-white rounded-2xl shadow-xl border border-slate-300 flex flex-col overflow-hidden">
+    
+    <!-- Header bar -->
+    <header class="deck-header">
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <div class="header-icon-box">
+          <!-- Terracotta Theme Icon -->
+          <svg width="20" height="20" style="width: 20px; height: 20px;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
+        </div>
+        <div>
+          <span style="display: block; font-size: 11px; font-weight: 900; letter-spacing: 0.08em; color: #fde047; text-transform: uppercase;">
+            GSEA SEMESTER 1 - GENERAL ENGLISH MODULE 1
+          </span>
+          <h1 style="font-size: 15px; font-weight: 700; color: #ffffff; margin: 2px 0 0 0;">
+            Session 2 - Additional Materials &amp; Resources: Evolution of Transport
+          </h1>
+        </div>
+      </div>
+      
+      <!-- Back to Module / Session Link -->
+      <div class="flex items-center space-x-2 shrink-0">
+        <a class="flex items-center space-x-1.5 bg-[#c29b38] hover:bg-[#a8842c] active:bg-[#8f6e21] text-white px-3.5 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-md cursor-pointer shrink-0 back-btn"
+           href="../index.html">
+          <svg width="14" height="14" style="width: 14px; height: 14px;" class="w-3.5 h-3.5 stroke-[2.5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path>
+          </svg>
+          <span>Back to Module 1</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Workspace Body -->
+    <div class="deck-body">
+      
+      <!-- Introduction & Badge Area -->
+      <div style="display: flex; flex-direction: column; gap: 8px; padding-bottom: 4px; border-bottom: 1px solid #f1f5f9;">
+        <div>
+          <span style="display: inline-block; background-color: #b85d42; color: #ffffff; padding: 4px 12px; border-radius: 9999px; font-size: 11px; font-weight: 800; border: 1px solid #9e4e37; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+            GSEA Supplementary Resource Hub
+          </span>
+        </div>
+        <h2 style="font-size: 22px; font-weight: 900; color: #b85d42; margin: 4px 0 0 0; letter-spacing: -0.02em;">
+          Session 2 Multimedia, Case Studies &amp; Research Links
+        </h2>
+        <p style="font-size: 13px; color: #64748b; line-height: 1.55; margin: 0; max-width: 950px;">
+          Explore curated audio-visual material, real-world case studies on the evolution of transport, and authoritative reference portals to expand your DD&amp;RS insights, master cause-and-effect structures, and prepare for class discussions.
+        </p>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 1: YOUTUBE VIDEO VIEWERS (3 Columns)                              -->
+      <!-- ========================================================================= -->
+      <section class="section-panel">
+        <div class="section-header">
+          <span class="section-badge">01</span>
+          <h3 class="section-title">Video Viewers &amp; Analysis</h3>
+        </div>
+        <p class="section-intro">
+          Watch the accompanying video clips below and take notes on historical mobility transitions, modal split trade-offs, and technical cause-and-effect vocabulary.
+        </p>
+
+        <!-- 3-Column Video Grid -->
+        <div class="video-grid">
+          
+          <!-- Video 1 -->
+          <div class="compact-video-card">
+            <div class="video-header">
+              <span class="video-title" title="Video 1: Evolution of Modern Transport">Video 1: Transport Evolution</span>
+              <span class="tag-pill tag-amber">History &amp; Shifts</span>
+            </div>
+            
+            <div class="video-player-container">
+              <iframe 
+                src="https://www.youtube.com/embed/cjxn0z1f7Pk" 
+                title="Evolution of Transport and Airport Systems" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <p class="video-caption">
+              <strong>Focus:</strong> Trace key technological milestones from early steam and combustion engines to interconnected multimodal hubs.
+            </p>
+          </div>
+
+          <!-- Video 2 -->
+          <div class="compact-video-card">
+            <div class="video-header">
+              <span class="video-title" title="Video 2: High-Speed Rail vs. Aviation">Video 2: High-Speed Rail vs Air</span>
+              <span class="tag-pill tag-emerald">Modal Shift</span>
+            </div>
+
+            <div class="video-player-container">
+              <iframe 
+                src="https://www.youtube.com/embed/a_fS9ddgoGs" 
+                title="High-Speed Rail vs Aviation: 600km Corridor Debate" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <p class="video-caption">
+              <strong>Focus:</strong> Evaluate infrastructure life-cycle emissions, door-to-door transit time, and land take across a 600 km corridor.
+            </p>
+          </div>
+
+          <!-- Video 3 -->
+          <div class="compact-video-card">
+            <div class="video-header">
+              <span class="video-title" title="Video 3: Decarbonizing Transport & DD&RS">Video 3: Future Decarbonization</span>
+              <span class="tag-pill tag-sky">Case Study</span>
+            </div>
+
+            <div class="video-player-container">
+              <iframe 
+                src="https://www.youtube.com/embed/SaV2m8jtaRI" 
+                title="Decarbonizing Transport and Sustainable Innovation" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <p class="video-caption">
+              <strong>Focus:</strong> Analyze fleet renewal economics, hydrogen/electric propulsion, and the business case for sustainable corporate mobility.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 2: FEATURED NEWS & CURRENT AFFAIRS (2 Columns)                    -->
+      <!-- ========================================================================= -->
+      <section class="section-panel">
+        <div class="section-header">
+          <span class="section-badge">02</span>
+          <h3 class="section-title">Featured Case Studies &amp; Policy Reports</h3>
+        </div>
+        <p class="section-intro">
+          Read these two industry reports examining statutory modal shift policies and urban transit transitions.
+        </p>
+
+        <div class="news-grid">
+          
+          <!-- Article 1 -->
+          <article class="news-card">
+            <div>
+              <div class="news-meta">
+                <span class="news-topic">Modal Shift &amp; Rail Policy</span>
+                <span class="news-source-tag">Industry Press</span>
+              </div>
+              <h4 class="news-heading">
+                The European Rail Revival: Banning Short-Haul Domestic Flights Where Rail Alternatives Exist
+              </h4>
+              <p class="news-snippet">
+                European policymakers have implemented statutory restrictions on domestic short-haul flights connecting cities with high-speed rail links under 2.5 hours. Explore how airlines are restructuring their feeder networks, forming intermodal partnerships, and auditing corporate travel emissions.
+              </p>
+            </div>
+            
+            <div class="news-footer">
+              <span class="read-time">Estimated read: 5 mins</span>
+              <a href="https://www.railtech.com" target="_blank" rel="noopener noreferrer" class="article-btn">
+                <span>Read Analysis</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="news-card">
+            <div>
+              <div class="news-meta">
+                <span class="news-topic">DD&amp;RS &amp; Urban Transit</span>
+                <span class="news-source-tag">Global Mobility</span>
+              </div>
+              <h4 class="news-heading">
+                Transit-Oriented Development: From Curitiba&#39;s BRT to the 15-Minute Polycentric City
+              </h4>
+              <p class="news-snippet">
+                Investigate how pioneer bus rapid transit (BRT) networks and integrated micro-mobility corridors dramatically reduce automobile dependency. Discover how municipal transport authorities leverage territorial equity to ensure accessible, low-carbon transit for all urban demographics.
+              </p>
+            </div>
+            
+            <div class="news-footer">
+              <span class="read-time">Estimated read: 4 mins</span>
+              <a href="https://www.itdp.org" target="_blank" rel="noopener noreferrer" class="article-btn">
+                <span>Read Case Study</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 3: CURATED WEB RESOURCES & REFERENCES (6 Items, 3x2 Grid)        -->
+      <!-- ========================================================================= -->
+      <section class="section-panel">
+        <div class="section-header">
+          <span class="section-badge">03</span>
+          <h3 class="section-title">Key Digital References &amp; Policy Portals</h3>
+        </div>
+        <p class="section-intro">
+          Authoritative institutional portals and technical data hubs to support your B2 technical reporting and DD&amp;RS case study preparations.
+        </p>
+
+        <div class="resources-grid">
+          
+          <!-- Resource 1 -->
+          <a href="https://www.itf-oecd.org" target="_blank" rel="noopener noreferrer" class="resource-card">
+            <div>
+              <div class="resource-header">
+                <span class="resource-tag">01 • Global Policy</span>
+                <span class="resource-icon">↗</span>
+              </div>
+              <h4 class="resource-name">ITF / OECD International Transport Forum</h4>
+              <p class="resource-desc">
+                Access global transport outlook models, carbon abatement pathways, and policy research on infrastructure life-cycle sustainability.
+              </p>
+            </div>
+            <div class="resource-action">
+              <span>Visit Portal</span>
+              <span aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <!-- Resource 2 -->
+          <a href="https://www.eea.europa.eu/themes/transport" target="_blank" rel="noopener noreferrer" class="resource-card">
+            <div>
+              <div class="resource-header">
+                <span class="resource-tag">02 • Emissions Data</span>
+                <span class="resource-icon">↗</span>
+              </div>
+              <h4 class="resource-name">European Environment Agency (EEA) Transport Hub</h4>
+              <p class="resource-desc">
+                Review empirical greenhouse gas inventory datasets comparing passenger-kilometer emissions between rail, road, and commercial aviation.
+              </p>
+            </div>
+            <div class="resource-action">
+              <span>Visit Portal</span>
+              <span aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <!-- Resource 3 -->
+          <a href="https://uic.org/passenger/highspeed/" target="_blank" rel="noopener noreferrer" class="resource-card">
+            <div>
+              <div class="resource-header">
+                <span class="resource-tag">03 • Rail Infrastructure</span>
+                <span class="resource-icon">↗</span>
+              </div>
+              <h4 class="resource-name">UIC International Union of Railways</h4>
+              <p class="resource-desc">
+                Explore technical benchmarks on high-speed rail corridors, signaling modernization (ERTMS), and rail decarbonization strategies.
+              </p>
+            </div>
+            <div class="resource-action">
+              <span>Visit Portal</span>
+              <span aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <!-- Resource 4 -->
+          <a href="https://www.icao.int/environmental-protection/CORSIA/Pages/default.aspx" target="_blank" rel="noopener noreferrer" class="resource-card">
+            <div>
+              <div class="resource-header">
+                <span class="resource-tag">04 • Aviation Policy</span>
+                <span class="resource-icon">↗</span>
+              </div>
+              <h4 class="resource-name">ICAO Environmental Protection &amp; CORSIA</h4>
+              <p class="resource-desc">
+                Official International Civil Aviation Organization framework governing aviation emissions standards, CORSIA, and SAF targets.
+              </p>
+            </div>
+            <div class="resource-action">
+              <span>Visit Portal</span>
+              <span aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <!-- Resource 5 -->
+          <a href="https://ourworldindata.org/co2-emissions-from-transport" target="_blank" rel="noopener noreferrer" class="resource-card">
+            <div>
+              <div class="resource-header">
+                <span class="resource-tag">05 • Interactive Data</span>
+                <span class="resource-icon">↗</span>
+              </div>
+              <h4 class="resource-name">Our World in Data: Transport Emissions</h4>
+              <p class="resource-desc">
+                Interactive charts illustrating the historical evolution of mobility emissions and per-capita travel carbon intensity since 1950.
+              </p>
+            </div>
+            <div class="resource-action">
+              <span>Visit Portal</span>
+              <span aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <!-- Resource 6 -->
+          <a href="https://www.etsglobal.org/fr/fr" target="_blank" rel="noopener noreferrer" class="resource-card">
+            <div>
+              <div class="resource-header">
+                <span class="resource-tag">06 • Exam Prep</span>
+                <span class="resource-icon">↗</span>
+              </div>
+              <h4 class="resource-name">Official ETS TOEIC Practice Hub</h4>
+              <p class="resource-desc">
+                Practice timed workplace transport reading comprehension, corporate travel memos, and correlative inversion sentence completions.
+              </p>
+            </div>
+            <div class="resource-action">
+              <span>Visit Portal</span>
+              <span aria-hidden="true">→</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- Stylized Skills Footer Area -->
+      <div class="w-full pt-3 pb-3 px-4 rounded-xl border border-slate-200/60 bg-slate-50/50 grid grid-cols-2 sm:grid-cols-4 gap-y-2.5 gap-x-4 shadow-sm vocab-footer">
+        <div class="flex flex-col vocab-item"><span class="text-sm font-black italic tracking-wide text-[#b85d42] vocab-word" style="color: #b85d42; font-style: italic;">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/ˈfluː.ən.si/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-xs font-bold uppercase text-[#c29b38] vocab-word" style="color: #c29b38; text-transform: uppercase;">Grammar</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/ˈɡræm.ər/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-[11px] font-extrabold normal-case text-slate-700 underline decoration-slate-300 vocab-word" style="color: #334155; text-decoration: underline; text-decoration-color: #cbd5e1;">Evolution of Transport</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/ˌev.əˈluː.ʃən əv ˈtræn.spɔːt/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-xs font-semibold italic text-[#9e4e37] vocab-word" style="color: #9e4e37; font-style: italic;">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/prəˌnʌn.siˈeɪ.shən/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-xs font-bold uppercase tracking-wider text-teal-700 vocab-word" style="color: #0f766e; text-transform: uppercase;">Comprehension</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/ˌkɒm.prɪˈhen.ʃən/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-sm font-black italic text-sky-700 vocab-word" style="color: #0369a1; font-style: italic;">discussion</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/dɪˈskʌʃ.ən/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-xs font-extrabold uppercase text-rose-600 vocab-word" style="color: #e11d48; text-transform: uppercase;">CORRECTION</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/kəˈrek.ʃən/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-[11px] font-extrabold tracking-widest text-[#c29b38] vocab-word" style="color: #c29b38; letter-spacing: 0.08em;">INTERACTION</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/ˌɪn.təˈræk.ʃən/</span></div>
+      </div>
+
+    </div>
+
+    <!-- Bottom status footer -->
+    <footer class="deck-footer bg-slate-50 border-t border-slate-200 px-3 py-2 text-[11px] text-slate-500 flex justify-between items-center shrink-0 rounded-b-2xl">
+      <span class="font-medium text-slate-700" style="font-weight: 600; color: #334155;">Active: Session 2 Additional Materials</span>
+      <span class="font-medium">GSEA Semester 1 English. Phil PARRIS LH/LAN</span>
+    </footer>
+
+  </div>
+</div>
+
+</body>
+</html>

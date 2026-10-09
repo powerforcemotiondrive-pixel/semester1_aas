@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="com.enac.gsea.course" version="1.0" 
+          xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" 
+          xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+  </metadata>
+  <organizations default="GSEA_ORG">
+    <organization identifier="GSEA_ORG">
+      <title>GSEA Semester 1 - Course Modules</title>
+      <item identifier="ITEM_MOD1">
+        <title>Module 1: Travel &amp; Transport</title>
+        <item identifier="ITEM_M1_S1" identifierref="RESOURCE_1">
+          <title>Session 1 - Introduction &amp; Travel Anecdote</title>
+        </item>
+        <item identifier="ITEM_M1_S2" identifierref="RESOURCE_1">
+          <title>Session 2 - Evolution of Transport</title>
+        </item>
+        <item identifier="ITEM_M1_S3" identifierref="RESOURCE_1">
+          <title>Session 3 - Overtourism</title>
+        </item>
+        <item identifier="ITEM_M1_S4" identifierref="RESOURCE_1">
+          <title>Session 4 - Sustainable and Eco-tourism</title>
+        </item>
+        <item identifier="ITEM_M1_S5" identifierref="RESOURCE_1">
+          <title>Session 5 - Formative Evaluation</title>
+        </item>
+      </item>
+      <item identifier="ITEM_MOD2">
+        <title>Module 2: Social Policy &amp; Innovation</title>
+        <item identifier="ITEM_M2_S1" identifierref="RESOURCE_1">
+          <title>Session 1: Extreme Weather</title>
+        </item>
+        <item identifier="ITEM_M2_S2" identifierref="RESOURCE_1">
+          <title>Session 2: Sustainable Cities</title>
+        </item>
+        <item identifier="ITEM_M2_S3" identifierref="RESOURCE_1">
+          <title>Session 3: Building and Supporting Arguments</title>
+        </item>
+        <item identifier="ITEM_M2_S4" identifierref="RESOURCE_1">
+          <title>Session 4: Biodiversity in Urban Areas and Airports</title>
+        </item>
+        <item identifier="ITEM_M2_S5" identifierref="RESOURCE_1">
+          <title>Session 5 - Formative Evaluation</title>
+        </item>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="RESOURCE_1" type="webcontent" adlcp:scormtype="sco" href="index.html">
+      <!-- Main course entry file -->
+      <file href="index.html"/>
+      <file href="ddrs.html"/>
+      <file href="ddrs1.html"/>
+      <file href="ddrs2.html"/>
+      <file href="ddrs3.html"/>
+      
+      <!-- Compiled Tailwind CSS stylesheets -->
+      <file href="dist/output.css"/>
+      <file href="output.css"/>
+      
+      <!-- Session 1 Course Pages -->
+      <file href="session1/plan1.html"/>
+      <file href="session1/obj1.html"/>
+      <file href="session1/rev1.html"/>
+      <file href="session1/admat1.html"/>
+      
+      <!-- Session 2 Course Pages -->
+      <file href="session2/plan2.html"/>
+      <file href="session2/obj2.html"/>
+      <file href="session2/rev1.html"/>
+      <file href="session2/rev2.html"/>
+      <file href="session2/admat1.html"/>
+      <file href="session2/admat2.html"/>
+      
+      <!-- Module Deck Card Images -->
+      <file href="images/card1.png"/>
+      <file href="images/card2.png"/>
+      <file href="images/card3.png"/>
+      <file href="images/card4.png"/>
+      <file href="images/card5.png"/>
+      
+      <!-- Module 2 Card Images -->
+      <file href="images/m2card1.png"/>
+      <file href="images/m2card2.png"/>
+      <file href="images/m2card3.png"/>
+      <file href="images/m2card4.png"/>
+      
+      <!-- Session 1 Subdirectory Images -->
+      <file href="session1/images/card1.png"/>
+      <file href="session1/images/card2.png"/>
+      <file href="session1/images/card3.png"/>
+      <file href="session1/images/card4.png"/>
+
+      <!-- Session 2 Subdirectory Images -->
+      <file href="session2/images/card1.png"/>
+      <file href="session2/images/card2.png"/>
+      <file href="session2/images/card3.png"/>
+      <file href="session2/images/card4.png"/>
+      
+      <!-- Student Worksheets & PDF Documents -->
+      <file href="agmod1.pdf"/>
+      <file href="ws1.pdf"/>
+    </resource>
+  </resources>
+</manifest>

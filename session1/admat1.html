@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 1 - Additional Materials &amp; Resources</title>
+  <!-- Remote Tailwind CSS -->
+  <link rel="stylesheet" href="../dist/output.css">
+  <link rel="stylesheet" href="https://powerforcemotiondrive-pixel.github.io/moodle-assets/output.css">
+
+  <style>
+    /* Robust, self-contained styling for resilient rendering across all browsers */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background-color: #f1f5f9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1e293b;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Container Canvas */
+    .deck-container {
+      width: 98%;
+      max-width: 1350px;
+      margin: 0 auto;
+      padding: 12px 8px;
+    }
+    @media (min-width: 640px) {
+      .deck-container {
+        width: 95%;
+        padding: 12px 16px;
+      }
+    }
+    @media (min-width: 1024px) {
+      .deck-container {
+        width: 90%;
+      }
+    }
+    .moodle-deck-canvas {
+      background-color: #ffffff;
+      border-radius: 16px;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Header styling */
+    .deck-header {
+      background-color: #b85d42;
+      color: #ffffff;
+      padding: 18px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid #9e4e37;
+      background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.03) 10px, rgba(255, 255, 255, 0.03) 20px);
+    }
+    .header-icon-box {
+      background-color: #c29b38;
+      padding: 10px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: #c29b38;
+      color: #ffffff;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 12px;
+      text-decoration: none;
+      transition: background-color 0.15s ease, transform 0.1s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .back-btn:hover {
+      background-color: #a8842c;
+      transform: translateY(-1px);
+    }
+
+    /* Content Area */
+    .deck-body {
+      background-color: #ffffff;
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    @media (max-width: 640px) {
+      .deck-body {
+        padding: 16px 14px;
+        gap: 18px;
+      }
+    }
+
+    /* Unified Section Panels: Clean, shaded background container for distinct section separation */
+    .section-panel {
+      background-color: #f8fafc; /* subtle slate tint for elegant contrast */
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 20px 22px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    @media (max-width: 640px) {
+      .section-panel {
+        padding: 14px 14px;
+      }
+    }
+
+    /* Section Headers */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .section-badge {
+      background-color: #b85d42;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+    }
+    .section-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #b85d42;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin: 0;
+    }
+    .section-intro {
+      font-size: 12px;
+      color: #64748b;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* Section 1: Evenly Spaced 3-Column Video Grid */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      width: 100%;
+    }
+    @media (max-width: 720px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .compact-video-card {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 14px 16px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 0; /* Prevents grid blowout */
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .compact-video-card:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+    .video-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .video-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .tag-pill {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .tag-amber {
+      background-color: #fef3c7;
+      color: #92400e;
+    }
+    .tag-emerald {
+      background-color: #d1fae5;
+      color: #065f46;
+    }
+    .tag-sky {
+      background-color: #e0f2fe;
+      color: #0369a1;
+    }
+    .video-player-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background-color: #0f172a;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15);
+    }
+    .video-player-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+    .video-caption {
+      font-size: 11px;
+      color: #64748b;
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    /* Section 2: News Articles Grid (2 Equal Columns) */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      width: 100%;
+    }
+    @media (max-width: 680px) {
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .news-card {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 18px 20px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      min-width: 0;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .news-card:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    .news-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+    }
+    .news-topic {
+      font-weight: 800;
+      color: #b85d42;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .news-source-tag {
+      background-color: #f1f5f9;
+      color: #475569;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .news-heading {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.4;
+      margin: 6px 0;
+    }
+    .news-snippet {
+      font-size: 12px;
+      color: #475569;
+      line-height: 1.55;
+      margin: 0;
+    }
+    .news-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 12px;
+    }
+    .read-time {
+      font-size: 11px;
+      color: #94a3b8;
+      font-weight: 500;
+    }
+    .article-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: #b85d42;
+      color: #ffffff;
+      padding: 6px 13px;
+      border-radius: 7px;
+      font-size: 11px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.15s ease;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    .article-btn:hover {
+      background-color: #9e4e37;
+    }
+
+    /* Section 3: Web Resources (6 Items in 3x2 Grid) */
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      width: 100%;
+    }
+    @media (max-width: 900px) {
+      .resources-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 580px) {
+      .resources-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .resource-card {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px 18px;
+      text-decoration: none;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      min-width: 0;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+    }
+    .resource-card:hover {
+      border-color: #c29b38;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(194, 155, 56, 0.15);
+    }
+    .resource-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .resource-tag {
+      font-size: 10px;
+      font-weight: 800;
+      color: #c29b38;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .resource-icon {
+      font-size: 12px;
+      font-weight: 700;
+      color: #94a3b8;
+      transition: color 0.15s ease;
+    }
+    .resource-card:hover .resource-icon {
+      color: #c29b38;
+    }
+    .resource-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 3px 0;
+      transition: color 0.15s ease;
+    }
+    .resource-card:hover .resource-name {
+      color: #b85d42;
+    }
+    .resource-desc {
+      font-size: 11px;
+      color: #64748b;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .resource-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #b85d42;
+    }
+
+    /* Bottom Vocabulary Ribbon */
+    .vocab-footer {
+      border: 1px solid rgba(226, 232, 240, 0.6);
+      background-color: rgba(248, 250, 252, 0.5);
+      border-radius: 12px;
+      padding: 12px 16px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 16px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+    @media (min-width: 640px) {
+      .vocab-footer {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+    .vocab-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .vocab-word {
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .vocab-ipa {
+      font-size: 8px;
+      color: #94a3b8;
+      font-family: monospace;
+      margin-top: 1px;
+    }
+
+    /* Deck Footer */
+    .deck-footer {
+      background-color: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      padding: 10px 18px;
+      font-size: 11px;
+      color: #64748b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Custom Tailwind adjustments for Warm Editorial / Terracotta & Oat theme -->
+<div class="w-[98%] sm:w-[95%] lg:w-[90%] max-w-[1350px] mx-auto px-2 sm:px-4 py-3 font-sans deck-container">
+  <div class="moodle-deck-canvas bg-white rounded-2xl shadow-xl border border-slate-300 flex flex-col overflow-hidden">
+    
+    <!-- Header bar -->
+    <header class="deck-header">
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <div class="header-icon-box">
+          <!-- Multimedia Library SVG Icon -->
+          <svg width="20" height="20" style="width: 20px; height: 20px;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+          </svg>
+        </div>
+        <div>
+          <span style="display: block; font-size: 11px; font-weight: 900; letter-spacing: 0.08em; color: #fde047; text-transform: uppercase;">
+            GSEA SEMESTER 1 - GENERAL ENGLISH MODULE 1
+          </span>
+          <h1 style="font-size: 15px; font-weight: 700; color: #ffffff; margin: 2px 0 0 0;">
+            Session 1 - Additional Materials &amp; Resources
+          </h1>
+        </div>
+      </div>
+      <!-- Back to Module / Session Link -->
+      <div class="flex items-center space-x-2 shrink-0">
+        <a class="flex items-center space-x-1.5 bg-[#c29b38] hover:bg-[#a8842c] active:bg-[#8f6e21] text-white px-3.5 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-md cursor-pointer shrink-0 back-btn"
+           href="../index.html">
+          <svg width="14" height="14" style="width: 14px; height: 14px;" class="w-3.5 h-3.5 stroke-[2.5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path>
+          </svg>
+          <span>Back to Module 1</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Workspace Body -->
+    <div class="deck-body">
+      
+      <!-- Introduction & Badge Area -->
+      <div style="display: flex; flex-direction: column; gap: 8px; padding-bottom: 4px; border-bottom: 1px solid #f1f5f9;">
+        <div>
+          <span style="display: inline-block; background-color: #b85d42; color: #ffffff; padding: 4px 12px; border-radius: 9999px; font-size: 11px; font-weight: 800; border: 1px solid #9e4e37; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+            GSEA Supplementary Resource Hub
+          </span>
+        </div>
+        <h2 style="font-size: 22px; font-weight: 900; color: #b85d42; margin: 4px 0 0 0; letter-spacing: -0.02em;">
+          Session 1 Multimedia, Case Studies &amp; Research Links
+        </h2>
+        <p style="font-size: 13px; color: #64748b; line-height: 1.55; margin: 0; max-width: 950px;">
+          Explore curated audio-visual material, real-world current affairs articles, and authoritative reference portals to expand your vocabulary, deepen your DD&amp;RS insights, and prepare for class discussions.
+        </p>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 1: YOUTUBE VIDEO VIEWERS (Shaded Panel, 3 Evenly Spaced)          -->
+      <!-- ========================================================================= -->
+      <section class="section-panel">
+        <div class="section-header">
+          <span class="section-badge">01</span>
+          <h3 class="section-title">Video Viewers &amp; Analysis</h3>
+        </div>
+        <p class="section-intro">
+          Watch the accompanying video clips below and take notes on relevant travel collocations, tone, and arguments.
+        </p>
+
+        <!-- 3-Column Evenly Spaced Video Grid across the row -->
+        <div class="video-grid">
+          
+          <!-- Video 1 -->
+          <div class="compact-video-card">
+            <div class="video-header">
+              <span class="video-title" title="Video 1: Sustainable Aviation">Video 1: Sustainable Aviation</span>
+              <span class="tag-pill tag-amber">Discussion</span>
+            </div>
+            
+            <!-- 🔗 [LINK 1/11: VIDEO 1 EMBED URL] - Replace src below with your YouTube embed link -->
+            <div class="video-player-container">
+              <iframe 
+                src="https://www.youtube.com/embed/a_fS9ddgoGs" 
+                title="YouTube video player 1 - Sustainable Aviation" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <p class="video-caption">
+              <strong>Focus:</strong> Industry terminology regarding carbon offsetting, sustainable fleet modernization, and passenger choices.
+            </p>
+          </div>
+
+          <!-- Video 2 -->
+          <div class="compact-video-card">
+            <div class="video-header">
+              <span class="video-title" title="Video 2: TOEIC Listening Strategies">Video 2: TOEIC Listening</span>
+              <span class="tag-pill tag-emerald">Strategy</span>
+            </div>
+
+            <!-- 🔗 [LINK 2/11: VIDEO 2 EMBED URL] - Replace src below with your YouTube embed link -->
+            <div class="video-player-container">
+              <iframe 
+                src="https://www.youtube.com/embed/SaV2m8jtaRI" 
+                title="YouTube video player 2 - TOEIC Listening" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <p class="video-caption">
+              <strong>Focus:</strong> Analyze conversational tone in airport announcements and multi-speaker dialogues (TOEIC Parts 3 &amp; 4).
+            </p>
+          </div>
+
+          <!-- Video 3 -->
+          <div class="compact-video-card">
+            <div class="video-header">
+              <span class="video-title" title="Video 3: Airport Infrastructure & DD&RS">Video 3: Airport Operations</span>
+              <span class="tag-pill tag-sky">Case Study</span>
+            </div>
+
+            <!-- 🔗 [LINK 3/11: VIDEO 3 EMBED URL] - Replace src below with your YouTube embed link -->
+            <div class="video-player-container">
+              <iframe 
+                src="https://www.youtube.com/embed/cjxn0z1f7Pk" 
+                title="YouTube video player 3 - Airport Infrastructure & Operations" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <p class="video-caption">
+              <strong>Focus:</strong> Evaluate regional transit hubs, electric ground support equipment (e-GSE), and terminal energy efficiency.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 2: FEATURED NEWS & CURRENT AFFAIRS (2 Equal Columns)              -->
+      <!-- ========================================================================= -->
+      <section class="section-panel">
+        <div class="section-header">
+          <span class="section-badge">02</span>
+          <h3 class="section-title">Featured News &amp; Current Affairs</h3>
+        </div>
+        <p class="section-intro">
+          Read these two industry reports examining ecological responsibility and evolving travel patterns.
+        </p>
+
+        <div class="news-grid">
+          
+          <!-- Article 1 -->
+          <article class="news-card">
+            <div>
+              <div class="news-meta">
+                <span class="news-topic">Aviation &amp; Climate</span>
+                <span class="news-source-tag">Industry Press</span>
+              </div>
+              <h4 class="news-heading">
+                Decarbonizing Regional Transport: The Race Toward Sustainable Aviation Fuels (SAF)
+              </h4>
+              <p class="news-snippet">
+                European air corridors and major aerospace hubs are accelerating mandates for SAF adoption. Explore how airlines are restructuring their supply chains, addressing cost premiums, and measuring real-world emissions reductions.
+              </p>
+            </div>
+            
+            <div class="news-footer">
+              <span class="read-time">Estimated read: 4 mins</span>
+              <!-- 🔗 [LINK 4/11: NEWS ARTICLE 1 URL] - Replace href below with Article 1 link -->
+              <a href="https://e-campus.enac.fr/moodle" target="_blank" rel="noopener noreferrer" class="article-btn">
+                <span>Read Article</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="news-card">
+            <div>
+              <div class="news-meta">
+                <span class="news-topic">DD&amp;RS &amp; Overtourism</span>
+                <span class="news-source-tag">Global Mobility</span>
+              </div>
+              <h4 class="news-heading">
+                Balancing Resident Well-Being &amp; Tourism Influx: New Regulatory Trends
+              </h4>
+              <p class="news-snippet">
+                Historic capitals and coastal regions are introducing dynamic access fees and high-speed rail incentives to disperse visitor numbers. Discover how city planners evaluate community impact and infrastructure longevity.
+              </p>
+            </div>
+            
+            <div class="news-footer">
+              <span class="read-time">Estimated read: 5 mins</span>
+              <!-- 🔗 [LINK 5/11: NEWS ARTICLE 2 URL] - Replace href below with Article 2 link -->
+              <a href="https://e-campus.enac.fr/moodle" target="_blank" rel="noopener noreferrer" class="article-btn">
+                <span>Read Article</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 3: CURATED WEB RESOURCES & REFERENCES (6 Items, 3x2 Grid)        -->
+      <!-- ========================================================================= -->
+      <section class="section-panel">
+        <div class="section-header">
+          <span class="section-badge">03</span>
+          <h3 class="section-title">Curated Web Resources &amp; References</h3>
+        </div>
+        <p class="section-intro">
+          Access these 6 authoritative portals for grammar reference, vocabulary enrichment, and DD&amp;RS research.
+        </p>
+
+        <div class="resources-grid">
+          
+          <!-- Resource 1 -->
+          <!-- 🔗 [LINK 6/11: RESOURCE 1 URL] - Replace href below with Resource 1 link -->
+          <a href="https://www.etsglobal.org/fr/fr" target="_blank" rel="noopener noreferrer" class="resource-card">
+            <div>
+              <div class="resource-header">
+                <span class="resource-tag">01 • Exam Prep</span>
+                <span class="resource-icon">↗</span>
+              </div>
+              <h4 class="resource-name">Official ETS TOEIC Hub</h4>
+              <p class="resource-desc">
+                Review sample test questions, test timing rubrics, and the official score mapping guide for B2/C1 levels.
+              </p>
+            </div>
+            <div class="resource-action">
+              <span>Visit Resource</span>
+              <span aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <!-- Resource 2 -->
+          <!-- 🔗 [LINK 7/11: RESOURCE 2 URL] - Replace href below with Resource 2 link -->
+          <a href="https://www.iata.org/en/programs/sustainability/" target="_blank" rel="noopener noreferrer" class="resource-card">
+            <div>
+              <div class="resource-header">
+                <span class="resource-tag">02 • Sustainability</span>
+                <span class="resource-icon">↗</span>
+              </div>
+              <h4 class="resource-name">IATA NetZero &amp; Aviation Sustainability</h4>
+              <p class="resource-desc">
+                Authoritative data on the international airline industry's roadmap to net-zero carbon emissions by 2050.
+              </p>
+            </div>
+            <div class="resource-action">
+              <span>Visit Resource</span>
+              <span aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <!-- Resource 3 -->
+          <!-- 🔗 [LINK 8/11: RESOURCE 3 URL] - Replace href below with Resource 3 link -->
+          <a href="https://www.unwto.org/sustainable-development" target="_blank" rel="noopener noreferrer" class="resource-card">
+            <div>
+              <div class="resource-header">
+                <span class="resource-tag">03 • DD&amp;RS Guidelines</span>
+                <span class="resource-icon">↗</span>
+              </div>
+              <h4 class="resource-name">UN Tourism Sustainable Development</h4>
+              <p class="resource-desc">
+                Global framework policies outlining sustainable destination management and community-based tourism (CBT).
+              </p>
+            </div>
+            <div class="resource-action">
+              <span>Visit Resource</span>
+              <span aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <!-- Resource 4 -->
+          <!-- 🔗 [LINK 9/11: RESOURCE 4 URL] - Replace href below with Resource 4 link -->
+          <a href="https://dictionary.cambridge.org" target="_blank" rel="noopener noreferrer" class="resource-card">
+            <div>
+              <div class="resource-header">
+                <span class="resource-tag">04 • Collocations</span>
+                <span class="resource-icon">↗</span>
+              </div>
+              <h4 class="resource-name">Cambridge English Collocations &amp; Idioms</h4>
+              <p class="resource-desc">
+                Check high-frequency B2/C1 travel combinations, prepositions with transit verbs, and formal business phrases.
+              </p>
+            </div>
+            <div class="resource-action">
+              <span>Visit Resource</span>
+              <span aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <!-- Resource 5 -->
+          <!-- 🔗 [LINK 10/11: RESOURCE 5 URL] - Replace href below with Resource 5 link -->
+          <a href="https://www.bbc.com/travel" target="_blank" rel="noopener noreferrer" class="resource-card">
+            <div>
+              <div class="resource-header">
+                <span class="resource-tag">05 • Travel Anecdotes</span>
+                <span class="resource-icon">↗</span>
+              </div>
+              <h4 class="resource-name">BBC Travel Features &amp; Culture</h4>
+              <p class="resource-desc">
+                Engaging journalistic articles and personal narrative essays to inspire your Session 1 travel anecdotes.
+              </p>
+            </div>
+            <div class="resource-action">
+              <span>Visit Resource</span>
+              <span aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <!-- Resource 6 -->
+          <!-- 🔗 [LINK 11/11: RESOURCE 6 URL] - Replace href below with Resource 6 link -->
+          <a href="https://www.icao.int/environmental-protection/CORSIA/Pages/default.aspx" target="_blank" rel="noopener noreferrer" class="resource-card">
+            <div>
+              <div class="resource-header">
+                <span class="resource-tag">06 • Environmental Policy</span>
+                <span class="resource-icon">↗</span>
+              </div>
+              <h4 class="resource-name">ICAO CORSIA &amp; Climate Action</h4>
+              <p class="resource-desc">
+                International Civil Aviation Organization carbon offsetting and reduction scheme policies for international aviation.
+              </p>
+            </div>
+            <div class="resource-action">
+              <span>Visit Resource</span>
+              <span aria-hidden="true">→</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- Stylized Skills Footer Area (matches plan1.html & obj1.html) -->
+      <div class="w-full pt-3 pb-3 px-4 rounded-xl border border-slate-200/60 bg-slate-50/50 grid grid-cols-2 sm:grid-cols-4 gap-y-2.5 gap-x-4 shadow-sm vocab-footer">
+        <div class="flex flex-col vocab-item"><span class="text-sm font-black italic tracking-wide text-[#b85d42] vocab-word" style="color: #b85d42; font-style: italic;">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/ˈfluː.ən.si/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-xs font-bold uppercase text-[#c29b38] vocab-word" style="color: #c29b38; text-transform: uppercase;">Grammar</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/ˈɡræm.ər/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-[11px] font-extrabold normal-case text-slate-700 underline decoration-slate-300 vocab-word" style="color: #334155; text-decoration: underline; text-decoration-color: #cbd5e1;">Aeronautical Vocabulary</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/ˌer.əˈnɔː.tɪ.kəl vəˈkæb.jə.lə.ri/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-xs font-semibold italic text-[#9e4e37] vocab-word" style="color: #9e4e37; font-style: italic;">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/prəˌnʌn.siˈeɪ.shən/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-xs font-bold uppercase tracking-wider text-teal-700 vocab-word" style="color: #0f766e; text-transform: uppercase;">Comprehension</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/ˌkɒm.prɪˈhen.ʃən/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-sm font-black italic text-sky-700 vocab-word" style="color: #0369a1; font-style: italic;">discussion</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/dɪˈskʌʃ.ən/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-xs font-extrabold uppercase text-rose-600 vocab-word" style="color: #e11d48; text-transform: uppercase;">CORRECTION</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/kəˈrek.ʃən/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-[11px] font-extrabold tracking-widest text-[#c29b38] vocab-word" style="color: #c29b38; letter-spacing: 0.08em;">INTERACTION</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/ˌɪn.təˈræk.ʃən/</span></div>
+      </div>
+
+    </div>
+
+    <!-- Bottom status footer -->
+    <footer class="deck-footer bg-slate-50 border-t border-slate-200 px-3 py-2 text-[11px] text-slate-500 flex justify-between items-center shrink-0 rounded-b-2xl">
+      <span class="font-medium text-slate-700" style="font-weight: 600; color: #334155;">Active: Session 1 Additional Materials</span>
+      <span class="font-medium">GSEA Semester 1 English. Phil PARRIS LH/LAN</span>
+    </footer>
+
+  </div>
+</div>
+
+</body>
+</html>

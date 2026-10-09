@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSEA Semester 1 - Course Modules</title>
+  <!-- Tailwind CSS CLI Output -->
+  <link rel="stylesheet" href="https://powerforcemotiondrive-pixel.github.io/moodle-assets/output.css">
+  <style>
+    /* Theme transitions */
+    #deck-header, #deck-icon-box, #card-tag-wrapper, #card-heading, #prev-btn, #next-btn, #counter-badge, #ecampus-btn {
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    /* Floating module box styling - separated box positioned under the frame to the right */
+    .module-selector-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+      padding-right: 16px;
+    }
+    @media (min-width: 640px) {
+      .module-selector-wrapper {
+        padding-right: 24px;
+      }
+    }
+
+    .module-selector-box {
+      display: inline-flex;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 6px 10px;
+      border-radius: 14px;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    }
+
+    .module-buttons-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center">
+
+  <!-- Custom Tailwind adjustments -->
+  <div class="w-[98%] sm:w-[95%] lg:w-[90%] max-w-[1350px] mx-auto px-2 sm:px-4 py-3 font-sans">
+    <!-- Main Deck Container -->
+    <div class="moodle-deck-canvas bg-white rounded-2xl shadow-2xl border border-slate-300 flex flex-col overflow-hidden">
+      
+      <!-- Header bar -->
+      <header id="deck-header" class="bg-[#b85d42] text-white px-4 py-4 sm:px-6 sm:py-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#9e4e37] shrink-0 relative overflow-hidden" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.03) 10px, rgba(255, 255, 255, 0.03) 20px);">
+        <div class="flex items-center space-x-3 sm:space-x-4">
+          <div id="deck-icon-box" class="bg-[#c29b38] p-2.5 rounded-lg text-white shadow-md flex items-center justify-center">
+            <!-- Theme Icon -->
+            <svg width="20" height="20" style="width: 20px; height: 20px;" class="w-5 h-5 text-white shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+          </div>
+          <div>
+            <span id="deck-supertitle" class="block text-xs sm:text-sm md:text-base font-black tracking-wider text-[#fde047] uppercase">GSEA SEMESTER 1 - MODULE 1: TRAVEL, TRANSPORT &amp; LEISURE (2)</span>
+            <h1 id="deck-title" class="text-sm sm:text-base font-bold text-white mt-0.5">Loading Module...</h1>
+          </div>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="flex items-center space-x-2">
+          <span id="counter-badge" class="text-xs font-medium text-white bg-[#9e4e37] px-2.5 py-1 rounded-md border border-[#853f2c] mr-1 shadow-md">1 of 6</span>
+          <button id="prev-btn" class="flex items-center space-x-1 bg-[#9e4e37] hover:bg-[#853f2c] active:bg-[#6e3222] text-slate-100 px-3 py-1.5 rounded-lg font-semibold text-xs transition-all border border-[#853f2c] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer shadow-md" type="button">
+            <span class="pointer-events-none">Previous</span>
+          </button>
+          <button id="next-btn" class="flex items-center space-x-1 bg-[#c29b38] hover:bg-[#a8842c] active:bg-[#8f6e21] text-white px-3 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-md disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer" type="button">
+            <span class="pointer-events-none">Next</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Workspace Body -->
+      <div class="flex-1 flex flex-col md:flex-row overflow-hidden">
+        <!-- Sidebar Directory -->
+        <div class="w-full md:w-64 bg-slate-50 border-r border-slate-200 flex flex-col shrink-0 max-h-32 md:max-h-none overflow-y-auto">
+          <div class="p-2.5 bg-slate-200/70 border-b border-slate-200 text-[11px] font-bold uppercase tracking-wider text-slate-600">
+            Contents Menu
+          </div>
+          <div id="deck-menu" class="divide-y divide-slate-200">
+            <!-- Populated via script -->
+          </div>
+        </div>
+
+        <!-- Main Content Panel Area -->
+        <div class="flex-1 bg-white p-4 sm:p-6 flex flex-col justify-between overflow-y-auto">
+          <!-- Content Card Details with Borderless Image Option -->
+          <div class="space-y-4">
+            <div class="flex flex-col lg:flex-row gap-4 items-start justify-between">
+              <div class="space-y-3 flex-1">
+                <!-- Restyled badge -->
+                <div id="card-tag-wrapper" class="inline-flex items-center space-x-2 bg-[#b85d42] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#9e4e37] shadow-sm">
+                  <span id="card-tag">Section 1</span>
+                </div>
+                <h2 id="card-heading" class="text-lg sm:text-xl font-black text-[#b85d42] tracking-tight"></h2>
+                <div id="card-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed space-y-2"></div>
+              </div>
+              <!-- Image Container with Subtle Drop Shadow -->
+              <div id="image-container" class="w-full sm:w-48 h-48 rounded-xl shrink-0 overflow-hidden shadow-md hidden" style="box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);">
+                <img id="card-image" class="w-full h-full object-cover" alt="Module graphic">
+              </div>
+            </div>
+
+            <!-- Stylized Skills Footer Area -->
+            <div id="card-skills" class="w-full pt-3 pb-3 px-4 rounded-xl border border-slate-200/60 bg-slate-50/50 grid grid-cols-2 sm:grid-cols-4 gap-y-2.5 gap-x-4 shadow-sm"></div>
+          </div>
+
+          <!-- Action Link Footer Inside Card -->
+          <div class="pt-4 border-t border-slate-100 flex flex-col items-start gap-2.5 mt-4">
+            <div id="footer-instruction" class="text-[11px] text-slate-500 font-medium">Click below to open this specific page directly in your workspace tab.</div>
+            <!-- Dynamic Action Links Container -->
+            <div id="action-links-container" class="w-full flex flex-wrap items-center gap-2"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom status footer -->
+      <footer class="bg-slate-50 border-t border-slate-200 px-3 py-2 text-[11px] text-slate-500 flex justify-between items-center shrink-0 rounded-b-2xl">
+        <span id="footer-status" class="font-medium text-slate-700">Ready</span>
+        <span class="font-medium">GSEA Semester 1 General English. Phil PARRIS LH/LAN</span>
+      </footer>
+    </div>
+
+    <!-- Module Selector Bar at Bottom - Compact, Neat & Positioned under Worksheet button -->
+    <div class="module-selector-wrapper">
+      <!-- Separate Box for eCampus Link Button -->
+      <div class="module-selector-box">
+        <a id="ecampus-btn"
+           href="https://e-campus.enac.fr/moodle/"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Visit eCampus Moodle"
+           class="px-4 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-bold tracking-wide transition-all border cursor-pointer select-none inline-flex items-center justify-center no-underline shadow-md"
+           style="background-color: #b85d42; border-color: #9e4e37; border-width: 1.5px; border-style: solid; color: #ffffff; box-shadow: 0 2px 8px rgba(184, 93, 66, 0.25);">
+          eCampus
+        </a>
+      </div>
+      <!-- Separate Box for Module Selection Buttons -->
+      <div class="module-selector-box">
+        <div id="module-selector-container" class="module-buttons-group">
+          <!-- Populated via script -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script Configuration -->
+  <script>
+    const createModulePages = (modNumber) => {
+      const sessionTitles = {
+        1: {
+          s1: "Session 1 - Introduction & Travel Anecdotes",
+          s2: "Session 2 - Evolution of Transport",
+          s3: "Session 3 - Overtourism",
+          s4: "Session 4 - Sustainable and Eco-tourism"
+        },
+        2: {
+          s1: "Session 1: Extreme Weather",
+          s2: "Session 2: Sustainable Cities",
+          s3: "Session 3: Building and Supporting Arguments",
+          s4: "Session 4: Biodiversity in Urban Areas and Airports"
+        },
+        3: {
+          s1: "Session 1: Artificial Intelligence",
+          s2: "Session 2: Future of travel",
+          s3: "Session 3: Debate and Critical Thinking",
+          s4: "Session 4: Biometrics and digital identity"
+        }
+      };
+
+      const titles = sessionTitles[modNumber] || sessionTitles[1];
+
+      const moduleImages = {
+        1: {
+          card1: "images/card1.png",
+          card2: "images/card2.png",
+          card3: "images/card3.png",
+          card4: "images/card4.png"
+        },
+        2: {
+          card1: "images/m2card1.png",
+          card2: "images/m2card2.png",
+          card3: "images/m2card3.png",
+          card4: "images/m2card4.png"
+        },
+        3: {
+          card1: "images/m3card1.png",
+          card2: "images/m3card2.png",
+          card3: "images/m3card3.png",
+          card4: "images/m3card4.png"
+        }
+      };
+
+      const images = moduleImages[modNumber] || moduleImages[1];
+
+      return [
+        {
+          tag: `Module ${modNumber} - Session 1`,
+          title: titles.s1,
+          description: "Welcome to our new module on Social Policy, Research and Innovation, and Environmental Management! In our interactive sessions, we will be working extensively on discussion, grammar correction, DDRS, and TOEIC-related exercises to build your professional proficiency.<br><br><em>Subject overview:</em> An introduction to travel and transport themes alongside personal travel anecdotes.<br><br>All our work this module builds progressively toward your Formative Evaluation in Session 5 (Design an eco-friendly holiday itinerary or compare two cities with different tourism policies), for which you will receive a GO / NO GO.",
+          url: "session1/admat1.html",
+          additionalMaterialsUrl: "session1/admat1.html",
+          pdfUrl: "agmod1.pdf",
+          lessonPlanUrl: "session1/plan1.html",
+          objectivesUrl: "session1/obj1.html",
+          classReviewUrl: "session1/rev1.html",
+          imageUrl: images.card1
+        },
+        {
+          tag: `Module ${modNumber} - Session 2`,
+          title: titles.s2,
+          description: "Welcome back! Continuing our focus on Social Policy, Research, Innovation, and Environmental Management, we will be working on discussion, grammar correction, DDRS, and TOEIC-related exercises.<br><br><em>Subject overview:</em> Exploring how transport systems have evolved over time and their societal impacts.<br><br>All our work this module builds progressively toward your Formative Evaluation in Session 5 (Design an eco-friendly holiday itinerary or compare two cities with different tourism policies), for which you will receive a GO / NO GO.",
+          url: "session2/admat1.html",
+          additionalMaterialsUrl: "session2/admat1.html",
+          pdfUrl: "agmod1.pdf",
+          lessonPlanUrl: "session2/plan2.html",
+          objectivesUrl: "session2/obj2.html",
+          classReviewUrl: "session2/rev1.html",
+          imageUrl: images.card2
+        },
+        {
+          tag: `Module ${modNumber} - Session 3`,
+          title: titles.s3,
+          description: "Welcome to Session 3! In this class, we will be working on discussion, grammar correction, DDRS, and TOEIC-related exercises within the framework of Social Policy, Research and Innovation, and Environmental Management.<br><br><em>Subject overview:</em> Analyzing the environmental and social challenges brought by overtourism in popular destinations.<br><br>All our work this module builds progressively toward your Formative Evaluation in Session 5 (Design an eco-friendly holiday itinerary or compare two cities with different tourism policies), for which you will receive a GO / NO GO.",
+          url: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266758",
+          pdfUrl: "agmod1.pdf",
+          lessonPlanUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266897",
+          objectivesUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266889",
+          classReviewUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=267460",
+          imageUrl: images.card3
+        },
+        {
+          tag: `Module ${modNumber} - Session 4`,
+          title: titles.s4,
+          description: "Welcome to Session 4! As we examine environmental management and green innovation, we will continue working on discussion, grammar correction, DDRS, and TOEIC-related exercises.<br><br><em>Subject overview:</em> Investigating sustainable practices, green innovation, and eco-friendly alternatives in modern tourism.<br><br>All our work this module builds progressively toward your Formative Evaluation in Session 5 (Design an eco-friendly holiday itinerary or compare two cities with different tourism policies), for which you will receive a GO / NO GO.",
+          url: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266780",
+          pdfUrl: "agmod1.pdf",
+          lessonPlanUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=267455",
+          objectivesUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266891",
+          classReviewUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=267462",
+          imageUrl: images.card4
+        },
+        {
+          tag: `Module ${modNumber} - Session 5`,
+          title: "Session 5 - Formative Evaluation",
+          description: "Welcome to Session 5! Throughout this module, we have worked on discussion, grammar correction, DDRS, and TOEIC-related exercises.<br><br><em>Subject overview:</em> Formative Evaluation — Design an eco-friendly holiday itinerary or compare two cities with different tourism policies + Targets.<br><br>For this session's evaluation, you will receive a GO / NO GO based on your performance.",
+          url: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266604",
+          pdfUrl: "agmod1.pdf",
+          lessonPlanUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=267409",
+          objectivesUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266887",
+          imageUrl: "images/card6.png"
+        },
+        {
+          tag: `Module ${modNumber} - Focus`,
+          title: "DDRS - Framework & Core Principles",
+          description: "<strong>Definition:</strong> DDRS (Développement Durable et Responsabilité Sociétale / Sustainable Development & Social Responsibility) is the guiding operational framework that integrates ecological protection, social equity, and ethical governance into modern corporate and public policy.<br><br><strong>Basic areas covered:</strong> Environmental preservation and carbon reduction, social wellbeing and community impact, and ethical business innovation.<br><br><strong>Importance of discussing these areas:</strong> Discussing DDRS topics is vital to equip future transport and aviation professionals with the critical thinking needed to balance continuous operational growth with long-term environmental and social sustainability.",
+          detailsUrl: `ddrs${modNumber}.html`,
+          imageUrl: "images/card5.png"
+        }
+      ];
+    };
+
+    const modulesData = [
+      {
+        id: 1,
+        name: "Module 1",
+        subtitle: "Travel, Transport & Leisure",
+        supertitle: "GSEA SEMESTER 1 - MODULE 1: TRAVEL, TRANSPORT & LEISURE (2)",
+        // Terracotta Theme (Original)
+        primary: "#b85d42",
+        primaryDark: "#9e4e37",
+        primaryDarker: "#853f2c",
+        accent: "#c29b38",
+        accentDark: "#a8842c",
+        accentDarker: "#8f6e21",
+        highlight: "#fde047",
+        activeMenuBg: "rgba(254, 243, 199, 0.8)",
+        activeMenuText: "#b85d42",
+        activeMenuBorder: "#c29b38",
+        pages: createModulePages(1)
+      },
+      {
+        id: 2,
+        name: "Module 2",
+        subtitle: "Weather & the Environment",
+        supertitle: "GSEA SEMESTER 1 - MODULE 2: WEATHER & THE ENVIRONMENT",
+        // Slate Blue Theme
+        primary: "#365f88",
+        primaryDark: "#274868",
+        primaryDarker: "#1d364f",
+        accent: "#4d78a3",
+        accentDark: "#3b6284",
+        accentDarker: "#2d4d6a",
+        highlight: "#bae6fd",
+        activeMenuBg: "rgba(54, 95, 136, 0.08)",
+        activeMenuText: "#365f88",
+        activeMenuBorder: "#4d78a3",
+        pages: createModulePages(2)
+      },
+      {
+        id: 3,
+        name: "Module 3",
+        subtitle: "New Technology",
+        supertitle: "GSEA SEMESTER 1 - MODULE 3: NEW TECHNOLOGY",
+        // Olive Green Theme
+        primary: "#526e38",
+        primaryDark: "#3e5429",
+        primaryDarker: "#2c3c1d",
+        accent: "#6c8c4c",
+        accentDark: "#57723c",
+        accentDarker: "#43592d",
+        highlight: "#d9f99d",
+        activeMenuBg: "rgba(82, 110, 56, 0.08)",
+        activeMenuText: "#526e38",
+        activeMenuBorder: "#6c8c4c",
+        pages: createModulePages(3)
+      }
+    ];
+
+    let currentModuleIndex = 0;
+    let currentIndex = 0;
+
+    function initDeck() {
+      document.getElementById('prev-btn').addEventListener('click', () => stepDeck(-1));
+      document.getElementById('next-btn').addEventListener('click', () => stepDeck(1));
+
+      // Enable keyboard navigation with left/right arrow keys
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') stepDeck(-1);
+        if (e.key === 'ArrowRight') stepDeck(1);
+      });
+
+      // Hide image container on error to prevent broken image icons
+      const imgEl = document.getElementById('card-image');
+      const imageContainer = document.getElementById('image-container');
+      if (imgEl && imageContainer) {
+        imgEl.addEventListener('error', () => {
+          imageContainer.classList.add('hidden');
+        });
+      }
+
+      // Read initial module from URL hash if provided (#module1, #module2, #module3)
+      const hash = window.location.hash.toLowerCase();
+      let initialMod = 0;
+      if (hash.includes('mod2') || hash.includes('module2') || hash.includes('module-2')) {
+        initialMod = 1;
+      } else if (hash.includes('mod3') || hash.includes('module3') || hash.includes('module-3')) {
+        initialMod = 2;
+      }
+
+      switchModule(initialMod, 0);
+    }
+
+    function renderModuleSelector() {
+      const container = document.getElementById('module-selector-container');
+      if (!container) return;
+      container.innerHTML = '';
+
+      modulesData.forEach((mod, idx) => {
+        const isSelected = idx === currentModuleIndex;
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
+        btn.setAttribute('aria-label', `Select ${mod.name}`);
+
+        btn.className = `px-4 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-bold tracking-wide transition-all border cursor-pointer select-none ${
+          isSelected ? 'shadow-md scale-[1.02]' : 'hover:bg-slate-50'
+        }`;
+
+        if (isSelected) {
+          btn.style.backgroundColor = mod.primary;
+          btn.style.borderColor = mod.primaryDark;
+          btn.style.borderWidth = '1.5px';
+          btn.style.borderStyle = 'solid';
+          btn.style.color = '#ffffff';
+          btn.style.boxShadow = `0 2px 8px ${mod.primary}40`;
+        } else {
+          btn.style.backgroundColor = '#ffffff';
+          btn.style.borderColor = '#cbd5e1';
+          btn.style.borderWidth = '1.5px';
+          btn.style.borderStyle = 'solid';
+          btn.style.color = '#475569';
+          btn.onmouseenter = () => {
+            btn.style.borderColor = mod.primary;
+            btn.style.color = mod.primary;
+            btn.style.backgroundColor = mod.activeMenuBg;
+          };
+          btn.onmouseleave = () => {
+            btn.style.backgroundColor = '#ffffff';
+            btn.style.borderColor = '#cbd5e1';
+            btn.style.color = '#475569';
+          };
+        }
+
+        btn.textContent = mod.name;
+
+        btn.addEventListener('click', () => {
+          switchModule(idx, 0);
+        });
+
+        container.appendChild(btn);
+      });
+    }
+
+    function switchModule(modIdx, cardIdx = 0) {
+      if (modIdx < 0 || modIdx >= modulesData.length) return;
+      currentModuleIndex = modIdx;
+      currentIndex = cardIdx;
+
+      applyTheme(modulesData[currentModuleIndex]);
+      buildMenu();
+      renderCard(currentIndex);
+      renderModuleSelector();
+
+      // Update URL hash without causing jumps
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', `#module${modIdx + 1}`);
+      }
+    }
+
+    function applyTheme(mod) {
+      // Header background and border
+      const header = document.getElementById('deck-header');
+      if (header) {
+        header.style.backgroundColor = mod.primary;
+        header.style.borderColor = mod.primaryDark;
+      }
+
+      // Header icon container
+      const iconBox = document.getElementById('deck-icon-box');
+      if (iconBox) {
+        iconBox.style.backgroundColor = mod.accent;
+      }
+
+      // Header supertitle
+      const supertitle = document.getElementById('deck-supertitle');
+      if (supertitle) {
+        supertitle.textContent = mod.supertitle;
+        supertitle.style.color = mod.highlight;
+      }
+
+      // Counter badge
+      const counterBadge = document.getElementById('counter-badge');
+      if (counterBadge) {
+        counterBadge.style.backgroundColor = mod.primaryDark;
+        counterBadge.style.borderColor = mod.primaryDarker;
+      }
+
+      // Prev and Next navigation buttons
+      const prevBtn = document.getElementById('prev-btn');
+      if (prevBtn) {
+        prevBtn.style.backgroundColor = mod.primaryDark;
+        prevBtn.style.borderColor = mod.primaryDarker;
+        prevBtn.onmouseenter = () => { if (!prevBtn.disabled) prevBtn.style.backgroundColor = mod.primaryDarker; };
+        prevBtn.onmouseleave = () => { if (!prevBtn.disabled) prevBtn.style.backgroundColor = mod.primaryDark; };
+      }
+
+      const nextBtn = document.getElementById('next-btn');
+      if (nextBtn) {
+        nextBtn.style.backgroundColor = mod.accent;
+        nextBtn.style.borderColor = mod.accentDark;
+        nextBtn.onmouseenter = () => { if (!nextBtn.disabled) nextBtn.style.backgroundColor = mod.accentDark; };
+        nextBtn.onmouseleave = () => { if (!nextBtn.disabled) nextBtn.style.backgroundColor = mod.accent; };
+      }
+
+      // Skills Footer Area with module color harmony
+      const skillsEl = document.getElementById('card-skills');
+      if (skillsEl) {
+        skillsEl.innerHTML = `
+          <div class="flex flex-col"><span class="text-sm font-black italic tracking-wide" style="color: ${mod.primary};">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono">/ˈfluː.ən.si/</span></div>
+          <div class="flex flex-col"><span class="text-xs font-bold uppercase" style="color: ${mod.accent};">Grammar</span><span class="text-[8px] text-slate-400 font-mono">/ˈɡræm.ər/</span></div>
+          <div class="flex flex-col"><span class="text-[11px] font-extrabold normal-case text-slate-700 underline decoration-slate-300">DDRS & TOEIC</span><span class="text-[8px] text-slate-400 font-mono">/diː-diː-ɑː-ɛs & ˈtəʊ.ɪk/</span></div>
+          <div class="flex flex-col"><span class="text-xs font-semibold italic" style="color: ${mod.primaryDark};">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono">/prəˌnʌn.siˈeɪ.shən/</span></div>
+          <div class="flex flex-col"><span class="text-xs font-bold uppercase tracking-wider text-teal-700">Comprehension</span><span class="text-[8px] text-slate-400 font-mono">/ˌkɒm.prɪˈhen.ʃən/</span></div>
+          <div class="flex flex-col"><span class="text-sm font-black italic text-sky-700">Discussion</span><span class="text-[8px] text-slate-400 font-mono">/dɪˈskʌʃ.ən/</span></div>
+          <div class="flex flex-col"><span class="text-xs font-extrabold uppercase text-rose-600">CORRECTION</span><span class="text-[8px] text-slate-400 font-mono">/kəˈrek.ʃən/</span></div>
+          <div class="flex flex-col"><span class="text-[11px] font-extrabold tracking-widest" style="color: ${mod.accent};">GO / NO GO</span><span class="text-[8px] text-slate-400 font-mono">/ɡəʊ / nəʊ ɡəʊ/</span></div>
+        `;
+      }
+
+      // eCampus button matching module theme
+      const ecampusBtn = document.getElementById('ecampus-btn');
+      if (ecampusBtn) {
+        ecampusBtn.style.backgroundColor = mod.primary;
+        ecampusBtn.style.borderColor = mod.primaryDark;
+        ecampusBtn.style.boxShadow = `0 2px 8px ${mod.primary}40`;
+        ecampusBtn.onmouseenter = () => {
+          ecampusBtn.style.backgroundColor = mod.primaryDark;
+          ecampusBtn.style.borderColor = mod.primaryDarker;
+        };
+        ecampusBtn.onmouseleave = () => {
+          ecampusBtn.style.backgroundColor = mod.primary;
+          ecampusBtn.style.borderColor = mod.primaryDark;
+        };
+      }
+    }
+
+    function buildMenu() {
+      const menuEl = document.getElementById('deck-menu');
+      if (!menuEl) return;
+      menuEl.innerHTML = '';
+      const mod = modulesData[currentModuleIndex];
+
+      mod.pages.forEach((page, idx) => {
+        const item = document.createElement('button');
+        item.type = 'button';
+        item.innerHTML = `
+          <span class="truncate pr-2 pointer-events-none">${page.title}</span>
+          <span class="text-[10px] text-slate-400 font-mono pointer-events-none">0${idx + 1}</span>
+        `;
+        item.addEventListener('click', () => renderCard(idx));
+        menuEl.appendChild(item);
+      });
+    }
+
+    function updateMenu(activeIdx) {
+      const menuEl = document.getElementById('deck-menu');
+      if (!menuEl) return;
+      const items = menuEl.querySelectorAll('button');
+      const mod = modulesData[currentModuleIndex];
+
+      items.forEach((item, idx) => {
+        const isActive = idx === activeIdx;
+        item.className = `w-full text-left px-3 py-2 text-xs font-medium transition-all flex items-center justify-between border-b border-slate-100 cursor-pointer ${
+          isActive 
+            ? 'font-bold shadow-md shadow-slate-400/40' 
+            : 'text-slate-700 hover:bg-slate-100'
+        }`;
+        if (isActive) {
+          item.style.backgroundColor = mod.activeMenuBg;
+          item.style.color = mod.activeMenuText;
+          item.style.borderLeft = `4px solid ${mod.activeMenuBorder}`;
+        } else {
+          item.style.backgroundColor = '';
+          item.style.color = '';
+          item.style.borderLeft = '4px solid transparent';
+        }
+      });
+    }
+
+    function renderCard(idx) {
+      const mod = modulesData[currentModuleIndex];
+      const pages = mod.pages;
+      if (idx < 0 || idx >= pages.length) return;
+      currentIndex = idx;
+
+      const page = pages[currentIndex];
+
+      // Update badge tag
+      const cardTag = document.getElementById('card-tag');
+      const cardTagWrapper = document.getElementById('card-tag-wrapper');
+      cardTag.textContent = page.tag;
+      if (cardTagWrapper) {
+        cardTagWrapper.style.backgroundColor = mod.primary;
+        cardTagWrapper.style.borderColor = mod.primaryDark;
+      }
+
+      // Update card title
+      const cardHeading = document.getElementById('card-heading');
+      cardHeading.textContent = page.title;
+      cardHeading.style.color = mod.primary;
+
+      document.getElementById('card-desc').innerHTML = page.description;
+
+      const actionContainer = document.getElementById('action-links-container');
+      const footerInstruction = document.getElementById('footer-instruction');
+      actionContainer.innerHTML = '';
+
+      if (page.detailsUrl) {
+        footerInstruction.textContent = "Click below to view the official government DD&RS framework:";
+        const detailsBtn = document.createElement('a');
+        detailsBtn.className = "inline-flex items-center space-x-2 text-white px-3.5 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all cursor-pointer";
+        detailsBtn.style.backgroundColor = mod.primary;
+        detailsBtn.onmouseenter = () => detailsBtn.style.backgroundColor = mod.primaryDark;
+        detailsBtn.onmouseleave = () => detailsBtn.style.backgroundColor = mod.primary;
+        detailsBtn.href = page.detailsUrl;
+        detailsBtn.target = "_blank";
+        detailsBtn.rel = "noopener noreferrer";
+        detailsBtn.innerHTML = "<span>Details</span>";
+        actionContainer.appendChild(detailsBtn);
+
+        const imageContainer = document.getElementById('image-container');
+        const imgEl = document.getElementById('card-image');
+
+        if (page.imageUrl && page.imageUrl.trim() !== "") {
+          imgEl.src = page.imageUrl;
+          imageContainer.classList.remove('hidden');
+        } else {
+          imgEl.src = "";
+          imageContainer.classList.add('hidden');
+        }
+
+        document.getElementById('counter-badge').textContent = `${currentIndex + 1} of ${pages.length}`;
+        document.getElementById('deck-title').textContent = page.title;
+        document.getElementById('footer-status').textContent = `Active: ${mod.name} - ${page.title}`;
+
+        document.getElementById('prev-btn').disabled = (currentIndex === 0);
+        document.getElementById('next-btn').disabled = (currentIndex === pages.length - 1);
+
+        updateMenu(currentIndex);
+        return;
+      }
+
+      footerInstruction.textContent = "Click below to open this specific page directly in your workspace tab.";
+
+      const leftButtonsGroup = document.createElement('div');
+      leftButtonsGroup.className = "flex flex-wrap items-center gap-2";
+
+      const createActionBtn = (href, label) => {
+        const btn = document.createElement('a');
+        btn.className = "inline-flex items-center space-x-2 text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all";
+        btn.style.backgroundColor = mod.primary;
+        btn.onmouseenter = () => btn.style.backgroundColor = mod.primaryDark;
+        btn.onmouseleave = () => btn.style.backgroundColor = mod.primary;
+        btn.href = href;
+        btn.target = "_blank";
+        btn.rel = "noopener noreferrer";
+        btn.innerHTML = `<span>${label}</span>`;
+        return btn;
+      };
+
+      if (page.lessonPlanUrl) {
+        leftButtonsGroup.appendChild(createActionBtn(page.lessonPlanUrl, "Lesson Plan"));
+      }
+
+      if (page.objectivesUrl) {
+        leftButtonsGroup.appendChild(createActionBtn(page.objectivesUrl, "Objectives"));
+      }
+
+      const materialsUrl = page.additionalMaterialsUrl || page.url;
+      if (materialsUrl) {
+        leftButtonsGroup.appendChild(createActionBtn(materialsUrl, "Additional Materials"));
+      }
+
+      if (page.classReviewUrl && !page.classReviewUrl.includes("YOUR_REVIEW_ID")) {
+        leftButtonsGroup.appendChild(createActionBtn(page.classReviewUrl, "Revision"));
+      }
+
+      actionContainer.appendChild(leftButtonsGroup);
+
+      if (page.pdfUrl && !page.pdfUrl.includes("INSERT_YOUR_PDF_LINK_HERE")) {
+        const pdfBtn = document.createElement('a');
+        pdfBtn.className = "inline-flex items-center space-x-2 text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all ml-auto";
+        pdfBtn.style.backgroundColor = mod.accent;
+        pdfBtn.onmouseenter = () => pdfBtn.style.backgroundColor = mod.accentDark;
+        pdfBtn.onmouseleave = () => pdfBtn.style.backgroundColor = mod.accent;
+        pdfBtn.href = page.pdfUrl;
+        pdfBtn.target = "_blank";
+        pdfBtn.rel = "noopener noreferrer";
+        pdfBtn.innerHTML = "<span>Worksheet</span>";
+        actionContainer.appendChild(pdfBtn);
+      }
+
+      const imageContainer = document.getElementById('image-container');
+      const imgEl = document.getElementById('card-image');
+
+      if (page.imageUrl && page.imageUrl.trim() !== "") {
+        imgEl.src = page.imageUrl;
+        imageContainer.classList.remove('hidden');
+      } else {
+        imgEl.src = "";
+        imageContainer.classList.add('hidden');
+      }
+
+      document.getElementById('counter-badge').textContent = `${currentIndex + 1} of ${pages.length}`;
+      document.getElementById('deck-title').textContent = page.title;
+      document.getElementById('footer-status').textContent = `Active: ${mod.name} - ${page.title}`;
+
+      document.getElementById('prev-btn').disabled = (currentIndex === 0);
+      document.getElementById('next-btn').disabled = (currentIndex === pages.length - 1);
+
+      updateMenu(currentIndex);
+    }
+
+    function stepDeck(direction) {
+      const mod = modulesData[currentModuleIndex];
+      const newIndex = currentIndex + direction;
+      if (newIndex >= 0 && newIndex < mod.pages.length) {
+        renderCard(newIndex);
+      }
+    }
+
+    // Standard DOMContentLoaded listener properly calling initDeck()
+    document.addEventListener('DOMContentLoaded', () => {
+      initDeck();
+    });
+  </script>
+</body>
+</html>
