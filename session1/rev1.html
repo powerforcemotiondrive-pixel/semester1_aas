@@ -5,8 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Session 1 - Objectives / Travel</title>
     <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="../output.css">
+    <link rel="stylesheet" href="../dist/output.css">
     <link rel="stylesheet" href="https://powerforcemotiondrive-pixel.github.io/moodle-assets/output.css">
-</head>
+    <style>
+      /* Signature Tactile Micro-Mesh Texture */
+      .textured-surface {
+        background-image: 
+          /* Layer 1: Soft top-edge spotlight sheen */
+          radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.14) 0%, transparent 70%),
+          /* Layer 2: 45° diagonal highlight ridges (1px line every 4px) */
+          repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.045) 0, rgba(255, 255, 255, 0.045) 1px, transparent 0, transparent 4px),
+          /* Layer 3: -45° crosshatch shadow grooves (1px line every 4px) */
+          repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.16) 0, rgba(0, 0, 0, 0.16) 1px, transparent 0, transparent 4px),
+          /* Layer 4: Vertical depth gradient (light top, darker bottom) */
+          linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.14) 100%);
+      }
+
+      /* Inactive buttons and header controls must not have mesh texture */
+      .icon-box,
+      .back-btn,
+      button:disabled,
+      .btn-inactive {
+        background-image: none !important;
+      }
+    </style>
+  </head>
 <body class="bg-slate-100 min-h-screen">
 
 <!-- Custom Tailwind adjustments for Warm Editorial / Terracotta & Oat theme -->
@@ -14,23 +38,22 @@
   <div class="moodle-deck-canvas bg-white rounded-2xl shadow-xl border border-slate-300 flex flex-col overflow-hidden">
       
       <!-- Standardized Header bar -->
-      <header class="bg-[#b85d42] text-white px-4 py-4 sm:px-6 sm:py-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#9e4e37] shrink-0 relative overflow-hidden"
-              style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.03) 10px, rgba(255, 255, 255, 0.03) 20px);">
+      <header class="textured-surface bg-[#c0684f] text-white px-4 py-4 sm:px-6 sm:py-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#a8543d] shrink-0 relative overflow-hidden">
         <div class="flex items-center space-x-3 sm:space-x-4 min-w-0 flex-1">
-          <div class="bg-[#c29b38] p-2.5 rounded-lg text-white shadow-md flex items-center justify-center shrink-0">
+          <div class="bg-[#c99948] p-2.5 rounded-lg text-white shadow-md flex items-center justify-center shrink-0">
             <!-- Terracotta Theme Icon -->
             <svg width="20" height="20" style="width: 20px; height: 20px;" class="w-5 h-5 text-white shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
             </svg>
           </div>
           <div class="min-w-0">
-            <span class="block text-[11px] sm:text-sm md:text-base font-black tracking-wider text-[#fde047] uppercase truncate">GSEA SEMESTER 1 - GENERAL ENGLISH MODULE 1</span>
+            <span class="block text-[11px] sm:text-sm md:text-base font-black tracking-wider text-[#fef08a] uppercase truncate">GSEA SEMESTER 1 - GENERAL ENGLISH MODULE 1</span>
             <h1 class="text-xs sm:text-base font-bold text-white mt-0.5 truncate">Session 1 - Introduction / Introduction to TOEIC / Travel</h1>
           </div>
         </div>
       <!-- Back to Module / Session Link -->
       <div class="flex items-center space-x-2 shrink-0">
-        <a class="flex items-center space-x-1.5 bg-[#c29b38] hover:bg-[#a8842c] active:bg-[#8f6e21] text-white px-3.5 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-md cursor-pointer shrink-0"
+        <a class="flex items-center space-x-1.5 bg-[#c99948] hover:bg-[#b08137] active:bg-[#966b2a] text-white px-3.5 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-md cursor-pointer shrink-0"
            href="../index.html">
           <svg width="14" height="14" style="width: 14px; height: 14px;" class="w-3.5 h-3.5 stroke-[2.5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path>
@@ -47,10 +70,10 @@
             <div class="flex flex-col lg:flex-row gap-6 items-start justify-between">
               <div class="space-y-4 flex-1">
                 <!-- Badge -->
-                <div class="inline-flex items-center space-x-2 bg-[#b85d42] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#9e4e37] shadow-sm">
+                <div class="textured-surface inline-flex items-center space-x-2 bg-[#c0684f] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#a8543d] shadow-sm">
                   GSEA Semester 1 Lesson Outline
                 </div>
-                <h2 class="text-xl sm:text-2xl font-black text-[#b85d42] tracking-tight">
+                <h2 class="text-xl sm:text-2xl font-black text-[#c0684f] tracking-tight">
                   Session 1: Travel, Transport &amp; Leisure
                 </h2>
                 <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -69,8 +92,8 @@
                 <!-- 01 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Itinerary</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">01</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Itinerary</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">01</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     A planned route or journey, detailing scheduled stops, transport connections, and activities.
@@ -79,8 +102,8 @@
                 <!-- 02 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Layover</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">02</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Layover</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">02</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     A period of waiting between two connecting flights or segments of a travel journey.
@@ -89,8 +112,8 @@
                 <!-- 03 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Commuter Pass</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">03</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Commuter Pass</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">03</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     A discounted ticket valid for multiple journeys over a specified period on public transport.
@@ -99,8 +122,8 @@
                 <!-- 04 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Baggage Allowance</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">04</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Baggage Allowance</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">04</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     The maximum weight and volume of luggage a passenger can check in or carry on without penalty.
@@ -109,8 +132,8 @@
                 <!-- 05 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Hub-and-Spoke</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">05</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Hub-and-Spoke</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">05</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     A transport distribution network where traffic flows through a central hub airport or station.
@@ -119,8 +142,8 @@
                 <!-- 06 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Round-Trip</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">06</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Round-Trip</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">06</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     A journey to a destination and back to the original starting location.
@@ -129,8 +152,8 @@
                 <!-- 07 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Code-Share</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">07</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Code-Share</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">07</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     An airline partnership where multiple carriers market and sell seats on the same operating flight.
@@ -139,8 +162,8 @@
                 <!-- 08 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Transit Lounge</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">08</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Transit Lounge</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">08</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     A designated area within an airport terminal for passengers waiting to catch connecting flights.
@@ -149,8 +172,8 @@
                 <!-- 09 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">All-Inclusive</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">09</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">All-Inclusive</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">09</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     A vacation package where meals, drinks, and resort leisure activities are bundled into one price.
@@ -159,8 +182,8 @@
                 <!-- 10 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Car Rental Agency</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">10</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Car Rental Agency</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">10</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     A commercial enterprise providing short-term vehicle leases to leisure and business travelers.
@@ -169,8 +192,8 @@
                 <!-- 11 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Hop-On Hop-Off</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">11</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Hop-On Hop-Off</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">11</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     A flexible tourist transport service allowing passengers to board and exit at designated spots.
@@ -179,8 +202,8 @@
                 <!-- 12 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Jet Lag</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">12</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Jet Lag</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">12</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     Fatigue and sleep disruption resulting from rapid long-distance travel across multiple time zones.
@@ -189,8 +212,8 @@
                 <!-- 13 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Excursion</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">13</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Excursion</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">13</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     A short leisure trip or outing taken by tourists during a vacation, usually returning the same day.
@@ -199,8 +222,8 @@
                 <!-- 14 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Peak Season</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">14</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Peak Season</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">14</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     The time of year when travel demand is highest, resulting in premium prices and crowded venues.
@@ -209,8 +232,8 @@
                 <!-- 15 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Guided Tour</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">15</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Guided Tour</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">15</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     A structured group excursion led by an expert interpreter or local tourism specialist.
@@ -219,8 +242,8 @@
                 <!-- 16 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Boutique Hotel</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">16</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Boutique Hotel</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">16</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     A small stylish accommodation provider known for intimate ambience and personalized leisure services.
@@ -229,8 +252,8 @@
                 <!-- 17 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Overbooking</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">17</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Overbooking</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">17</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     Selling more reservations than available seats or rooms to account for potential cancellations.
@@ -239,8 +262,8 @@
                 <!-- 18 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Red-Eye Flight</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">18</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Red-Eye Flight</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">18</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     An overnight flight that departs late in the evening and arrives early the following morning.
@@ -249,8 +272,8 @@
                 <!-- 19 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Travel Insurance</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">19</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Travel Insurance</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">19</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     Coverage purchased to protect against unforeseen expenses such as trip cancellations or emergencies.
@@ -259,8 +282,8 @@
                 <!-- 20 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Boarding Pass</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">20</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Boarding Pass</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">20</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     A document provided by an airline granting permission to enter the secure boarding area and aircraft.
@@ -269,8 +292,8 @@
                 <!-- 21 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Frequent Flyer</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">21</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Frequent Flyer</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">21</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     A loyalty program offered by airlines to reward passengers with redeemable miles and exclusive perks.
@@ -279,8 +302,8 @@
                 <!-- 22 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Sightseeing</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">22</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Sightseeing</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">22</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     The leisure activity of visiting places of interest, historical landmarks, and scenic attractions.
@@ -289,8 +312,8 @@
                 <!-- 23 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Customs Declaration</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">23</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Customs Declaration</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">23</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     An official statement detailing goods or currency being brought across an international border.
@@ -299,8 +322,8 @@
                 <!-- 24 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Connecting Flight</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">24</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Connecting Flight</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">24</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     A flight requiring passengers to change planes at an intermediate stop before reaching their final destination.
@@ -309,8 +332,8 @@
                 <!-- 25 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Local Transit</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">25</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Local Transit</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">25</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     Public transport networks including buses, trams, and subways serving metropolitan and tourist areas.
@@ -319,8 +342,8 @@
                 <!-- 26 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Tourism Board</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">26</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Tourism Board</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">26</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     An official organization promoting regional leisure destinations and providing visitor information.
@@ -329,8 +352,8 @@
                 <!-- 27 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Platform Screen</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">27</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Platform Screen</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">27</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     Automated digital displays at railway and subway platforms indicating train arrivals and schedules.
@@ -339,8 +362,8 @@
                 <!-- 28 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Departure Board</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">28</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Departure Board</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">28</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     A centralized electronic board listing flight or train schedules, gate changes, and delays.
@@ -349,8 +372,8 @@
                 <!-- 29 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Terminal Shuttle</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">29</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Terminal Shuttle</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">29</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     A complimentary vehicle or train transporting passengers between different airport or station terminals.
@@ -359,8 +382,8 @@
                 <!-- 30 -->
                 <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
                   <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                    <h3 class="text-xs sm:text-sm font-bold text-[#b85d42] truncate">Express Check-In</h3>
-                    <span class="bg-[#c29b38] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">30</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Express Check-In</h3>
+                    <span class="bg-[#c99948] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">30</span>
                   </div>
                   <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
                     Accelerated ticketing service enabling travelers to bypass long lines using mobile apps or kiosks.
@@ -370,7 +393,7 @@
 
               <!-- Context Statements -->
               <div class="pt-4 space-y-3">
-                <div class="inline-flex items-center space-x-2 bg-[#c29b38] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide shadow-sm">
+                <div class="inline-flex items-center space-x-2 bg-[#c99948] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide shadow-sm">
                   Travel &amp; Transport Context Statements (Past Perfect Tense Focus)
                 </div>
                 <ul class="list-disc list-inside space-y-2 text-xs sm:text-sm text-slate-700 bg-slate-50/50 p-3 sm:p-4 rounded-xl border border-slate-200/70">
@@ -384,7 +407,7 @@
 
               <!-- Grammar Tip -->
               <div class="pt-2 space-y-3">
-                <div class="inline-flex items-center space-x-2 bg-[#b85d42] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#9e4e37] shadow-sm">
+                <div class="textured-surface inline-flex items-center space-x-2 bg-[#c0684f] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#a8543d] shadow-sm">
                   Grammar Focus: The Past Perfect Tense (had + past participle)
                 </div>
                 <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -399,14 +422,14 @@
 
               <!-- Stylized Skills Footer Area -->
               <div class="w-full pt-3 pb-3 px-4 rounded-xl border border-slate-200/60 bg-slate-50/50 grid grid-cols-2 sm:grid-cols-4 gap-y-2.5 gap-x-4 shadow-sm">
-                <div class="flex flex-col"><span class="text-sm font-black italic tracking-wide text-[#b85d42]">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono">/ˈfluː.ən.si/</span></div>
-                <div class="flex flex-col"><span class="text-xs font-bold uppercase text-[#c29b38]">Grammar</span><span class="text-[8px] text-slate-400 font-mono">/ˈɡræm.ər/</span></div>
+                <div class="flex flex-col"><span class="text-sm font-black italic tracking-wide text-[#c0684f]">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono">/ˈfluː.ən.si/</span></div>
+                <div class="flex flex-col"><span class="text-xs font-bold uppercase text-[#c99948]">Grammar</span><span class="text-[8px] text-slate-400 font-mono">/ˈɡræm.ər/</span></div>
                 <div class="flex flex-col"><span class="text-[11px] font-extrabold normal-case text-slate-700 underline decoration-slate-300">Travel &amp; Leisure Vocabulary</span><span class="text-[8px] text-slate-400 font-mono">/ˈtræv.əl ənd ˈleʒ.ər vəˈkæb.jə.lə.ri/</span></div>
-                <div class="flex flex-col"><span class="text-xs font-semibold italic text-[#9e4e37]">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono">/prəˌnʌn.siˈeɪ.shən/</span></div>
+                <div class="flex flex-col"><span class="text-xs font-semibold italic text-[#a8543d]">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono">/prəˌnʌn.siˈeɪ.shən/</span></div>
                 <div class="flex flex-col"><span class="text-xs font-bold uppercase tracking-wider text-teal-700">Comprehension</span><span class="text-[8px] text-slate-400 font-mono">/ˌkɒm.prɪˈhen.ʃən/</span></div>
                 <div class="flex flex-col"><span class="text-sm font-black italic text-sky-700">discussion</span><span class="text-[8px] text-slate-400 font-mono">/dɪˈskʌʃ.ən/</span></div>
                 <div class="flex flex-col"><span class="text-xs font-extrabold uppercase text-rose-600">CORRECTION</span><span class="text-[8px] text-slate-400 font-mono">/kəˈrek.ʃən/</span></div>
-                <div class="flex flex-col"><span class="text-[11px] font-extrabold tracking-widest text-[#c29b38]">INTERACTION</span><span class="text-[8px] text-slate-400 font-mono">/ˌɪn.təˈræk.ʃən/</span></div>
+                <div class="flex flex-col"><span class="text-[11px] font-extrabold tracking-widest text-[#c99948]">INTERACTION</span><span class="text-[8px] text-slate-400 font-mono">/ˌɪn.təˈræk.ʃən/</span></div>
               </div>
 
           </div>
