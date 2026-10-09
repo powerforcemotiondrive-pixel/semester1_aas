@@ -488,17 +488,17 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
   }
-  .border-\[\#5a7e47\] {
-    border-color: #5a7e47;
+  .border-\[\#4e713b\] {
+    border-color: #4e713b;
   }
-  .border-\[\#9e523b\] {
-    border-color: #9e523b;
+  .border-\[\#396084\] {
+    border-color: #396084;
   }
-  .border-\[\#456e92\] {
-    border-color: #456e92;
+  .border-\[\#924731\] {
+    border-color: #924731;
   }
-  .border-\[\#b5634c\] {
-    border-color: #b5634c;
+  .border-\[\#a85640\] {
+    border-color: #a85640;
   }
   .border-slate-100 {
     border-color: var(--color-slate-100);
@@ -527,23 +527,23 @@
       border-color: color-mix(in oklab, var(--color-white) 20%, transparent);
     }
   }
-  .bg-\[\#6e9359\] {
-    background-color: #6e9359;
-  }
   .bg-\[\#87ac6e\] {
     background-color: #87ac6e;
-  }
-  .bg-\[\#5681a8\] {
-    background-color: #5681a8;
   }
   .bg-\[\#7097bd\] {
     background-color: #7097bd;
   }
-  .bg-\[\#b5634c\] {
-    background-color: #b5634c;
+  .bg-\[\#49739a\] {
+    background-color: #49739a;
   }
-  .bg-\[\#cb755e\] {
-    background-color: #cb755e;
+  .bg-\[\#60854b\] {
+    background-color: #60854b;
+  }
+  .bg-\[\#a85640\] {
+    background-color: #a85640;
+  }
+  .bg-\[\#c0684f\] {
+    background-color: #c0684f;
   }
   .bg-\[\#d6a555\] {
     background-color: #d6a555;
@@ -737,29 +737,29 @@
     --tw-tracking: var(--tracking-widest);
     letter-spacing: var(--tracking-widest);
   }
-  .text-\[\#5a7e47\] {
-    color: #5a7e47;
-  }
-  .text-\[\#6e9359\] {
-    color: #6e9359;
+  .text-\[\#4e713b\] {
+    color: #4e713b;
   }
   .text-\[\#87ac6e\] {
     color: #87ac6e;
   }
-  .text-\[\#456e92\] {
-    color: #456e92;
-  }
-  .text-\[\#5681a8\] {
-    color: #5681a8;
-  }
   .text-\[\#7097bd\] {
     color: #7097bd;
   }
-  .text-\[\#b5634c\] {
-    color: #b5634c;
+  .text-\[\#49739a\] {
+    color: #49739a;
   }
-  .text-\[\#cb755e\] {
-    color: #cb755e;
+  .text-\[\#60854b\] {
+    color: #60854b;
+  }
+  .text-\[\#396084\] {
+    color: #396084;
+  }
+  .text-\[\#a85640\] {
+    color: #a85640;
+  }
+  .text-\[\#c0684f\] {
+    color: #c0684f;
   }
   .text-\[\#d6a555\] {
     color: #d6a555;
@@ -876,11 +876,11 @@
     .hover\:bg-\[\#5c83a8\]:hover {
       background-color: #5c83a8;
     }
-    .hover\:bg-\[\#9e523b\]:hover {
-      background-color: #9e523b;
-    }
     .hover\:bg-\[\#729759\]:hover {
       background-color: #729759;
+    }
+    .hover\:bg-\[\#924731\]:hover {
+      background-color: #924731;
     }
     .hover\:bg-\[\#bf8f40\]:hover {
       background-color: #bf8f40;
@@ -913,8 +913,8 @@
   .active\:bg-\[\#496f92\]:active {
     background-color: #496f92;
   }
-  .active\:bg-\[\#88432f\]:active {
-    background-color: #88432f;
+  .active\:bg-\[\#853f2c\]:active {
+    background-color: #853f2c;
   }
   .active\:bg-\[\#a8782f\]:active {
     background-color: #a8782f;

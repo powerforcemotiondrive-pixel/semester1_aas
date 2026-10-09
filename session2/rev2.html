@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="../output.css">
     <style>
       /* Signature Tactile Micro-Mesh Texture */
-      .textured-surface,
-      .back-btn {
+      .textured-surface {
         background-image: 
           /* Layer 1: Soft top-edge spotlight sheen */
           radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.14) 0%, transparent 70%),
@@ -25,7 +24,8 @@
       .icon-box,
       [class*="rounded-full"],
       button:disabled,
-      .btn-inactive {
+      .btn-inactive,
+      .back-btn {
         background-image: none !important;
       }
     </style>
@@ -37,7 +37,7 @@
   <div class="moodle-deck-canvas bg-white rounded-2xl shadow-xl border border-slate-300 flex flex-col overflow-hidden">
     
     <!-- Standardized Header bar -->
-    <header class="textured-surface bg-[#cb755e] text-white px-4 py-4 sm:px-6 sm:py-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#b5634c] shrink-0 relative overflow-hidden">
+    <header class="textured-surface bg-[#c0684f] text-white px-4 py-4 sm:px-6 sm:py-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#a85640] shrink-0 relative overflow-hidden">
       <div class="flex items-center space-x-3 sm:space-x-4 min-w-0 flex-1">
         <div class="bg-[#d6a555] p-2.5 rounded-lg text-white shadow-md flex items-center justify-center shrink-0">
           <!-- Terracotta Theme Icon -->
@@ -53,7 +53,7 @@
       
       <!-- Back to Module / Session Link -->
       <div class="flex items-center space-x-2 shrink-0">
-        <a class="textured-surface back-btn flex items-center space-x-1.5 bg-[#d6a555] hover:bg-[#bf8f40] active:bg-[#a8782f] text-white px-3.5 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-md cursor-pointer shrink-0"
+        <a class="back-btn flex items-center space-x-1.5 bg-[#d6a555] hover:bg-[#bf8f40] active:bg-[#a8782f] text-white px-3.5 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-md cursor-pointer shrink-0"
            href="../index.html">
           <svg width="14" height="14" style="width: 14px; height: 14px;" class="w-3.5 h-3.5 stroke-[2.5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path>
@@ -70,10 +70,10 @@
           <div class="flex flex-col lg:flex-row gap-6 items-start justify-between">
             <div class="space-y-4 flex-1">
               <!-- Badge -->
-              <div class="inline-flex items-center space-x-2 bg-[#cb755e] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#b5634c] shadow-sm">
+              <div class="inline-flex items-center space-x-2 bg-[#c0684f] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#a85640] shadow-sm">
                 GSEA Semester 1 Lesson Outline
               </div>
-              <h2 class="text-xl sm:text-2xl font-black text-[#cb755e] tracking-tight">
+              <h2 class="text-xl sm:text-2xl font-black text-[#c0684f] tracking-tight">
                 Session 2: Evolution of Transport &amp; DD&amp;RS
               </h2>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -93,7 +93,7 @@
             <!-- 01 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Modal Shift</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Modal Shift</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">01</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -104,7 +104,7 @@
             <!-- 02 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">High-Speed Rail (HSR)</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">High-Speed Rail (HSR)</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">02</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -115,7 +115,7 @@
             <!-- 03 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Life-Cycle Emissions</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Life-Cycle Emissions</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">03</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -126,7 +126,7 @@
             <!-- 04 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Territorial Equity</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Territorial Equity</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">04</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -137,7 +137,7 @@
             <!-- 05 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Land Take</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Land Take</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">05</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -148,7 +148,7 @@
             <!-- 06 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Decarbonization</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Decarbonization</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">06</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -159,7 +159,7 @@
             <!-- 07 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Intermodal Transit</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Intermodal Transit</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">07</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -170,7 +170,7 @@
             <!-- 08 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Electrification</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Electrification</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">08</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -181,7 +181,7 @@
             <!-- 09 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Short-Haul Flight</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Short-Haul Flight</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">09</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -192,7 +192,7 @@
             <!-- 10 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Active Mobility</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Active Mobility</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">10</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -203,7 +203,7 @@
             <!-- 11 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Fleet Renewal</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Fleet Renewal</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">11</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -214,7 +214,7 @@
             <!-- 12 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Corridor Capacity</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Corridor Capacity</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">12</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -225,7 +225,7 @@
             <!-- 13 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Sustainable Aviation Fuel</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Sustainable Aviation Fuel</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">13</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -236,7 +236,7 @@
             <!-- 14 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Modal Split</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Modal Split</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">14</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -247,7 +247,7 @@
             <!-- 15 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Congestion Charge</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Congestion Charge</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">15</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -258,7 +258,7 @@
             <!-- 16 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Last-Mile Connectivity</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Last-Mile Connectivity</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">16</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -269,7 +269,7 @@
             <!-- 17 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Transit-Oriented Dev.</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Transit-Oriented Dev.</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">17</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -280,7 +280,7 @@
             <!-- 18 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Zero-Emission Vehicle</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Zero-Emission Vehicle</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">18</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -291,7 +291,7 @@
             <!-- 19 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Energy Efficiency</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Energy Efficiency</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">19</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -302,7 +302,7 @@
             <!-- 20 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Noise Abatement</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Noise Abatement</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">20</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -313,7 +313,7 @@
             <!-- 21 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Mobility-as-a-Service</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Mobility-as-a-Service</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">21</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -324,7 +324,7 @@
             <!-- 22 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Freight Modal Shift</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Freight Modal Shift</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">22</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -335,7 +335,7 @@
             <!-- 23 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Infrastructure Footprint</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Infrastructure Footprint</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">23</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -346,7 +346,7 @@
             <!-- 24 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Regulatory Framework</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Regulatory Framework</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">24</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -357,7 +357,7 @@
             <!-- 25 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Passenger Punctuality</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Passenger Punctuality</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">25</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -368,7 +368,7 @@
             <!-- 26 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Environmental Impact</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Environmental Impact</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">26</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -379,7 +379,7 @@
             <!-- 27 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Urban Sprawl</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Urban Sprawl</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">27</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -390,7 +390,7 @@
             <!-- 28 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Public Transit Subsidy</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Public Transit Subsidy</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">28</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -401,7 +401,7 @@
             <!-- 29 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Signaling Modernization</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Signaling Modernization</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">29</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -412,7 +412,7 @@
             <!-- 30 -->
             <div class="bg-slate-50/60 border border-slate-200/70 rounded-xl p-3 flex flex-col justify-between shadow-sm hover:shadow-md transition-all w-full sm:w-[48%] lg:w-[31.8%] min-h-[7rem]">
               <div class="flex items-center justify-between border-b border-slate-200/70 pb-1.5 gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-[#cb755e] truncate">Carbon Offset Scheme</h3>
+                <h3 class="text-xs sm:text-sm font-bold text-[#c0684f] truncate">Carbon Offset Scheme</h3>
                 <span class="bg-[#d6a555] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">30</span>
               </div>
               <p class="text-[11px] text-slate-600 leading-snug pt-1.5">
@@ -438,7 +438,7 @@
 
           <!-- Grammar Tip -->
           <div class="pt-2 space-y-3">
-            <div class="inline-flex items-center space-x-2 bg-[#cb755e] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#b5634c] shadow-sm">
+            <div class="inline-flex items-center space-x-2 bg-[#c0684f] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#a85640] shadow-sm">
               Grammar Focus: Cause, Consequence &amp; Proportional Comparatives
             </div>
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -454,10 +454,10 @@
 
           <!-- Stylized Skills Footer Area -->
           <div class="w-full pt-3 pb-3 px-4 rounded-xl border border-slate-200/60 bg-slate-50/50 grid grid-cols-2 sm:grid-cols-4 gap-y-2.5 gap-x-4 shadow-sm">
-            <div class="flex flex-col"><span class="text-sm font-black italic tracking-wide text-[#cb755e]">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono">/ˈfluː.ən.si/</span></div>
+            <div class="flex flex-col"><span class="text-sm font-black italic tracking-wide text-[#c0684f]">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono">/ˈfluː.ən.si/</span></div>
             <div class="flex flex-col"><span class="text-xs font-bold uppercase text-[#d6a555]">Grammar</span><span class="text-[8px] text-slate-400 font-mono">/ˈɡræm.ər/</span></div>
             <div class="flex flex-col"><span class="text-[11px] font-extrabold normal-case text-slate-700 underline decoration-slate-300">Evolution of Transport</span><span class="text-[8px] text-slate-400 font-mono">/ˌev.əˈluː.ʃən əv ˈtræn.spɔːt/</span></div>
-            <div class="flex flex-col"><span class="text-xs font-semibold italic text-[#b5634c]">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono">/prəˌnʌn.siˈeɪ.shən/</span></div>
+            <div class="flex flex-col"><span class="text-xs font-semibold italic text-[#a85640]">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono">/prəˌnʌn.siˈeɪ.shən/</span></div>
             <div class="flex flex-col"><span class="text-xs font-bold uppercase tracking-wider text-teal-700">Comprehension</span><span class="text-[8px] text-slate-400 font-mono">/ˌkɒm.prɪˈhen.ʃən/</span></div>
             <div class="flex flex-col"><span class="text-sm font-black italic text-sky-700">discussion</span><span class="text-[8px] text-slate-400 font-mono">/dɪˈskʌʃ.ən/</span></div>
             <div class="flex flex-col"><span class="text-xs font-extrabold uppercase text-[#ea5d74]">CORRECTION</span><span class="text-[8px] text-slate-400 font-mono">/kəˈrek.ʃən/</span></div>

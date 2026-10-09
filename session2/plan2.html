@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="../output.css">
     <style>
       /* Signature Tactile Micro-Mesh Texture */
-      .textured-surface,
-      .back-btn {
+      .textured-surface {
         background-image: 
           /* Layer 1: Soft top-edge spotlight sheen */
           radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.14) 0%, transparent 70%),
@@ -25,7 +24,8 @@
       .icon-box,
       [class*="rounded-full"],
       button:disabled,
-      .btn-inactive {
+      .btn-inactive,
+      .back-btn {
         background-image: none !important;
       }
     </style>
@@ -37,7 +37,7 @@
   <div class="moodle-deck-canvas bg-white rounded-2xl shadow-xl border border-slate-300 flex flex-col overflow-hidden">
     
     <!-- Header bar -->
-    <header class="textured-surface bg-[#cb755e] text-white px-4 py-4 sm:px-6 sm:py-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#b5634c] shrink-0 relative overflow-hidden">
+    <header class="textured-surface bg-[#c0684f] text-white px-4 py-4 sm:px-6 sm:py-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#a85640] shrink-0 relative overflow-hidden">
       <div class="flex items-center space-x-3 sm:space-x-4">
         <div class="bg-[#d6a555] p-2.5 rounded-lg text-white shadow-md flex items-center justify-center">
           <!-- Terracotta Theme Icon -->
@@ -57,7 +57,7 @@
       
       <!-- Back to Module / Session Link -->
       <div class="flex items-center space-x-2 shrink-0">
-        <a class="textured-surface back-btn flex items-center space-x-1.5 bg-[#d6a555] hover:bg-[#bf8f40] active:bg-[#a8782f] text-white px-3.5 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-md cursor-pointer shrink-0"
+        <a class="back-btn flex items-center space-x-1.5 bg-[#d6a555] hover:bg-[#bf8f40] active:bg-[#a8782f] text-white px-3.5 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-md cursor-pointer shrink-0"
            href="../index.html">
           <svg width="14" height="14" style="width: 14px; height: 14px;" class="w-3.5 h-3.5 stroke-[2.5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path>
@@ -77,11 +77,11 @@
           <div class="space-y-4 flex-1">
             
             <!-- Restyled larger terracotta badge -->
-            <div class="inline-flex items-center space-x-2 bg-[#cb755e] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#b5634c] shadow-sm">
+            <div class="inline-flex items-center space-x-2 bg-[#c0684f] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#a85640] shadow-sm">
               GSEA Semester 1 Lesson Outline
             </div>
             
-            <h2 class="text-xl sm:text-2xl font-black text-[#cb755e] tracking-tight">
+            <h2 class="text-xl sm:text-2xl font-black text-[#c0684f] tracking-tight">
               Session 2 Lesson Plan (2 Hours)
             </h2>
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -93,11 +93,11 @@
               
               <!-- Item 1 -->
               <div class="grid grid-cols-[60px_1fr] items-center p-2.5 rounded-xl border border-slate-200/70 bg-slate-50/60 shadow-sm gap-2.5">
-                <span class="bg-[#cb755e] text-white text-xs font-bold py-1 rounded-md text-center flex items-center justify-center self-center">0-15</span>
+                <span class="bg-[#c0684f] text-white text-xs font-bold py-1 rounded-md text-center flex items-center justify-center self-center">0-15</span>
                 <div class="flex items-start space-x-2">
                   <span class="font-black text-[#d6a555] text-xs sm:text-sm pt-0.2">1.</span>
                   <div>
-                    <h3 class="text-xs sm:text-sm font-bold text-[#cb755e]">Warm-Up &amp; Rapid Retrieval (15 mins)</h3>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f]">Warm-Up &amp; Rapid Retrieval (15 mins)</h3>
                     <p class="text-[11px] text-slate-600 mt-0.5">&quot;Timeline Clash&quot; — Historical shifts in mobility and their socio-environmental costs.</p>
                   </div>
                 </div>
@@ -105,11 +105,11 @@
 
               <!-- Item 2 -->
               <div class="grid grid-cols-[60px_1fr] items-center p-2.5 rounded-xl border border-slate-200/70 bg-slate-50/60 shadow-sm gap-2.5">
-                <span class="bg-[#cb755e] text-white text-xs font-bold py-1 rounded-md text-center flex items-center justify-center self-center">15-40</span>
+                <span class="bg-[#c0684f] text-white text-xs font-bold py-1 rounded-md text-center flex items-center justify-center self-center">15-40</span>
                 <div class="flex items-start space-x-2">
                   <span class="font-black text-[#d6a555] text-xs sm:text-sm pt-0.2">2.</span>
                   <div>
-                    <h3 class="text-xs sm:text-sm font-bold text-[#cb755e]">Media &amp; Critical Analysis (25 mins)</h3>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f]">Media &amp; Critical Analysis (25 mins)</h3>
                     <p class="text-[11px] text-slate-600 mt-0.5">&quot;The Multi-Modal Pitch&quot; — 3 vs. 3 debate evaluating infrastructure trade-offs along a 600 km regional transit corridor.</p>
                   </div>
                 </div>
@@ -117,11 +117,11 @@
 
               <!-- Item 3 -->
               <div class="grid grid-cols-[60px_1fr] items-center p-2.5 rounded-xl border border-slate-200/70 bg-slate-50/60 shadow-sm gap-2.5">
-                <span class="bg-[#cb755e] text-white text-xs font-bold py-1 rounded-md text-center flex items-center justify-center self-center">40-60</span>
+                <span class="bg-[#c0684f] text-white text-xs font-bold py-1 rounded-md text-center flex items-center justify-center self-center">40-60</span>
                 <div class="flex items-start space-x-2">
                   <span class="font-black text-[#d6a555] text-xs sm:text-sm pt-0.2">3.</span>
                   <div>
-                    <h3 class="text-xs sm:text-sm font-bold text-[#cb755e]">Grammar in Context (20 mins)</h3>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f]">Grammar in Context (20 mins)</h3>
                     <p class="text-[11px] text-slate-600 mt-0.5">Expressing cause, consequence (<em>owing to</em>, <em>resulted in</em>), and complex comparison (<em>The more... the...</em>) in technical report writing.</p>
                   </div>
                 </div>
@@ -129,11 +129,11 @@
 
               <!-- Item 4 -->
               <div class="grid grid-cols-[60px_1fr] items-center p-2.5 rounded-xl border border-slate-200/70 bg-slate-50/60 shadow-sm gap-2.5">
-                <span class="bg-[#cb755e] text-white text-xs font-bold py-1 rounded-md text-center flex items-center justify-center self-center">60-80</span>
+                <span class="bg-[#c0684f] text-white text-xs font-bold py-1 rounded-md text-center flex items-center justify-center self-center">60-80</span>
                 <div class="flex items-start space-x-2">
                   <span class="font-black text-[#d6a555] text-xs sm:text-sm pt-0.2">4.</span>
                   <div>
-                    <h3 class="text-xs sm:text-sm font-bold text-[#cb755e]">TOEIC Workplace Application (20 mins)</h3>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f]">TOEIC Workplace Application (20 mins)</h3>
                     <p class="text-[11px] text-slate-600 mt-0.5">Strategy, high-frequency transport collocations, and correlative inversion structures (<em>No sooner... than</em>) in Parts 5 &amp; 7.</p>
                   </div>
                 </div>
@@ -141,11 +141,11 @@
 
               <!-- Item 5 -->
               <div class="grid grid-cols-[60px_1fr] items-center p-2.5 rounded-xl border border-slate-200/70 bg-slate-50/60 shadow-sm gap-2.5">
-                <span class="bg-[#cb755e] text-white text-xs font-bold py-1 rounded-md text-center flex items-center justify-center self-center">80-95</span>
+                <span class="bg-[#c0684f] text-white text-xs font-bold py-1 rounded-md text-center flex items-center justify-center self-center">80-95</span>
                 <div class="flex items-start space-x-2">
                   <span class="font-black text-[#d6a555] text-xs sm:text-sm pt-0.2">5.</span>
                   <div>
-                    <h3 class="text-xs sm:text-sm font-bold text-[#cb755e]">DDRS Case Discussion (15 mins)</h3>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f]">DDRS Case Discussion (15 mins)</h3>
                     <p class="text-[11px] text-slate-600 mt-0.5">&quot;The Transit Audit&quot; — Resolving corporate travel dilemmas (short-haul flight vs. TGV) and formulating modal-shift actions.</p>
                   </div>
                 </div>
@@ -153,11 +153,11 @@
 
               <!-- Item 6 -->
               <div class="grid grid-cols-[60px_1fr] items-center p-2.5 rounded-xl border border-slate-200/70 bg-slate-50/60 shadow-sm gap-2.5">
-                <span class="bg-[#cb755e] text-white text-xs font-bold py-1 rounded-md text-center flex items-center justify-center self-center">95-110</span>
+                <span class="bg-[#c0684f] text-white text-xs font-bold py-1 rounded-md text-center flex items-center justify-center self-center">95-110</span>
                 <div class="flex items-start space-x-2">
                   <span class="font-black text-[#d6a555] text-xs sm:text-sm pt-0.2">6.</span>
                   <div>
-                    <h3 class="text-xs sm:text-sm font-bold text-[#cb755e]">Consolidating Game (15 mins)</h3>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f]">Consolidating Game (15 mins)</h3>
                     <p class="text-[11px] text-slate-600 mt-0.5">&quot;The Taboo Modal Shift&quot; — Rapid circumlocution drill and active retrieval of session transport vocabulary.</p>
                   </div>
                 </div>
@@ -165,11 +165,11 @@
 
               <!-- Item 7 -->
               <div class="grid grid-cols-[60px_1fr] items-center p-2.5 rounded-xl border border-slate-200/70 bg-slate-50/60 shadow-sm gap-2.5">
-                <span class="bg-[#cb755e] text-white text-xs font-bold py-1 rounded-md text-center flex items-center justify-center self-center">110-120</span>
+                <span class="bg-[#c0684f] text-white text-xs font-bold py-1 rounded-md text-center flex items-center justify-center self-center">110-120</span>
                 <div class="flex items-start space-x-2">
                   <span class="font-black text-[#d6a555] text-xs sm:text-sm pt-0.2">7.</span>
                   <div>
-                    <h3 class="text-xs sm:text-sm font-bold text-[#cb755e]">Debrief &amp; Tracking (10 mins)</h3>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f]">Debrief &amp; Tracking (10 mins)</h3>
                     <p class="text-[11px] text-slate-600 mt-0.5">Self-study logging, target setting, and verification of Formative Evaluation (FE) speaking assessment readiness.</p>
                   </div>
                 </div>
@@ -179,10 +179,10 @@
 
             <!-- Stylized Skills Footer Area -->
             <div class="w-full pt-3 pb-3 px-4 rounded-xl border border-slate-200/60 bg-slate-50/50 grid grid-cols-2 sm:grid-cols-4 gap-y-2.5 gap-x-4 shadow-sm">
-              <div class="flex flex-col"><span class="text-sm font-black italic tracking-wide text-[#cb755e]">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono">/ˈfluː.ən.si/</span></div>
+              <div class="flex flex-col"><span class="text-sm font-black italic tracking-wide text-[#c0684f]">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono">/ˈfluː.ən.si/</span></div>
               <div class="flex flex-col"><span class="text-xs font-bold uppercase text-[#d6a555]">Grammar</span><span class="text-[8px] text-slate-400 font-mono">/ˈɡræm.ər/</span></div>
               <div class="flex flex-col"><span class="text-[11px] font-extrabold normal-case text-slate-700 underline decoration-slate-300">Aeronautical Vocabulary</span><span class="text-[8px] text-slate-400 font-mono">/ˌer.əˈnɔː.tɪ.kəl vəˈkæb.jə.lə.ri/</span></div>
-              <div class="flex flex-col"><span class="text-xs font-semibold italic text-[#b5634c]">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono">/prəˌnʌn.siˈeɪ.shən/</span></div>
+              <div class="flex flex-col"><span class="text-xs font-semibold italic text-[#a85640]">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono">/prəˌnʌn.siˈeɪ.shən/</span></div>
               <div class="flex flex-col"><span class="text-xs font-bold uppercase tracking-wider text-teal-700">Comprehension</span><span class="text-[8px] text-slate-400 font-mono">/ˌkɒm.prɪˈhen.ʃən/</span></div>
               <div class="flex flex-col"><span class="text-sm font-black italic text-sky-700">discussion</span><span class="text-[8px] text-slate-400 font-mono">/dɪˈskʌʃ.ən/</span></div>
               <div class="flex flex-col"><span class="text-xs font-extrabold uppercase text-[#ea5d74]">CORRECTION</span><span class="text-[8px] text-slate-400 font-mono">/kəˈrek.ʃən/</span></div>

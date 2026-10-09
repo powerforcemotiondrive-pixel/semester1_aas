@@ -81,7 +81,7 @@
     <div class="moodle-deck-canvas bg-white rounded-2xl shadow-xl border border-slate-300 flex flex-col overflow-hidden">
       
       <!-- Header bar -->
-      <header id="deck-header" class="textured-surface bg-[#cb755e] text-white px-4 py-4 sm:px-6 sm:py-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#b5634c] shrink-0 relative overflow-hidden">
+      <header id="deck-header" class="textured-surface bg-[#c0684f] text-white px-4 py-4 sm:px-6 sm:py-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#a85640] shrink-0 relative overflow-hidden">
         <div class="flex items-center space-x-3 sm:space-x-4">
           <div id="deck-icon-box" class="bg-[#d6a555] p-2.5 rounded-lg text-white shadow-md flex items-center justify-center">
             <!-- Theme Icon -->
@@ -97,11 +97,11 @@
 
         <!-- Navigation Controls -->
         <div class="flex items-center space-x-2">
-          <span id="counter-badge" class="text-xs font-medium text-white bg-[#b5634c] px-2.5 py-1 rounded-md border border-[#9e523b] mr-1 shadow-md">1 of 6</span>
-          <button id="prev-btn" class="flex items-center space-x-1 bg-[#b5634c] hover:bg-[#9e523b] active:bg-[#88432f] text-slate-100 px-3 py-1.5 rounded-lg font-semibold text-xs transition-all border border-[#9e523b] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer shadow-md" type="button">
+          <span id="counter-badge" class="text-xs font-medium text-white bg-[#a85640] px-2.5 py-1 rounded-md border border-[#924731] mr-1 shadow-md">1 of 6</span>
+          <button id="prev-btn" class="flex items-center space-x-1 bg-[#a85640] hover:bg-[#924731] active:bg-[#853f2c] text-slate-100 px-3 py-1.5 rounded-lg font-semibold text-xs transition-all border border-[#924731] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer shadow-md" type="button">
             <span class="pointer-events-none">Previous</span>
           </button>
-          <button id="next-btn" class="flex items-center space-x-1 bg-[#d6a555] hover:bg-[#bf8f40] active:bg-[#a8782f] text-white px-3 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-md disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer" type="button">
+          <button id="next-btn" class="flex items-center space-x-1 bg-[#d6a555] hover:bg-[#bf8f40] active:bg-[#a8782f] text-white px-3.5 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-md disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer" type="button">
             <span class="pointer-events-none">Next</span>
           </button>
         </div>
@@ -126,10 +126,10 @@
             <div class="flex flex-col lg:flex-row gap-4 items-start justify-between">
               <div class="space-y-3 flex-1">
                 <!-- Restyled badge (no mesh) -->
-                <div id="card-tag-wrapper" class="inline-flex items-center space-x-2 bg-[#cb755e] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#b5634c] shadow-sm">
+                <div id="card-tag-wrapper" class="inline-flex items-center space-x-2 bg-[#c0684f] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#a85640] shadow-sm">
                   <span id="card-tag">Section 1</span>
                 </div>
-                <h2 id="card-heading" class="text-lg sm:text-xl font-black text-[#cb755e] tracking-tight"></h2>
+                <h2 id="card-heading" class="text-lg sm:text-xl font-black text-[#c0684f] tracking-tight"></h2>
                 <div id="card-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed space-y-2"></div>
               </div>
               <!-- Image Container with Subtle Drop Shadow -->
@@ -174,7 +174,7 @@
            rel="noopener noreferrer"
            aria-label="Visit eCampus Moodle"
            class="textured-surface px-4 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-bold tracking-wide transition-all border cursor-pointer select-none inline-flex items-center justify-center no-underline shadow-md"
-           style="background-color: #cb755e; border-color: #b5634c; border-width: 1.5px; border-style: solid; color: #ffffff; box-shadow: 0 2px 8px rgba(203, 117, 94, 0.25);">
+           style="background-color: #c0684f; border-color: #a85640; border-width: 1.5px; border-style: solid; color: #ffffff; box-shadow: 0 2px 8px rgba(192, 104, 79, 0.25);">
           eCampus
         </a>
       </div>
@@ -303,10 +303,10 @@
         name: "Module 1",
         subtitle: "Travel, Transport & Leisure",
         supertitle: "GSEA SEMESTER 1 - MODULE 1: TRAVEL, TRANSPORT & LEISURE (2)",
-        // Softened Pastel Terracotta / Warm Orange Theme
-        primary: "#cb755e",
-        primaryDark: "#b5634c",
-        primaryDarker: "#9e523b",
+        // Refined Terracotta / Warm Orange Theme (slightly darker for contrast)
+        primary: "#c0684f",
+        primaryDark: "#a85640",
+        primaryDarker: "#924731",
         accent: "#d6a555",
         accentDark: "#bf8f40",
         accentDarker: "#a8782f",
@@ -314,7 +314,7 @@
         worksheet: "#dfb469",
         worksheetDark: "#cb9e53",
         activeMenuBg: "rgba(254, 243, 199, 0.7)",
-        activeMenuText: "#cb755e",
+        activeMenuText: "#c0684f",
         activeMenuBorder: "#d6a555",
         pages: createModulePages(1)
       },
@@ -323,18 +323,18 @@
         name: "Module 2",
         subtitle: "Weather & the Environment",
         supertitle: "GSEA SEMESTER 1 - MODULE 2: WEATHER & THE ENVIRONMENT",
-        // Softened Pastel Slate Blue Theme
-        primary: "#5681a8",
-        primaryDark: "#456e92",
-        primaryDarker: "#355a7a",
+        // Refined Slate Blue Theme (slightly darker for contrast)
+        primary: "#49739a",
+        primaryDark: "#396084",
+        primaryDarker: "#2d4f6d",
         accent: "#7097bd",
         accentDark: "#5c83a8",
         accentDarker: "#496f92",
         highlight: "#e9f6ff",
         worksheet: "#7fa7cc",
         worksheetDark: "#6b92b6",
-        activeMenuBg: "rgba(86, 129, 168, 0.12)",
-        activeMenuText: "#5681a8",
+        activeMenuBg: "rgba(73, 115, 154, 0.12)",
+        activeMenuText: "#49739a",
         activeMenuBorder: "#7097bd",
         pages: createModulePages(2)
       },
@@ -343,18 +343,18 @@
         name: "Module 3",
         subtitle: "New Technology",
         supertitle: "GSEA SEMESTER 1 - MODULE 3: NEW TECHNOLOGY",
-        // Softened Pastel Botanical Sage Green Theme
-        primary: "#6e9359",
-        primaryDark: "#5a7e47",
-        primaryDarker: "#486737",
+        // Refined Botanical Sage Green Theme (slightly darker for contrast)
+        primary: "#60854b",
+        primaryDark: "#4e713b",
+        primaryDarker: "#3e5c2d",
         accent: "#87ac6e",
         accentDark: "#729759",
         accentDarker: "#5e8146",
         highlight: "#f2fde0",
         worksheet: "#96ba7e",
         worksheetDark: "#82a569",
-        activeMenuBg: "rgba(110, 147, 89, 0.12)",
-        activeMenuText: "#6e9359",
+        activeMenuBg: "rgba(96, 133, 75, 0.12)",
+        activeMenuText: "#60854b",
         activeMenuBorder: "#87ac6e",
         pages: createModulePages(3)
       }

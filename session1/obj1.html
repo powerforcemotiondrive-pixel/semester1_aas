@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="../output.css">
     <style>
       /* Signature Tactile Micro-Mesh Texture */
-      .textured-surface,
-      .back-btn {
+      .textured-surface {
         background-image: 
           /* Layer 1: Soft top-edge spotlight sheen */
           radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.14) 0%, transparent 70%),
@@ -25,7 +24,8 @@
       .icon-box,
       [class*="rounded-full"],
       button:disabled,
-      .btn-inactive {
+      .btn-inactive,
+      .back-btn {
         background-image: none !important;
       }
     </style>
@@ -39,7 +39,7 @@
   <div class="moodle-deck-canvas bg-white rounded-2xl shadow-xl border border-slate-300 flex flex-col overflow-hidden">
     
     <!-- Header bar -->
-    <header class="textured-surface bg-[#cb755e] text-white px-4 py-4 sm:px-6 sm:py-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#b5634c] shrink-0 relative overflow-hidden">
+    <header class="textured-surface bg-[#c0684f] text-white px-4 py-4 sm:px-6 sm:py-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#a85640] shrink-0 relative overflow-hidden">
       
       <!-- Left: Title Group -->
       <div class="flex items-center space-x-3 sm:space-x-4">
@@ -58,7 +58,7 @@
       </div>
       <!-- Back to Module / Session Link -->
       <div class="flex items-center space-x-2 shrink-0">
-        <a class="textured-surface back-btn flex items-center space-x-1.5 bg-[#d6a555] hover:bg-[#bf8f40] active:bg-[#a8782f] text-white px-3.5 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-md cursor-pointer shrink-0"
+        <a class="back-btn flex items-center space-x-1.5 bg-[#d6a555] hover:bg-[#bf8f40] active:bg-[#a8782f] text-white px-3.5 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-md cursor-pointer shrink-0"
            href="../index.html">
           <svg width="14" height="14" style="width: 14px; height: 14px;" class="w-3.5 h-3.5 stroke-[2.5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path>
@@ -79,11 +79,11 @@
             <div class="space-y-3 flex-1">
               
               <!-- Restyled larger terracotta badge -->
-              <div class="inline-flex items-center space-x-2 bg-[#cb755e] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#b5634c] shadow-sm">
+              <div class="inline-flex items-center space-x-2 bg-[#c0684f] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#a85640] shadow-sm">
                 GSEA Semester 1 - Objectives
               </div>
               
-              <h2 class="text-lg sm:text-xl font-black text-[#cb755e] tracking-tight">
+              <h2 class="text-lg sm:text-xl font-black text-[#c0684f] tracking-tight">
                 Session 1 - Objectives
               </h2>
               
@@ -94,37 +94,37 @@
               <!-- Objectives Milestones List -->
               <div class="space-y-2.5 pt-2">
                 <div class="flex items-start space-x-3 p-2.5 rounded-xl border border-slate-200/70 bg-slate-50/60 shadow-sm">
-                  <span class="bg-[#cb755e] text-white text-xs font-bold px-2.5 py-0.5 rounded-md shrink-0">1</span>
+                  <span class="bg-[#c0684f] text-white text-xs font-bold px-2.5 py-0.5 rounded-md shrink-0">1</span>
                   <div>
-                    <h3 class="text-xs sm:text-sm font-bold text-[#cb755e]">Understand the TOEIC Exam</h3>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f]">Understand the TOEIC Exam</h3>
                     <p class="text-[11px] text-slate-600">Understand the structure, scoring system, and strategic pacing of the TOEIC Listening &amp; Reading test, shifting from general language study to targeted exam technique.</p>
                   </div>
                 </div>
                 <div class="flex items-start space-x-3 p-2.5 rounded-xl border border-slate-200/70 bg-slate-50/60 shadow-sm">
-                  <span class="bg-[#cb755e] text-white text-xs font-bold px-2.5 py-0.5 rounded-md shrink-0">2</span>
+                  <span class="bg-[#c0684f] text-white text-xs font-bold px-2.5 py-0.5 rounded-md shrink-0">2</span>
                   <div>
-                    <h3 class="text-xs sm:text-sm font-bold text-[#cb755e]">Master High-Frequency Travel &amp; Professional Collocations</h3>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f]">Master High-Frequency Travel &amp; Professional Collocations</h3>
                     <p class="text-[11px] text-slate-600">Identify and correctly utilize essential B2/C1-level travel collocations and idioms in professional and conversational contexts.</p>
                   </div>
                 </div>
                 <div class="flex items-start space-x-3 p-2.5 rounded-xl border border-slate-200/70 bg-slate-50/60 shadow-sm">
-                  <span class="bg-[#cb755e] text-white text-xs font-bold px-2.5 py-0.5 rounded-md shrink-0">3</span>
+                  <span class="bg-[#c0684f] text-white text-xs font-bold px-2.5 py-0.5 rounded-md shrink-0">3</span>
                   <div>
-                    <h3 class="text-xs sm:text-sm font-bold text-[#cb755e]">Produce Advanced Narrative Structures</h3>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f]">Produce Advanced Narrative Structures</h3>
                     <p class="text-[11px] text-slate-600">Review and accurately apply narrative tenses (Past Simple vs. Past Continuous) and inversion structures to enhance complexity in speaking and writing.</p>
                   </div>
                 </div>
                 <div class="flex items-start space-x-3 p-2.5 rounded-xl border border-slate-200/70 bg-slate-50/60 shadow-sm">
-                  <span class="bg-[#cb755e] text-white text-xs font-bold px-2.5 py-0.5 rounded-md shrink-0">4</span>
+                  <span class="bg-[#c0684f] text-white text-xs font-bold px-2.5 py-0.5 rounded-md shrink-0">4</span>
                   <div>
-                    <h3 class="text-xs sm:text-sm font-bold text-[#cb755e]">Integrate DD&amp;RS Principles into Professional Travel</h3>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f]">Integrate DD&amp;RS Principles into Professional Travel</h3>
                     <p class="text-[11px] text-slate-600">Connect global travel scenarios to concepts of sustainable mobility, cultural respect, and responsible tourism.</p>
                   </div>
                 </div>
                 <div class="flex items-start space-x-3 p-2.5 rounded-xl border border-slate-200/70 bg-slate-50/60 shadow-sm">
-                  <span class="bg-[#cb755e] text-white text-xs font-bold px-2.5 py-0.5 rounded-md shrink-0">5</span>
+                  <span class="bg-[#c0684f] text-white text-xs font-bold px-2.5 py-0.5 rounded-md shrink-0">5</span>
                   <div>
-                    <h3 class="text-xs sm:text-sm font-bold text-[#cb755e]">Prepare for the Class 5 Formative Evaluation (FE)</h3>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#c0684f]">Prepare for the Class 5 Formative Evaluation (FE)</h3>
                     <p class="text-[11px] text-slate-600">Understand the exact assessment criteria—vocabulary, fluency, grammar, and TOEIC-readiness—for the upcoming 30-minute graded speaking activity.</p>
                   </div>
                 </div>
@@ -140,10 +140,10 @@
 
           <!-- Stylized Skills Footer Area -->
           <div class="w-full pt-3 pb-3 px-4 rounded-xl border border-slate-200/60 bg-slate-50/50 grid grid-cols-2 sm:grid-cols-4 gap-y-2.5 gap-x-4 shadow-sm">
-            <div class="flex flex-col"><span class="text-sm font-black italic tracking-wide text-[#cb755e]">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono">/ˈfluː.ən.si/</span></div>
+            <div class="flex flex-col"><span class="text-sm font-black italic tracking-wide text-[#c0684f]">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono">/ˈfluː.ən.si/</span></div>
             <div class="flex flex-col"><span class="text-xs font-bold uppercase text-[#d6a555]">Grammar</span><span class="text-[8px] text-slate-400 font-mono">/ˈɡræm.ər/</span></div>
             <div class="flex flex-col"><span class="text-[11px] font-extrabold text-slate-700 underline decoration-slate-300">Aeronautical Vocabulary</span><span class="text-[8px] text-slate-400 font-mono">/ˌer.əˈnɔː.tɪ.kəl/</span></div>
-            <div class="flex flex-col"><span class="text-xs font-semibold italic text-[#b5634c]">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono">/prəˌnʌn.siˈeɪ.shən/</span></div>
+            <div class="flex flex-col"><span class="text-xs font-semibold italic text-[#a85640]">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono">/prəˌnʌn.siˈeɪ.shən/</span></div>
             <div class="flex flex-col"><span class="text-xs font-bold uppercase tracking-wider text-teal-700">Comprehension</span><span class="text-[8px] text-slate-400 font-mono">/ˌkɒm.prɪˈhen.ʃən/</span></div>
             <div class="flex flex-col"><span class="text-sm font-black italic text-sky-700">discussion</span><span class="text-[8px] text-slate-400 font-mono">/dɪˈskʌʃ.ən/</span></div>
             <div class="flex flex-col"><span class="text-xs font-extrabold uppercase text-[#ea5d74]">CORRECTION</span><span class="text-[8px] text-slate-400 font-mono">/kəˈrek.ʃən/</span></div>

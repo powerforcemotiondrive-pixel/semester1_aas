@@ -51,7 +51,7 @@
 
     /* Header styling */
     .deck-header {
-      background-color: #cb755e;
+      background-color: #c0684f;
       color: #ffffff;
       padding: 18px 24px;
       display: flex;
@@ -59,7 +59,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      border-bottom: 1px solid #b5634c;
+      border-bottom: 1px solid #a85640;
       background-image: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.14) 0%, transparent 70%),
         repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.045) 0, rgba(255, 255, 255, 0.045) 1px, transparent 0, transparent 4px),
         repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.16) 0, rgba(0, 0, 0, 0.16) 1px, transparent 0, transparent 4px),
@@ -134,7 +134,7 @@
       border-bottom: 1px solid #e2e8f0;
     }
     .section-badge {
-      background-color: #cb755e;
+      background-color: #c0684f;
       color: #ffffff;
       font-size: 11px;
       font-weight: 800;
@@ -399,7 +399,7 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: #cb755e;
+      color: #c0684f;
     }
     .news-source-tag {
       font-size: 10px;
@@ -438,7 +438,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background-color: #cb755e;
+      background-color: #c0684f;
       color: #ffffff;
       padding: 6px 12px;
       border-radius: 6px;
@@ -448,7 +448,7 @@
       transition: background-color 0.15s ease;
     }
     .article-btn:hover {
-      background-color: #b5634c;
+      background-color: #a85640;
     }
 
     /* SECTION 3: Resources Grid */
@@ -498,7 +498,7 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: #cb755e;
+      color: #c0684f;
       background-color: #fff1ee;
       padding: 2px 7px;
       border-radius: 4px;
@@ -531,7 +531,7 @@
       border-top: 1px dashed #f1f5f9;
     }
     .resource-card:hover .resource-action {
-      color: #b5634c;
+      color: #a85640;
     }
 
     /* Skills Footer Area */
@@ -579,8 +579,7 @@
   
     /* Signature Tactile Micro-Mesh Texture */
     .textured-surface,
-    .article-btn,
-    .back-btn {
+    .article-btn {
       background-image: 
         radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.14) 0%, transparent 70%),
         repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.045) 0, rgba(255, 255, 255, 0.045) 1px, transparent 0, transparent 4px),
@@ -591,7 +590,8 @@
     .header-icon-box,
     .section-badge,
     button:disabled,
-    .btn-inactive {
+    .btn-inactive,
+      .back-btn {
       background-image: none !important;
     }
     
@@ -624,7 +624,7 @@
       
       <!-- Back to Module / Session Link -->
       <div class="flex items-center space-x-2 shrink-0">
-        <a class="textured-surface flex items-center space-x-1.5 bg-[#d6a555] hover:bg-[#bf8f40] active:bg-[#a8782f] text-white px-3.5 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-md cursor-pointer shrink-0 back-btn"
+        <a class="flex items-center space-x-1.5 bg-[#d6a555] hover:bg-[#bf8f40] active:bg-[#a8782f] text-white px-3.5 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-md cursor-pointer shrink-0 back-btn"
            href="../index.html">
           <svg width="14" height="14" style="width: 14px; height: 14px;" class="w-3.5 h-3.5 stroke-[2.5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path>
@@ -640,11 +640,11 @@
       <!-- Introduction & Badge Area -->
       <div style="display: flex; flex-direction: column; gap: 8px; padding-bottom: 4px; border-bottom: 1px solid #f1f5f9;">
         <div>
-          <span style="display: inline-block; background-color: #cb755e; color: #ffffff; padding: 4px 12px; border-radius: 9999px; font-size: 11px; font-weight: 800; border: 1px solid #b5634c; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+          <span style="display: inline-block; background-color: #c0684f; color: #ffffff; padding: 4px 12px; border-radius: 9999px; font-size: 11px; font-weight: 800; border: 1px solid #a85640; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
             GSEA Supplementary Resource Hub
           </span>
         </div>
-        <h2 style="font-size: 22px; font-weight: 900; color: #cb755e; margin: 4px 0 0 0; letter-spacing: -0.02em;">
+        <h2 style="font-size: 22px; font-weight: 900; color: #c0684f; margin: 4px 0 0 0; letter-spacing: -0.02em;">
           Session 2 Multimedia, Case Studies &amp; Research Links
         </h2>
         <p style="font-size: 13px; color: #64748b; line-height: 1.55; margin: 0; max-width: 950px;">
@@ -945,10 +945,10 @@
 
       <!-- Stylized Skills Footer Area -->
       <div class="w-full pt-3 pb-3 px-4 rounded-xl border border-slate-200/60 bg-slate-50/50 grid grid-cols-2 sm:grid-cols-4 gap-y-2.5 gap-x-4 shadow-sm vocab-footer">
-        <div class="flex flex-col vocab-item"><span class="text-sm font-black italic tracking-wide text-[#cb755e] vocab-word" style="color: #cb755e; font-style: italic;">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/ˈfluː.ən.si/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-sm font-black italic tracking-wide text-[#c0684f] vocab-word" style="color: #c0684f; font-style: italic;">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/ˈfluː.ən.si/</span></div>
         <div class="flex flex-col vocab-item"><span class="text-xs font-bold uppercase text-[#d6a555] vocab-word" style="color: #d6a555; text-transform: uppercase;">Grammar</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/ˈɡræm.ər/</span></div>
         <div class="flex flex-col vocab-item"><span class="text-[11px] font-extrabold normal-case text-slate-700 underline decoration-slate-300 vocab-word" style="color: #334155; text-decoration: underline; text-decoration-color: #cbd5e1;">Evolution of Transport</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/ˌev.əˈluː.ʃən əv ˈtræn.spɔːt/</span></div>
-        <div class="flex flex-col vocab-item"><span class="text-xs font-semibold italic text-[#b5634c] vocab-word" style="color: #b5634c; font-style: italic;">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/prəˌnʌn.siˈeɪ.shən/</span></div>
+        <div class="flex flex-col vocab-item"><span class="text-xs font-semibold italic text-[#a85640] vocab-word" style="color: #a85640; font-style: italic;">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/prəˌnʌn.siˈeɪ.shən/</span></div>
         <div class="flex flex-col vocab-item"><span class="text-xs font-bold uppercase tracking-wider text-teal-700 vocab-word" style="color: #0f766e; text-transform: uppercase;">Comprehension</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/ˌkɒm.prɪˈhen.ʃən/</span></div>
         <div class="flex flex-col vocab-item"><span class="text-sm font-black italic text-sky-700 vocab-word" style="color: #0369a1; font-style: italic;">discussion</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/dɪˈskʌʃ.ən/</span></div>
         <div class="flex flex-col vocab-item"><span class="text-xs font-extrabold uppercase text-[#ea5d74] vocab-word" style="color: #ea5d74; text-transform: uppercase;">CORRECTION</span><span class="text-[8px] text-slate-400 font-mono vocab-ipa">/kəˈrek.ʃən/</span></div>
