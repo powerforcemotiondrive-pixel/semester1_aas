@@ -79,18 +79,20 @@
       align-items: center;
       gap: 10px;
     }
-    /* Split-pane workspace fallbacks if output.css is missing or restricted */
+    /* Rock-Solid Static Deck Geometry - Prevents all vertical shifting */
+    .moodle-deck-canvas {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      contain: layout paint;
+    }
+
     .workspace-split {
       display: flex;
       flex-direction: column;
       flex: 1 1 0%;
       overflow: hidden;
-      min-height: 420px;
-    }
-    @media (min-width: 768px) {
-      .workspace-split {
-        flex-direction: row;
-      }
+      min-height: 480px;
     }
 
     .sidebar-menu {
@@ -100,14 +102,8 @@
       display: flex;
       flex-direction: column;
       flex-shrink: 0;
-      max-height: 8rem;
+      max-height: 9rem;
       overflow-y: auto;
-    }
-    @media (min-width: 768px) {
-      .sidebar-menu {
-        width: 16rem;
-        max-height: none;
-      }
     }
 
     .content-panel {
@@ -118,6 +114,54 @@
       flex-direction: column;
       justify-content: space-between;
       overflow-y: auto;
+    }
+
+    @media (min-width: 768px) {
+      .moodle-deck-canvas {
+        height: 636px;
+        min-height: 636px;
+        max-height: 636px;
+      }
+      .workspace-split {
+        flex-direction: row;
+        height: 530px;
+        min-height: 530px;
+        max-height: 530px;
+      }
+      .sidebar-menu {
+        width: 16rem;
+        height: 100%;
+        max-height: 530px;
+      }
+      .content-panel {
+        height: 100%;
+        max-height: 530px;
+        overflow-y: auto;
+      }
+    }
+
+    #action-links-container {
+      min-height: 38px;
+    }
+
+    /* Subtle slim scrollbar for internal content pane */
+    .content-panel::-webkit-scrollbar,
+    .sidebar-menu::-webkit-scrollbar {
+      width: 6px;
+    }
+    .content-panel::-webkit-scrollbar-track,
+    .sidebar-menu::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 4px;
+    }
+    .content-panel::-webkit-scrollbar-thumb,
+    .sidebar-menu::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    .content-panel::-webkit-scrollbar-thumb:hover,
+    .sidebar-menu::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
     }
 
     /* Vocabulary skills footer baseline styles & contrast */
@@ -272,6 +316,84 @@
 
   <!-- Script Configuration -->
   <script>
+    // --- SCORM 1.2 LMS Runtime Integration ---
+    const ScormAPI = (() => {
+      let api = null;
+      let isInitialized = false;
+
+      function findAPI(win) {
+        let attempts = 0;
+        try {
+          while (win && attempts < 10) {
+            if (win.API) return win.API;
+            if (win.parent && win.parent !== win) {
+              win = win.parent;
+            } else {
+              break;
+            }
+            attempts++;
+          }
+        } catch (e) {}
+        return null;
+      }
+
+      function getAPI() {
+        if (api) return api;
+        try {
+          api = findAPI(window);
+          if (!api && window.opener) {
+            api = findAPI(window.opener);
+          }
+        } catch (e) {}
+        return api;
+      }
+
+      function init() {
+        const a = getAPI();
+        if (a && !isInitialized) {
+          try {
+            const res = a.LMSInitialize("");
+            if (res === "true" || res === true) {
+              isInitialized = true;
+              const status = a.LMSGetValue("cmi.core.lesson_status");
+              if (!status || status === "not attempted") {
+                a.LMSSetValue("cmi.core.lesson_status", "incomplete");
+                a.LMSCommit("");
+              }
+            }
+          } catch (e) {}
+        }
+      }
+
+      function setProgress(locationStr, markCompleted = false) {
+        const a = getAPI();
+        if (a && isInitialized) {
+          try {
+            if (locationStr) {
+              a.LMSSetValue("cmi.core.lesson_location", String(locationStr));
+            }
+            if (markCompleted) {
+              a.LMSSetValue("cmi.core.lesson_status", "completed");
+            }
+            a.LMSCommit("");
+          } catch (e) {}
+        }
+      }
+
+      function finish() {
+        const a = getAPI();
+        if (a && isInitialized) {
+          try {
+            a.LMSCommit("");
+            a.LMSFinish("");
+            isInitialized = false;
+          } catch (e) {}
+        }
+      }
+
+      return { init, setProgress, finish };
+    })();
+
     const createModulePages = (modNumber) => {
       const sessionTitles = {
         1: {
@@ -478,6 +600,9 @@
     let currentIndex = 0;
 
     function initDeck() {
+      ScormAPI.init();
+      window.addEventListener('beforeunload', () => ScormAPI.finish());
+      window.addEventListener('unload', () => ScormAPI.finish());
       document.getElementById('prev-btn').addEventListener('click', () => stepDeck(-1));
       document.getElementById('next-btn').addEventListener('click', () => stepDeck(1));
 
@@ -496,29 +621,43 @@
         });
       }
 
-      // Read initial module from URL hash if provided (#module1, #module2, #module3)
-      function getModuleFromHash() {
+      // Read initial module and active card from URL hash or sessionStorage
+      function getInitialSelection() {
+        let mod = 0;
+        let card = 0;
         try {
           const hash = window.location.hash.toLowerCase();
           if (hash.includes('mod2') || hash.includes('module2') || hash.includes('module-2')) {
-            return 1;
+            mod = 1;
           } else if (hash.includes('mod3') || hash.includes('module3') || hash.includes('module-3')) {
-            return 2;
+            mod = 2;
           }
-        } catch (e) {
-          // Fallback if window.location access is restricted
-        }
-        return 0;
+
+          // Check if card index is directly in hash (e.g. #module1-card3)
+          const cardMatch = hash.match(/card-?(\d+)/);
+          if (cardMatch) {
+            card = Math.max(0, parseInt(cardMatch[1], 10) - 1);
+          } else {
+            // Restore card memory from sessionStorage when returning from a subpage
+            const savedMod = sessionStorage.getItem('gsea_last_mod');
+            const savedCard = sessionStorage.getItem('gsea_last_card');
+            if (savedMod !== null && parseInt(savedMod, 10) === mod && savedCard !== null) {
+              card = parseInt(savedCard, 10);
+            }
+          }
+        } catch (e) {}
+        return { mod, card };
       }
 
-      switchModule(getModuleFromHash(), 0);
+      const initialSelection = getInitialSelection();
+      switchModule(initialSelection.mod, initialSelection.card);
 
       // Listen for hash changes dynamically (e.g., browser back/forward or intra-page links)
       window.addEventListener('hashchange', () => {
         try {
-          const targetMod = getModuleFromHash();
-          if (targetMod !== currentModuleIndex) {
-            switchModule(targetMod, 0);
+          const target = getInitialSelection();
+          if (target.mod !== currentModuleIndex || target.card !== currentIndex) {
+            switchModule(target.mod, target.card);
           }
         } catch (e) {}
       });
@@ -586,10 +725,12 @@
       renderCard(currentIndex);
       renderModuleSelector();
 
-      // Update URL hash without causing jumps (Cross-Origin History API Guard)
+      // Update URL hash with card memory (Cross-Origin History API Guard)
       try {
+        sessionStorage.setItem('gsea_last_mod', String(modIdx));
+        sessionStorage.setItem('gsea_last_card', String(cardIdx));
         if (window.history && typeof window.history.replaceState === 'function') {
-          window.history.replaceState(null, '', `#module${modIdx + 1}`);
+          window.history.replaceState(null, '', `#module${modIdx + 1}-card${cardIdx + 1}`);
         }
       } catch (err) {
         // Silently swallow SecurityError if embedded in a restricted or cross-origin Moodle iframe
@@ -749,7 +890,7 @@
         detailsBtn.onmouseenter = () => detailsBtn.style.backgroundColor = mod.primaryDark;
         detailsBtn.onmouseleave = () => detailsBtn.style.backgroundColor = mod.primary;
         detailsBtn.href = page.detailsUrl;
-        detailsBtn.target = "_blank";
+        detailsBtn.target = "_self";
         detailsBtn.rel = "noopener noreferrer";
         detailsBtn.innerHTML = "<span>Details</span>";
         actionContainer.appendChild(detailsBtn);
@@ -773,6 +914,14 @@
         document.getElementById('next-btn').disabled = (currentIndex === pages.length - 1);
 
         updateMenu(currentIndex);
+        try {
+          sessionStorage.setItem('gsea_last_mod', String(currentModuleIndex));
+          sessionStorage.setItem('gsea_last_card', String(currentIndex));
+          if (window.history && typeof window.history.replaceState === 'function') {
+            window.history.replaceState(null, '', `#module${currentModuleIndex + 1}-card${currentIndex + 1}`);
+          }
+        } catch (e) {}
+        ScormAPI.setProgress('mod' + (currentModuleIndex + 1) + '-card' + currentIndex, true);
         return;
       }
 
@@ -785,8 +934,11 @@
         btn.onmouseenter = () => btn.style.backgroundColor = mod.primaryDark;
         btn.onmouseleave = () => btn.style.backgroundColor = mod.primary;
         btn.href = href;
-        btn.target = "_blank";
-        btn.rel = "noopener noreferrer";
+        const isExternal = href.startsWith('http://') || href.startsWith('https://');
+        btn.target = isExternal ? "_blank" : "_self";
+        if (isExternal) {
+          btn.rel = "noopener noreferrer";
+        }
         btn.innerHTML = `<span>${label}</span>`;
         return btn;
       };
@@ -816,8 +968,11 @@
         pdfBtn.onmouseenter = () => pdfBtn.style.backgroundColor = mod.worksheetDark;
         pdfBtn.onmouseleave = () => pdfBtn.style.backgroundColor = mod.worksheet;
         pdfBtn.href = page.pdfUrl;
-        pdfBtn.target = "_blank";
-        pdfBtn.rel = "noopener noreferrer";
+        const isPdfExternal = page.pdfUrl.startsWith('http://') || page.pdfUrl.startsWith('https://');
+        pdfBtn.target = isPdfExternal ? "_blank" : "_self";
+        if (isPdfExternal) {
+          pdfBtn.rel = "noopener noreferrer";
+        }
         pdfBtn.innerHTML = "<span>Worksheet</span>";
         actionContainer.appendChild(pdfBtn);
       }
@@ -841,6 +996,7 @@
       document.getElementById('next-btn').disabled = (currentIndex === pages.length - 1);
 
       updateMenu(currentIndex);
+      ScormAPI.setProgress('mod' + (currentModuleIndex + 1) + '-card' + currentIndex, true);
     }
 
     function stepDeck(direction) {
