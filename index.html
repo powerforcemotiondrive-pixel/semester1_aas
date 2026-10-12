@@ -24,20 +24,17 @@
         linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.14) 100%) !important;
     }
 
-    /* Elements and inactive buttons that must NOT have mesh texture */
+    /* Elements and buttons that must NOT have mesh texture */
     #deck-icon-box,
     #counter-badge,
     #card-tag-wrapper,
     #prev-btn,
     #next-btn,
     button:disabled,
-    .module-buttons-group button:not([aria-pressed="true"]),
+    .module-buttons-group button,
+    #ecampus-btn,
     .btn-inactive {
       background-image: none !important;
-    }
-
-    .module-buttons-group button:not([aria-pressed="true"]) {
-      background-color: #ffffff !important;
     }
 
     #worksheet-btn {
@@ -49,7 +46,7 @@
     }
 
     /* Theme transitions */
-    #deck-header, #deck-icon-box, #card-tag-wrapper, #card-heading, #prev-btn, #next-btn, #counter-badge, #ecampus-btn, .module-buttons-group button, #action-links-container a {
+    #deck-header, #unified-nav-container, #deck-icon-box, #card-tag-wrapper, #card-heading, #prev-btn, #next-btn, #counter-badge, #ecampus-btn, .module-buttons-group button, #action-links-container a {
       transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
     }
 
@@ -64,20 +61,20 @@
       padding-left: 2px;
     }
 
-    .module-selector-box {
+    .unified-nav-container {
       display: inline-flex;
       align-items: center;
-      background-color: #ffffff;
+      gap: 8px;
       padding: 6px 10px;
       border-radius: 14px;
-      border: 1px solid #cbd5e1;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      border: 1px solid #a85640;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
     }
 
     .module-buttons-group {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
     /* Rock-Solid Static Deck Geometry - Zero Vertical Shifting & Zero Edge Clipping */
     .moodle-deck-canvas {
@@ -299,24 +296,23 @@
       </footer>
     </div>
 
-    <!-- Module Selector Bar at Bottom - Left aligned -->
+    <!-- Unified Bottom Navigation Bar - Left aligned -->
     <div class="module-selector-wrapper">
-      <!-- Separate Box for Module Selection Buttons -->
-      <div class="module-selector-box">
+      <div id="unified-nav-container" class="textured-surface unified-nav-container">
+        <!-- Module Selection Buttons Group -->
         <div id="module-selector-container" class="module-buttons-group">
           <!-- Populated via script -->
         </div>
-      </div>
-      <!-- Separate Box for eCampus Link Button -->
-      <div class="module-selector-box">
+        <!-- Subtle vertical divider between modules and eCampus -->
+        <div class="h-5 w-px bg-white/25 mx-0.5" aria-hidden="true"></div>
+        <!-- eCampus Link Button -->
         <a id="ecampus-btn"
            href="https://e-campus.enac.fr/moodle/"
            target="_blank"
            rel="noopener noreferrer"
            aria-label="Visit eCampus Moodle"
-           class="textured-surface px-4 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-bold tracking-wide transition-all border cursor-pointer select-none inline-flex items-center justify-center no-underline shadow-md"
-           style="background-color: #c0684f; border-color: #a85640; border-width: 1.5px; border-style: solid; color: #ffffff; box-shadow: 0 2px 8px rgba(192, 104, 79, 0.25);">
-          eCampus
+           class="flex items-center space-x-1 px-3.5 py-1.5 rounded-lg text-xs font-bold tracking-wide transition-all border cursor-pointer select-none no-underline shadow-md text-white">
+          <span>eCampus ↗</span>
         </a>
       </div>
     </div>
@@ -675,6 +671,7 @@
       const container = document.getElementById('module-selector-container');
       if (!container) return;
       container.innerHTML = '';
+      const currentTheme = modulesData[currentModuleIndex];
 
       modulesData.forEach((mod, idx) => {
         const isSelected = idx === currentModuleIndex;
@@ -683,33 +680,33 @@
         btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
         btn.setAttribute('aria-label', `Select ${mod.name}`);
 
-        btn.className = `px-4 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-bold tracking-wide transition-all border cursor-pointer select-none ${
-          isSelected ? 'shadow-md scale-[1.02] textured-surface' : 'hover:bg-slate-50'
+        btn.className = `flex items-center space-x-1 px-3.5 py-1.5 rounded-lg text-xs tracking-wide transition-all border cursor-pointer select-none shadow-md ${
+          isSelected ? 'font-bold scale-[1.02]' : 'font-semibold'
         }`;
 
         if (isSelected) {
-          btn.style.backgroundColor = mod.primary;
-          btn.style.borderColor = mod.primaryDark;
-          btn.style.borderWidth = '1.5px';
-          btn.style.borderStyle = 'solid';
+          // Style matching Next button (active accent tone, no texture)
+          btn.style.backgroundColor = currentTheme.accent;
+          btn.style.borderColor = currentTheme.accentDark;
           btn.style.color = '#ffffff';
-          btn.style.boxShadow = `0 2px 8px ${mod.primary}40`;
-        } else {
-          btn.style.backgroundColor = '#ffffff';
-          btn.style.borderColor = '#cbd5e1';
-          btn.style.borderWidth = '1.5px';
-          btn.style.borderStyle = 'solid';
-          btn.style.color = '#475569';
-          btn.style.boxShadow = 'none';
+          btn.style.boxShadow = `0 2px 8px ${currentTheme.accentDark}50`;
           btn.onmouseenter = () => {
-            btn.style.borderColor = mod.primary;
-            btn.style.color = mod.primary;
-            btn.style.backgroundColor = mod.activeMenuBg;
+            btn.style.backgroundColor = currentTheme.accentDark;
           };
           btn.onmouseleave = () => {
-            btn.style.backgroundColor = '#ffffff';
-            btn.style.borderColor = '#cbd5e1';
-            btn.style.color = '#475569';
+            btn.style.backgroundColor = currentTheme.accent;
+          };
+        } else {
+          // Style matching Previous / counter badge (deeper primaryDark tone, no texture)
+          btn.style.backgroundColor = currentTheme.primaryDark;
+          btn.style.borderColor = currentTheme.primaryDarker;
+          btn.style.color = '#ffffff';
+          btn.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.15)';
+          btn.onmouseenter = () => {
+            btn.style.backgroundColor = currentTheme.primaryDarker;
+          };
+          btn.onmouseleave = () => {
+            btn.style.backgroundColor = currentTheme.primaryDark;
           };
         }
 
@@ -805,19 +802,25 @@
         `;
       }
 
-      // eCampus button matching module theme
+      // Unified bottom navigation container matching header theme
+      const navContainer = document.getElementById('unified-nav-container');
+      if (navContainer) {
+        navContainer.style.backgroundColor = mod.primary;
+        navContainer.style.borderColor = mod.primaryDark;
+      }
+
+      // eCampus button matching active accent button styling
       const ecampusBtn = document.getElementById('ecampus-btn');
       if (ecampusBtn) {
-        ecampusBtn.style.backgroundColor = mod.primary;
-        ecampusBtn.style.borderColor = mod.primaryDark;
-        ecampusBtn.style.boxShadow = `0 2px 8px ${mod.primary}40`;
+        ecampusBtn.style.backgroundColor = mod.accent;
+        ecampusBtn.style.borderColor = mod.accentDark;
+        ecampusBtn.style.color = '#ffffff';
+        ecampusBtn.style.boxShadow = `0 2px 8px ${mod.accentDark}50`;
         ecampusBtn.onmouseenter = () => {
-          ecampusBtn.style.backgroundColor = mod.primaryDark;
-          ecampusBtn.style.borderColor = mod.primaryDarker;
+          ecampusBtn.style.backgroundColor = mod.accentDark;
         };
         ecampusBtn.onmouseleave = () => {
-          ecampusBtn.style.backgroundColor = mod.primary;
-          ecampusBtn.style.borderColor = mod.primaryDark;
+          ecampusBtn.style.backgroundColor = mod.accent;
         };
       }
     }
