@@ -13,56 +13,65 @@
       <title>GSEA Semester 1 - Course Modules</title>
       <item identifier="ITEM_MOD1">
         <title>Module 1: Travel &amp; Transport</title>
-        <item identifier="ITEM_M1_S1" identifierref="RESOURCE_1">
+        <item identifier="ITEM_M1_S1" identifierref="RESOURCE_1" parameters="#module1-card1">
           <title>Session 1 - Introduction &amp; Travel Anecdotes</title>
         </item>
-        <item identifier="ITEM_M1_S2" identifierref="RESOURCE_1">
+        <item identifier="ITEM_M1_S2" identifierref="RESOURCE_1" parameters="#module1-card2">
           <title>Session 2 - Evolution of Transport</title>
         </item>
-        <item identifier="ITEM_M1_S3" identifierref="RESOURCE_1">
+        <item identifier="ITEM_M1_S3" identifierref="RESOURCE_1" parameters="#module1-card3">
           <title>Session 3 - Overtourism</title>
         </item>
-        <item identifier="ITEM_M1_S4" identifierref="RESOURCE_1">
+        <item identifier="ITEM_M1_S4" identifierref="RESOURCE_1" parameters="#module1-card4">
           <title>Session 4 - Sustainable and Eco-tourism</title>
         </item>
-        <item identifier="ITEM_M1_S5" identifierref="RESOURCE_1">
+        <item identifier="ITEM_M1_S5" identifierref="RESOURCE_1" parameters="#module1-card5">
           <title>Session 5 - Formative Evaluation</title>
+        </item>
+        <item identifier="ITEM_M1_S6" identifierref="RESOURCE_1" parameters="#module1-card6">
+          <title>Focus: DDRS Framework</title>
         </item>
       </item>
       <item identifier="ITEM_MOD2">
         <title>Module 2: Weather &amp; the Environment</title>
-        <item identifier="ITEM_M2_S1" identifierref="RESOURCE_1">
+        <item identifier="ITEM_M2_S1" identifierref="RESOURCE_1" parameters="#module2-card1">
           <title>Session 1: Extreme Weather</title>
         </item>
-        <item identifier="ITEM_M2_S2" identifierref="RESOURCE_1">
+        <item identifier="ITEM_M2_S2" identifierref="RESOURCE_1" parameters="#module2-card2">
           <title>Session 2: Sustainable Cities</title>
         </item>
-        <item identifier="ITEM_M2_S3" identifierref="RESOURCE_1">
+        <item identifier="ITEM_M2_S3" identifierref="RESOURCE_1" parameters="#module2-card3">
           <title>Session 3: Building and Supporting Arguments</title>
         </item>
-        <item identifier="ITEM_M2_S4" identifierref="RESOURCE_1">
+        <item identifier="ITEM_M2_S4" identifierref="RESOURCE_1" parameters="#module2-card4">
           <title>Session 4: Biodiversity in Urban Areas and Airports</title>
         </item>
-        <item identifier="ITEM_M2_S5" identifierref="RESOURCE_1">
+        <item identifier="ITEM_M2_S5" identifierref="RESOURCE_1" parameters="#module2-card5">
           <title>Session 5 - Formative Evaluation</title>
+        </item>
+        <item identifier="ITEM_M2_S6" identifierref="RESOURCE_1" parameters="#module2-card6">
+          <title>Focus: DDRS Framework</title>
         </item>
       </item>
       <item identifier="ITEM_MOD3">
         <title>Module 3: New Technology</title>
-        <item identifier="ITEM_M3_S1" identifierref="RESOURCE_1">
+        <item identifier="ITEM_M3_S1" identifierref="RESOURCE_1" parameters="#module3-card1">
           <title>Session 1: Artificial Intelligence</title>
         </item>
-        <item identifier="ITEM_M3_S2" identifierref="RESOURCE_1">
+        <item identifier="ITEM_M3_S2" identifierref="RESOURCE_1" parameters="#module3-card2">
           <title>Session 2: Future of travel</title>
         </item>
-        <item identifier="ITEM_M3_S3" identifierref="RESOURCE_1">
+        <item identifier="ITEM_M3_S3" identifierref="RESOURCE_1" parameters="#module3-card3">
           <title>Session 3: Debate and Critical Thinking</title>
         </item>
-        <item identifier="ITEM_M3_S4" identifierref="RESOURCE_1">
+        <item identifier="ITEM_M3_S4" identifierref="RESOURCE_1" parameters="#module3-card4">
           <title>Session 4: Biometrics and digital identity</title>
         </item>
-        <item identifier="ITEM_M3_S5" identifierref="RESOURCE_1">
+        <item identifier="ITEM_M3_S5" identifierref="RESOURCE_1" parameters="#module3-card5">
           <title>Session 5 - Formative Evaluation</title>
+        </item>
+        <item identifier="ITEM_M3_S6" identifierref="RESOURCE_1" parameters="#module3-card6">
+          <title>Focus: DDRS Framework</title>
         </item>
       </item>
     </organization>
