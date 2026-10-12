@@ -285,7 +285,8 @@
       border: 1px solid #e2e8f0;
       box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15);
     }
-    .video-player-container iframe {
+    .video-player-container iframe,
+    .video-player-container video {
       position: absolute;
       top: 0;
       left: 0;
@@ -293,6 +294,8 @@
       height: 100%;
       border: 0;
       display: block;
+      object-fit: contain;
+      background-color: #000000;
     }
     .video-facade {
       position: absolute;
@@ -684,19 +687,16 @@
             <div class="video-header">
               <span class="video-title" title="Video 1: Re Shaping the European Transport Network">Video 1: Re Shaping the European Transport Network</span>
               <div class="video-header-actions">
-                <a href="https://transport.ec.europa.eu/transport-modes/rail/high-speed-rail-plan_en" target="_blank" rel="noopener noreferrer" class="watch-direct-btn" title="Open Video 1 on YouTube">Watch ↗</a>
+                <a href="https://ec.europa.eu/assets/move/video/HSR.mp4" target="_blank" rel="noopener noreferrer" class="watch-direct-btn" title="Watch High Speed Rail Video">Watch ↗</a>
                 <span class="tag-pill tag-amber">Meteorology</span>
               </div>
             </div>
             
-            <div class="video-player-container" data-video-id="a_fS9ddgoGs" data-video-title="Meteorology for Air Traffic Controllers">
-              <iframe 
-                src="https://www.youtube-nocookie.com/embed/a_fS9ddgoGs" 
-                title="YouTube video player 1 - Meteorology for Air Traffic Controllers" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen>
-              </iframe>
+            <div class="video-player-container">
+              <video controls preload="metadata" playsinline title="Video 1: Re Shaping the European Transport Network">
+                <source src="https://ec.europa.eu/assets/move/video/HSR.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
 
             <p class="video-caption">
