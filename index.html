@@ -37,13 +37,6 @@
       background-image: none !important;
     }
 
-    #worksheet-btn {
-      background-color: #374151 !important;
-      color: #ffffff !important;
-    }
-    #worksheet-btn:hover {
-      background-color: #1f2937 !important;
-    }
 
     /* Theme transitions */
     #deck-header, #unified-nav-container, #deck-icon-box, #card-tag-wrapper, #card-heading, #prev-btn, #next-btn, #counter-badge, #ecampus-btn, .module-buttons-group button, #action-links-container a {
@@ -972,19 +965,8 @@
       }
 
       if (page.pdfUrl && !page.pdfUrl.includes("INSERT_YOUR_PDF_LINK_HERE")) {
-        const pdfBtn = document.createElement('a');
+        const pdfBtn = createActionBtn(page.pdfUrl, "Worksheet");
         pdfBtn.id = "worksheet-btn";
-        pdfBtn.className = "textured-surface inline-flex items-center space-x-2 text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all cursor-pointer";
-        pdfBtn.style.backgroundColor = mod.worksheet;
-        pdfBtn.onmouseenter = () => pdfBtn.style.backgroundColor = mod.worksheetDark;
-        pdfBtn.onmouseleave = () => pdfBtn.style.backgroundColor = mod.worksheet;
-        pdfBtn.href = page.pdfUrl;
-        const isPdfExternal = page.pdfUrl.startsWith('http://') || page.pdfUrl.startsWith('https://');
-        pdfBtn.target = isPdfExternal ? "_blank" : "_self";
-        if (isPdfExternal) {
-          pdfBtn.rel = "noopener noreferrer";
-        }
-        pdfBtn.innerHTML = "<span>Worksheet</span>";
         actionContainer.appendChild(pdfBtn);
       }
 
