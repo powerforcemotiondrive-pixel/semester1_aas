@@ -311,7 +311,7 @@
            target="_blank"
            rel="noopener noreferrer"
            aria-label="Visit eCampus Moodle"
-           class="flex items-center space-x-1 px-3.5 py-1.5 rounded-lg text-xs font-bold tracking-wide transition-all border cursor-pointer select-none no-underline shadow-md text-white">
+           class="flex items-center space-x-1 px-3.5 py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-all border cursor-pointer select-none no-underline shadow-md text-white">
           <span>eCampus ↗</span>
         </a>
       </div>
@@ -831,18 +831,18 @@
         navContainer.style.borderColor = mod.primaryDark;
       }
 
-      // eCampus button matching active accent button styling
+      // eCampus button matching inactive module button styling
       const ecampusBtn = document.getElementById('ecampus-btn');
       if (ecampusBtn) {
-        ecampusBtn.style.backgroundColor = mod.accent;
-        ecampusBtn.style.borderColor = mod.accentDark;
+        ecampusBtn.style.backgroundColor = mod.primaryDark;
+        ecampusBtn.style.borderColor = mod.primaryDarker;
         ecampusBtn.style.color = '#ffffff';
-        ecampusBtn.style.boxShadow = `0 2px 8px ${mod.accentDark}50`;
+        ecampusBtn.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.15)';
         ecampusBtn.onmouseenter = () => {
-          ecampusBtn.style.backgroundColor = mod.accentDark;
+          ecampusBtn.style.backgroundColor = mod.primaryDarker;
         };
         ecampusBtn.onmouseleave = () => {
-          ecampusBtn.style.backgroundColor = mod.accent;
+          ecampusBtn.style.backgroundColor = mod.primaryDark;
         };
       }
 
