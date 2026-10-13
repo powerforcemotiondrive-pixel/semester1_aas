@@ -1258,7 +1258,7 @@
 .bg-canvas-mod1,
 .bg-canvas-mod2,
 .bg-canvas-mod3 {
-  background-image: radial-gradient(rgba(0, 0, 0, 0.045) 1px, transparent 1px) !important;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.085) 1.25px, transparent 1.25px) !important;
   background-size: 20px 20px !important;
 }
 
