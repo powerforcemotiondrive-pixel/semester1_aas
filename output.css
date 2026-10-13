@@ -1255,6 +1255,13 @@
 }
 
 /* --- Canvas Backdrop & Floating Card Elevation Classes --- */
+.bg-canvas-mod1,
+.bg-canvas-mod2,
+.bg-canvas-mod3 {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.045) 1px, transparent 1px) !important;
+  background-size: 20px 20px !important;
+}
+
 /* Module 1: Subtle Terracotta / Clay Canvas (#f5f2ee) */
 .bg-canvas-mod1 {
   background-color: #f5f2ee !important;
