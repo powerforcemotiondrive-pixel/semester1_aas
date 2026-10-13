@@ -281,13 +281,15 @@
       border-radius: 8px;
       overflow: hidden;
     }
-    .video-player-container iframe {
+    .video-player-container iframe,
+    .video-player-container video {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       border: 0;
+      object-fit: cover;
     }
     .video-facade {
       position: absolute;
@@ -810,15 +812,15 @@
             <div class="video-header">
               <span class="video-title" title="Video 1: Evolution of Modern Transport">Video 1: Transport Evolution</span>
               <div class="video-header-actions">
-                <a href="https://www.youtube.com/watch?v=cjxn0z1f7Pk" target="_blank" rel="noopener noreferrer" class="watch-direct-btn" title="Open Video 1 on YouTube">Watch ↗</a>
+                <a href="https://www.youtube.com/watch?v=FaLCQo8NJFA" target="_blank" rel="noopener noreferrer" class="watch-direct-btn" title="Open Video 1 on YouTube">Watch ↗</a>
                 <span class="tag-pill tag-amber">History &amp; Shifts</span>
               </div>
             </div>
             
-            <div class="video-player-container" data-video-id="cjxn0z1f7Pk" data-video-title="Evolution of Transport and Airport Systems">
+            <div class="video-player-container" data-video-id="FaLCQo8NJFA" data-video-title="An Animated History of Transportation">
               <iframe 
-                src="https://www.youtube-nocookie.com/embed/cjxn0z1f7Pk" 
-                title="Evolution of Transport and Airport Systems" 
+                src="https://www.youtube-nocookie.com/embed/FaLCQo8NJFA" 
+                title="An Animated History of Transportation" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 referrerpolicy="strict-origin-when-cross-origin" 
                 allowfullscreen>
@@ -833,17 +835,17 @@
           <!-- Video 2 -->
           <div class="compact-video-card">
             <div class="video-header">
-              <span class="video-title" title="Video 2: High-Speed Rail vs. Aviation">Video 2: High-Speed Rail vs Air</span>
+              <span class="video-title" title="Video 2: High-Speed Rail in Europe">Video 2: High-Speed Rail</span>
               <div class="video-header-actions">
-                <a href="https://www.youtube.com/watch?v=a_fS9ddgoGs" target="_blank" rel="noopener noreferrer" class="watch-direct-btn" title="Open Video 2 on YouTube">Watch ↗</a>
+                <a href="https://www.youtube.com/watch?v=KrCnJjW0qp0" target="_blank" rel="noopener noreferrer" class="watch-direct-btn" title="Open Video 2 on YouTube">Watch ↗</a>
                 <span class="tag-pill tag-emerald">Modal Shift</span>
               </div>
             </div>
 
-            <div class="video-player-container" data-video-id="a_fS9ddgoGs" data-video-title="High-Speed Rail vs Aviation: 600km Corridor Debate">
+            <div class="video-player-container" data-video-id="KrCnJjW0qp0" data-video-title="Europe’s €345BN High-Speed Rail Plan">
               <iframe 
-                src="https://www.youtube-nocookie.com/embed/a_fS9ddgoGs" 
-                title="High-Speed Rail vs Aviation: 600km Corridor Debate" 
+                src="https://www.youtube-nocookie.com/embed/KrCnJjW0qp0" 
+                title="Europe’s €345BN High-Speed Rail Plan" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 referrerpolicy="strict-origin-when-cross-origin" 
                 allowfullscreen>
@@ -851,7 +853,7 @@
             </div>
 
             <p class="video-caption">
-              <strong>Focus:</strong> Evaluate infrastructure life-cycle emissions, door-to-door transit time, and land take across a 600 km corridor.
+              <strong>Focus:</strong> The European Commission's plan to expand high-speed rail corridors, reduce regional flight emissions, and drive modal shift across the EU.
             </p>
           </div>
 
@@ -860,15 +862,15 @@
             <div class="video-header">
               <span class="video-title" title="Video 3: Decarbonizing Transport & DD&RS">Video 3: Future Decarbonization</span>
               <div class="video-header-actions">
-                <a href="https://www.youtube.com/watch?v=SaV2m8jtaRI" target="_blank" rel="noopener noreferrer" class="watch-direct-btn" title="Open Video 3 on YouTube">Watch ↗</a>
+                <a href="https://www.youtube.com/watch?v=7KkBE0HgNJQ" target="_blank" rel="noopener noreferrer" class="watch-direct-btn" title="Open Video 3 on YouTube">Watch ↗</a>
                 <span class="tag-pill tag-sky">Case Study</span>
               </div>
             </div>
 
-            <div class="video-player-container" data-video-id="SaV2m8jtaRI" data-video-title="Decarbonizing Transport and Sustainable Innovation">
+            <div class="video-player-container" data-video-id="7KkBE0HgNJQ" data-video-title="Hydrogen Planes: Can We Fly Without Emissions?">
               <iframe 
-                src="https://www.youtube-nocookie.com/embed/SaV2m8jtaRI" 
-                title="Decarbonizing Transport and Sustainable Innovation" 
+                src="https://www.youtube-nocookie.com/embed/7KkBE0HgNJQ" 
+                title="Hydrogen Planes: Can We Fly Without Emissions?" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 referrerpolicy="strict-origin-when-cross-origin" 
                 allowfullscreen>
@@ -925,21 +927,21 @@
           <article class="news-card">
             <div>
               <div class="news-meta">
-                <span class="news-topic">DD&amp;RS &amp; Urban Transit</span>
-                <span class="news-source-tag">Global Mobility</span>
+                <span class="news-topic">European Commission Policy</span>
+                <span class="news-source-tag">EU Mobility Hub</span>
               </div>
               <h4 class="news-heading">
-                Transit-Oriented Development: From Curitiba&#39;s BRT to the 15-Minute Polycentric City
+                Reshaping the European Transport Network: The High-Speed Rail Action Plan
               </h4>
               <p class="news-snippet">
-                Investigate how pioneer bus rapid transit (BRT) networks and integrated micro-mobility corridors dramatically reduce automobile dependency. Discover how municipal transport authorities leverage territorial equity to ensure accessible, low-carbon transit for all urban demographics.
+                Examine the European Commission&#39;s strategic blueprint for expanding cross-border high-speed passenger rail, tripling HSR traffic by 2030, and accelerating the decarbonization of European transport corridors.
               </p>
             </div>
             
             <div class="news-footer">
               <span class="read-time">Estimated read: 4 mins</span>
-              <a href="https://www.itdp.org" target="_blank" rel="noopener noreferrer" class="article-btn">
-                <span>Read Case Study</span>
+              <a href="https://transport.ec.europa.eu/transport-modes/rail/high-speed-rail-plan_en" target="_blank" rel="noopener noreferrer" class="article-btn">
+                <span>Read Action Plan</span>
                 <span aria-hidden="true">→</span>
               </a>
             </div>
