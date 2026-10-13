@@ -580,6 +580,134 @@
       justify-content: space-between;
       align-items: center;
     }
+
+    /* Grammar Point & TOEIC Diagnostic Styles (Module 3 Forest Green Palette) */
+    .grammar-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      width: 100%;
+    }
+    @media (max-width: 860px) {
+      .grammar-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .grammar-card {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px 18px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .grammar-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #f1f5f9;
+      gap: 8px;
+    }
+    .grammar-card-title {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0;
+    }
+    .grammar-formula-box {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 12px;
+      text-align: center;
+      margin: 8px 0;
+    }
+    .grammar-formula {
+      font-size: 13px;
+      font-weight: 800;
+      color: #60854b;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      letter-spacing: -0.01em;
+    }
+    .toeic-question-box {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-top: 6px;
+    }
+    .toeic-question-stem {
+      font-size: 13px;
+      font-weight: 600;
+      color: #1e293b;
+      line-height: 1.5;
+      margin: 4px 0 10px 0;
+    }
+    .toeic-options-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+    @media (max-width: 500px) {
+      .toeic-options-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .toeic-option-item {
+      background-color: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 7px 10px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .toeic-option-letter {
+      font-weight: 700;
+      color: #94a3b8;
+    }
+    .grammar-details {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .grammar-summary {
+      cursor: pointer;
+      padding: 10px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #60854b;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      background-color: #f8fafc;
+      transition: background-color 0.15s ease;
+    }
+    .grammar-summary:hover {
+      background-color: #f1f5f9;
+    }
+    .grammar-summary::-webkit-details-marker {
+      display: none;
+    }
+    .grammar-analysis-body {
+      padding: 12px 14px;
+      border-top: 1px solid #e2e8f0;
+      background-color: #ffffff;
+      font-size: 11.5px;
+      line-height: 1.55;
+      color: #475569;
+    }
   
     /* Signature Tactile Micro-Mesh Texture */
     .textured-surface,
@@ -937,6 +1065,156 @@
               <span aria-hidden="true">→</span>
             </div>
           </a>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 4: GRAMMAR FOCUS & TOEIC APPLICATION                               -->
+      <!-- ========================================================================= -->
+      <section class="section-panel">
+        <div class="section-header">
+          <span class="section-badge" style="background-color: #60854b;">04</span>
+          <h3 class="section-title" style="color: #60854b;">Grammar Point: Conjunctions &amp; Transition Words &amp; TOEIC Practice</h3>
+        </div>
+        <p class="section-intro">
+          Distinguish subordinating conjunctions from prepositional phrases and conjunctive adverbs in governance debates, compliance briefs, and TOEIC Part 5 items.
+        </p>
+
+        <!-- 2-Column Responsive Layout -->
+        <div class="grammar-grid">
+          
+          <!-- Column 1: Grammar Definition, Formation & Rules -->
+          <div class="grammar-card">
+            <div>
+              <div class="grammar-card-header">
+                <span class="grammar-card-title" style="color: #60854b;">Clause Linkers vs. Prepositions</span>
+                <span class="tag-pill tag-emerald">B1–B2 Grammar Focus</span>
+              </div>
+              
+              <!-- Formula / Reference Banner -->
+              <div class="grammar-formula-box">
+                <div style="font-size: 10px; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em;">Connecting Syntax Patterns</div>
+                <div class="grammar-formula">
+                  Subordinating: [Conjunction] + S + V | Prepositional: [Preposition] + Noun / -ing
+                </div>
+              </div>
+
+              <!-- When to Use It -->
+              <div style="font-size: 12px; color: #475569; line-height: 1.55; margin-top: 10px;">
+                <p style="margin: 0 0 6px 0;">
+                  <strong style="color: #1e293b;">Key Functional Classes:</strong>
+                </p>
+                <ul style="margin: 0; padding-left: 14px; list-style-type: disc; font-size: 11.5px; display: flex; flex-direction: column; gap: 4px;">
+                  <li>
+                    <strong style="color: #1e293b;">Subordinating Conjunctions:</strong> Followed by a complete clause (<span style="font-weight: 700; color: #60854b;">Subject + Verb</span>). Express concession (<em>although, even though</em>), cause (<em>because, since</em>), or condition (<em>unless, provided that</em>).
+                  </li>
+                  <li>
+                    <strong style="color: #1e293b;">Prepositional Linkers:</strong> Followed strictly by a <span style="font-weight: 700; color: #60854b;">noun phrase or gerund (-ing)</span> without a finite verb (e.g., <em>despite, in spite of, due to, because of</em>).
+                  </li>
+                  <li>
+                    <strong style="color: #1e293b;">Conjunctive Adverbs:</strong> Link independent ideas across sentence boundaries or semicolons (<span style="font-weight: 600; color: #334155;">however, furthermore, therefore, consequently</span>).
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Crucial TOEIC Contrast / Pitfall Alert -->
+              <div style="margin-top: 10px; padding: 10px 12px; border-radius: 8px; background-color: #f0fdf4; border: 1px solid #bbf7d0; font-size: 11px; color: #166534; line-height: 1.45;">
+                <strong>⚠️ TOEIC Pitfall Alert:</strong> Always examine what follows the blank! If you see <strong>Subject + Finite Verb</strong>, eliminate <em>despite</em>, <em>in spite of</em>, and <em>due to</em>; choose a conjunction like <em>although</em> or <em>because</em>.
+              </div>
+            </div>
+
+            <!-- Authentic Governance Examples -->
+            <div style="border-top: 1px solid #f1f5f9; padding-top: 10px; margin-top: 4px;">
+              <span style="font-size: 10px; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 6px;">Governance &amp; Ethics Examples</span>
+              <div style="display: flex; flex-direction: column; gap: 5px; font-size: 11px; color: #334155;">
+                <div style="padding: 7px 10px; border-radius: 6px; background-color: #f8fafc; border: 1px solid #e2e8f0; display: flex; align-items: flex-start; gap: 6px;">
+                  <span style="color: #60854b; font-weight: 800;">✓</span>
+                  <span><em>"<strong>Although</strong> the model demonstrated accuracy, bias audits remained mandatory." (+ Clause)</em></span>
+                </div>
+                <div style="padding: 7px 10px; border-radius: 6px; background-color: #f8fafc; border: 1px solid #e2e8f0; display: flex; align-items: flex-start; gap: 6px;">
+                  <span style="color: #60854b; font-weight: 800;">✓</span>
+                  <span><em>"<strong>Despite</strong> high statistical accuracy, public deployment was delayed." (+ Noun Phrase)</em></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: TOEIC Part 5 Practice Question & Interactive Reveal -->
+          <div class="grammar-card">
+            <div>
+              <div class="grammar-card-header">
+                <span class="grammar-card-title" style="color: #87ac6e;">TOEIC Diagnostic Practice</span>
+                <span class="tag-pill tag-emerald">Part 5: Incomplete Sentences</span>
+              </div>
+
+              <!-- Question Prompt Box -->
+              <div class="toeic-question-box">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 10px; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">Sample Item • Reading Section</span>
+                  <span style="font-size: 10px; font-weight: 700; color: #64748b;">Timed Pace: ~30s</span>
+                </div>
+                <p class="toeic-question-stem">
+                  ________ the algorithmic predictive policing system demonstrated high statistical precision in pilot tests, municipal regulators suspended its deployment due to civil liberty concerns.
+                </p>
+                
+                <!-- Options Grid -->
+                <div class="toeic-options-grid">
+                  <div class="toeic-option-item">
+                    <span class="toeic-option-letter">(A)</span> Despite
+                  </div>
+                  <div class="toeic-option-item">
+                    <span class="toeic-option-letter">(B)</span> Although
+                  </div>
+                  <div class="toeic-option-item">
+                    <span class="toeic-option-letter">(C)</span> However
+                  </div>
+                  <div class="toeic-option-item">
+                    <span class="toeic-option-letter">(D)</span> In spite of
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Self-Check Disclosure -->
+            <div>
+              <details class="grammar-details">
+                <summary class="grammar-summary" style="color: #60854b;">
+                  <span style="display: flex; align-items: center; gap: 6px;">
+                    <span>💡</span>
+                    <span>Click to Reveal Answer &amp; TOEIC Strategy Analysis</span>
+                  </span>
+                  <span style="font-size: 11px; color: #94a3b8;">▼</span>
+                </summary>
+                
+                <div class="grammar-analysis-body">
+                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <span style="background-color: #dcfce7; color: #166534; font-weight: 800; font-size: 11px; padding: 2px 8px; border-radius: 4px; border: 1px solid #bbf7d0;">
+                      Correct Answer: (B) Although
+                    </span>
+                  </div>
+                  
+                  <p style="margin: 0 0 8px 0;">
+                    <strong>Grammar Analysis:</strong> The blank opens a subordinate clause containing a complete subject (<em>the algorithmic predictive policing system</em>) and finite past verb (<em>demonstrated</em>). Introducing a full clause of concession requires the <strong>subordinating conjunction</strong> <em>Although</em>.
+                  </p>
+                  
+                  <div style="display: flex; flex-direction: column; gap: 4px; margin-bottom: 8px;">
+                    <span style="font-weight: 700; color: #1e293b;">Distractor Breakdown:</span>
+                    <ul style="margin: 0; padding-left: 14px; list-style-type: disc; font-size: 11px; display: flex; flex-direction: column; gap: 3px;">
+                      <li><strong>(A) Despite:</strong> Preposition; must be followed by a noun phrase or gerund, never a full subject + verb clause.</li>
+                      <li><strong>(C) However:</strong> Conjunctive adverb; cannot join two clauses together with a comma (e.g., requires a period or semicolon prior).</li>
+                      <li><strong>(D) In spite of:</strong> Prepositional phrase; identical in syntactic constraint to <em>Despite</em> (requires noun phrase).</li>
+                    </ul>
+                  </div>
+
+                  <div style="padding: 7px 10px; border-radius: 6px; background-color: #f0fdf4; border: 1px solid #bbf7d0; font-size: 10.5px; color: #166534;">
+                    <strong>📌 TOEIC Strategy Rule:</strong> Pairings like <em>Although vs. Despite</em> and <em>Because vs. Because of</em> are tested on nearly every TOEIC exam. Memorize: Conjunctions take <strong>S + V</strong>; Prepositions take <strong>Noun Phrases</strong>.
+                  </div>
+                </div>
+              </details>
+            </div>
+
+          </div>
 
         </div>
       </section>

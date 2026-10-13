@@ -577,6 +577,134 @@
       justify-content: space-between;
       align-items: center;
     }
+
+    /* Grammar Point & TOEIC Diagnostic Styles */
+    .grammar-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      width: 100%;
+    }
+    @media (max-width: 860px) {
+      .grammar-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .grammar-card {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px 18px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .grammar-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #f1f5f9;
+      gap: 8px;
+    }
+    .grammar-card-title {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0;
+    }
+    .grammar-formula-box {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 12px;
+      text-align: center;
+      margin: 8px 0;
+    }
+    .grammar-formula {
+      font-size: 13px;
+      font-weight: 800;
+      color: #c0684f;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      letter-spacing: -0.01em;
+    }
+    .toeic-question-box {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-top: 6px;
+    }
+    .toeic-question-stem {
+      font-size: 13px;
+      font-weight: 600;
+      color: #1e293b;
+      line-height: 1.5;
+      margin: 4px 0 10px 0;
+    }
+    .toeic-options-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+    @media (max-width: 500px) {
+      .toeic-options-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .toeic-option-item {
+      background-color: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 7px 10px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .toeic-option-letter {
+      font-weight: 700;
+      color: #94a3b8;
+    }
+    .grammar-details {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .grammar-summary {
+      cursor: pointer;
+      padding: 10px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #c0684f;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      background-color: #f8fafc;
+      transition: background-color 0.15s ease;
+    }
+    .grammar-summary:hover {
+      background-color: #f1f5f9;
+    }
+    .grammar-summary::-webkit-details-marker {
+      display: none;
+    }
+    .grammar-analysis-body {
+      padding: 12px 14px;
+      border-top: 1px solid #e2e8f0;
+      background-color: #ffffff;
+      font-size: 11.5px;
+      line-height: 1.55;
+      color: #475569;
+    }
   
     /* Signature Tactile Micro-Mesh Texture */
     .textured-surface,
@@ -941,6 +1069,153 @@
               <span aria-hidden="true">→</span>
             </div>
           </a>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- SECTION 4: GRAMMAR FOCUS & TOEIC APPLICATION                               -->
+      <!-- ========================================================================= -->
+      <section class="section-panel">
+        <div class="section-header">
+          <span class="section-badge">04</span>
+          <h3 class="section-title">Grammar Point: The Past Perfect Tense &amp; TOEIC Practice</h3>
+        </div>
+        <p class="section-intro">
+          Review essential chronological sequencing mechanics, historical transport usage patterns, and realistic TOEIC Reading Part 5 question strategy.
+        </p>
+
+        <!-- 2-Column Responsive Layout -->
+        <div class="grammar-grid">
+          
+          <!-- Column 1: Grammar Definition, Formation & Rules -->
+          <div class="grammar-card">
+            <div>
+              <div class="grammar-card-header">
+                <span class="grammar-card-title" style="color: #c0684f;">Definition &amp; Usage Rules</span>
+                <span class="tag-pill tag-amber">B1–B2 Grammar Focus</span>
+              </div>
+              
+              <!-- Formula Banner -->
+              <div class="grammar-formula-box">
+                <div style="font-size: 10px; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em;">Structural Formula</div>
+                <div class="grammar-formula">
+                  Subject + had + Past Participle (V3)
+                </div>
+              </div>
+
+              <!-- When to Use It -->
+              <div style="font-size: 12px; color: #475569; line-height: 1.55; margin-top: 10px;">
+                <p style="margin: 0 0 6px 0;">
+                  <strong style="color: #1e293b;">Core Function:</strong> The Past Perfect expresses an action that took place <em>before another past action or specific past time</em> (the "past before the past"). In professional transport history, case reports, and technical analyses, use it in two key situations:
+                </p>
+                <ul style="margin: 0; padding-left: 14px; list-style-type: disc; font-size: 11.5px; display: flex; flex-direction: column; gap: 4px;">
+                  <li>
+                    <strong style="color: #1e293b;">1. Chronological Ordering of Two Past Events:</strong> The earlier event uses the <span style="font-weight: 700; color: #c0684f;">Past Perfect</span> (<em>had + V3</em>), while the subsequent event uses the <strong>Past Simple</strong>.
+                  </li>
+                  <li>
+                    <strong style="color: #1e293b;">2. Completion Prior to a Past Deadline:</strong> Signaled by conjunctions such as <span style="font-weight: 700; color: #c0684f;">by the time</span>, <span style="font-weight: 700; color: #c0684f;">before</span>, <span style="font-weight: 700; color: #c0684f;">prior to</span>, <span style="font-weight: 600; color: #334155;">already</span>, and <span style="font-weight: 600; color: #334155;">until</span>.
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Crucial TOEIC Contrast / Pitfall Alert -->
+              <div style="margin-top: 10px; padding: 10px 12px; border-radius: 8px; background-color: #fffbeb; border: 1px solid #fef3c7; font-size: 11px; color: #92400e; line-height: 1.45;">
+                <strong>⚠️ TOEIC Pitfall Alert:</strong> Do not confuse the Past Perfect with the Present Perfect. When a sentence establishes a past reference point (e.g., <em>"By the time the inspectors arrived..."</em>), the preceding action cannot use <em>has/have</em>; it must use <strong>had + past participle</strong>.
+              </div>
+            </div>
+
+            <!-- Authentic Workplace & Historical Evolution Examples -->
+            <div style="border-top: 1px solid #f1f5f9; padding-top: 10px; margin-top: 4px;">
+              <span style="font-size: 10px; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 6px;">Transport Evolution Examples</span>
+              <div style="display: flex; flex-direction: column; gap: 5px; font-size: 11px; color: #334155;">
+                <div style="padding: 7px 10px; border-radius: 6px; background-color: #f8fafc; border: 1px solid #e2e8f0; display: flex; align-items: flex-start; gap: 6px;">
+                  <span style="color: #c0684f; font-weight: 800;">✓</span>
+                  <span><em>"By the time commercial jetliners entered service in the late 1950s, transcontinental rail networks <strong>had dominated</strong> international passenger travel for half a century."</em></span>
+                </div>
+                <div style="padding: 7px 10px; border-radius: 6px; background-color: #f8fafc; border: 1px solid #e2e8f0; display: flex; align-items: flex-start; gap: 6px;">
+                  <span style="color: #c0684f; font-weight: 800;">✓</span>
+                  <span><em>"The regional carrier <strong>had already phased out</strong> its older turboprop fleet before new carbon regulations took effect."</em></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: TOEIC Part 5 Practice Question & Interactive Reveal -->
+          <div class="grammar-card">
+            <div>
+              <div class="grammar-card-header">
+                <span class="grammar-card-title" style="color: #d6a555;">TOEIC Diagnostic Practice</span>
+                <span class="tag-pill tag-sky">Part 5: Incomplete Sentences</span>
+              </div>
+
+              <!-- Question Prompt Box -->
+              <div class="toeic-question-box">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 10px; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">Sample Item • Reading Section</span>
+                  <span style="font-size: 10px; font-weight: 700; color: #64748b;">Timed Pace: ~30s</span>
+                </div>
+                <p class="toeic-question-stem">
+                  By the time the civil aviation board published its updated sustainability directives, the airport authority ________ several energy-saving modifications across its terminals.
+                </p>
+                
+                <!-- Options Grid -->
+                <div class="toeic-options-grid">
+                  <div class="toeic-option-item">
+                    <span class="toeic-option-letter">(A)</span> implements
+                  </div>
+                  <div class="toeic-option-item">
+                    <span class="toeic-option-letter">(B)</span> had implemented
+                  </div>
+                  <div class="toeic-option-item">
+                    <span class="toeic-option-letter">(C)</span> will implement
+                  </div>
+                  <div class="toeic-option-item">
+                    <span class="toeic-option-letter">(D)</span> has implemented
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Self-Check Disclosure -->
+            <div>
+              <details class="grammar-details">
+                <summary class="grammar-summary">
+                  <span style="display: flex; align-items: center; gap: 6px;">
+                    <span>💡</span>
+                    <span>Click to Reveal Answer &amp; TOEIC Strategy Analysis</span>
+                  </span>
+                  <span style="font-size: 11px; color: #94a3b8;">▼</span>
+                </summary>
+                
+                <div class="grammar-analysis-body">
+                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <span style="background-color: #dcfce7; color: #166534; font-weight: 800; font-size: 11px; padding: 2px 8px; border-radius: 4px; border: 1px solid #bbf7d0;">
+                      Correct Answer: (B) had implemented
+                    </span>
+                  </div>
+                  
+                  <p style="margin: 0 0 8px 0;">
+                    <strong>Grammar Analysis:</strong> The dependent time clause begins with <em>"By the time the civil aviation board published [Past Simple]"</em>. This establishes a past point in time. Because the airport authority completed the modifications <em>prior</em> to that past publication, the main clause requires the <strong>Past Perfect</strong> (<em>had implemented</em>).
+                  </p>
+                  
+                  <div style="display: flex; flex-direction: column; gap: 4px; margin-bottom: 8px;">
+                    <span style="font-weight: 700; color: #1e293b;">Distractor Breakdown:</span>
+                    <ul style="margin: 0; padding-left: 14px; list-style-type: disc; font-size: 11px; display: flex; flex-direction: column; gap: 3px;">
+                      <li><strong>(A) implements:</strong> Simple present expresses general facts or routine actions, violating the past timeline established by <em>published</em>.</li>
+                      <li><strong>(C) will implement:</strong> Future tense contradicts the past chronological framework of the sentence.</li>
+                      <li><strong>(D) has implemented:</strong> Present perfect connects an action to the present, whereas here the baseline reference point is strictly in the past (<em>published</em>).</li>
+                    </ul>
+                  </div>
+
+                  <div style="padding: 7px 10px; border-radius: 6px; background-color: #fffbeb; border: 1px solid #fef3c7; font-size: 10.5px; color: #92400e;">
+                    <strong>📌 TOEIC Strategy Rule:</strong> Sentences opening with <em>"By the time + [Past Simple clause]"</em> almost always require the <strong>Past Perfect</strong> (<code>had + past participle</code>) in the main clause.
+                  </div>
+                </div>
+              </details>
+            </div>
+
+          </div>
 
         </div>
       </section>

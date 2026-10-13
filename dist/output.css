@@ -207,8 +207,14 @@
   .pointer-events-none {
     pointer-events: none;
   }
+  .fixed {
+    position: fixed;
+  }
   .relative {
     position: relative;
+  }
+  .static {
+    position: static;
   }
   .container {
     width: 100%;
