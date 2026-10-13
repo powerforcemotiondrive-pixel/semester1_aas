@@ -1285,3 +1285,13 @@
 .shadow-card-mod3 {
   box-shadow: 0 20px 25px -5px rgba(31, 48, 38, 0.05), 0 8px 10px -6px rgba(31, 48, 38, 0.03), 0 1px 3px 0 rgba(31, 48, 38, 0.03) !important;
 }
+
+/* Universal button texture reset: clean, sharp solid surfaces for all buttons */
+button,
+a[role="button"],
+.btn,
+.back-btn,
+.article-btn {
+  background-image: none !important;
+}
+

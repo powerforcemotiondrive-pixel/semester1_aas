@@ -7,12 +7,9 @@
   <!-- Tailwind CSS CLI Output -->
   <link rel="stylesheet" href="output.css">
   <style>
-    /* Signature Tactile Micro-Mesh Texture */
+    /* Signature Tactile Micro-Mesh Texture (Deck Header only) */
     .textured-surface,
-    #deck-header,
-    #ecampus-btn,
-    .module-buttons-group button[aria-pressed="true"],
-    #action-links-container a {
+    #deck-header {
       background-image: 
         /* Layer 1: Soft top-edge spotlight sheen */
         radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.14) 0%, transparent 70%),
@@ -24,15 +21,17 @@
         linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.14) 100%) !important;
     }
 
-    /* Elements and buttons that must NOT have mesh texture */
+    /* All buttons, badges, and controls must NOT have mesh texture */
+    button,
+    a[role="button"],
+    .module-buttons-group button,
+    #action-links-container a,
+    #ecampus-btn,
+    #prev-btn,
+    #next-btn,
     #deck-icon-box,
     #counter-badge,
     #card-tag-wrapper,
-    #prev-btn,
-    #next-btn,
-    button:disabled,
-    .module-buttons-group button,
-    #ecampus-btn,
     .btn-inactive {
       background-image: none !important;
     }
@@ -937,7 +936,7 @@
       if (page.detailsUrl) {
         footerInstruction.textContent = "Click below to view the official government DD&RS framework:";
         const detailsBtn = document.createElement('a');
-        detailsBtn.className = "textured-surface inline-flex items-center space-x-2 text-white px-3.5 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all cursor-pointer";
+        detailsBtn.className = "inline-flex items-center space-x-2 text-white px-3.5 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all cursor-pointer";
         detailsBtn.style.backgroundColor = mod.primary;
         detailsBtn.onmouseenter = () => detailsBtn.style.backgroundColor = mod.primaryDark;
         detailsBtn.onmouseleave = () => detailsBtn.style.backgroundColor = mod.primary;
@@ -981,7 +980,7 @@
 
       const createActionBtn = (href, label) => {
         const btn = document.createElement('a');
-        btn.className = "textured-surface inline-flex items-center space-x-2 text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all cursor-pointer";
+        btn.className = "inline-flex items-center space-x-2 text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all cursor-pointer";
         btn.style.backgroundColor = mod.primary;
         btn.onmouseenter = () => btn.style.backgroundColor = mod.primaryDark;
         btn.onmouseleave = () => btn.style.backgroundColor = mod.primary;
